@@ -1,0 +1,22 @@
+/*----------------------------------------------------*/
+/*------------------- CUSTOM FONTS -------------------*/
+/*----------------------------------------------------*/
+
+@font-face {
+  font-family: "Josephin Regular";
+  src: url("/josephin/Josefin-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Josephin Bold";
+  src: url("/josephin/Josefin-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Josephin Black";
+  src: url("/josephin/Josefin-Light.ttf");
+}
+
+/*-------------------------------------------------*/
+/*------------------- END OF CSS ------------------*/
+/*-------------------------------------------------*/

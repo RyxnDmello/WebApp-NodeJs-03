@@ -1,0 +1,16 @@
+@import url("./common/fonts.css");
+
+@import url("./home/navbar.css");
+@import url("./home/introduction.css");
+
+* {
+  text-decoration: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  position: relative;
+  z-index: -2;
+}
