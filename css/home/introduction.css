@@ -3,40 +3,125 @@
 /*-------------------------------------------------------------*/
 
 #introduction-section {
-  background: linear-gradient(45deg, #2f8796, #ea1ec1);
   justify-content: center;
   grid-auto-flow: column;
   align-items: center;
-  padding: 5rem 15rem;
+  padding: 5rem 8rem;
+  position: relative;
   display: grid;
+  gap: 4rem;
 }
 
-.intro-text-container {
+#introduction-section::after {
+  background-image: linear-gradient(45deg, #2f0d65 20%, #510d37 60%);
+  transform: skewX(-15deg);
+  box-shadow: 0 2px 20px;
+  isolation: isolate;
+  position: absolute;
+  content: "";
+  z-index: -1;
+  inset: 0;
+}
+
+/*--------------------------------------*/
+/*----------- INFO CONTAINER -----------*/
+/*--------------------------------------*/
+
+.intro-info-container {
   grid-template-columns: auto;
   justify-content: center;
   align-items: center;
   display: grid;
+  gap: 0.5rem;
 }
 
 .intro-title {
   font-family: "Poppins", sans-serif;
   text-shadow: 5px 5px #000;
-  line-height: 1.1;
+  font-size: 4.4rem;
+  line-height: 1.25;
   font-weight: 300;
-  font-size: 6rem;
   cursor: default;
   color: #fff;
 }
 
 .intro-description {
   font-family: "Poppins", sans-serif;
-  font-size: 1rem;
-  color: #000;
+  letter-spacing: 0.5px;
+  font-size: 1.2rem;
+  font-weight: 200;
+  color: #ececec;
+  cursor: default;
 }
 
 .intro-image {
   filter: drop-shadow(2.5px 2.5px 5px);
-  width: 350px;
+  width: 400px;
+}
+
+/*-------------------------------------*/
+/*---------- LINKS CONTAINER ----------*/
+/*-------------------------------------*/
+
+.intro-links-container {
+  justify-content: left;
+  grid-auto-flow: column;
+  align-items: center;
+  margin-top: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.intro-link {
+  transition: background-color 450ms, border-color 450ms;
+  box-shadow: 2px 2px 5px #000;
+  justify-content: center;
+  grid-auto-flow: column;
+  padding: 0.5rem 1.5rem;
+  align-items: center;
+  border-radius: 5px;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.intro-link.primary {
+  background-color: #e10044;
+}
+
+.intro-link.secondary {
+  background-color: #0000ff;
+}
+
+.intro-link-text {
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 1px;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.intro-link-image {
+  width: 25px;
+}
+
+/*-----------------------------------------------*/
+/*----------------- TRANSITIONS -----------------*/
+/*-----------------------------------------------*/
+
+.intro-link.primary:hover {
+  background-color: #b80037;
+}
+
+.intro-link.primary:focus {
+  background-color: #a40031;
+}
+
+.intro-link.secondary:hover {
+  background-color: #0000c8;
+}
+
+.intro-link.secondary:focus {
+  background-color: #0000a8;
 }
 
 /*--------------------------------------------------*/

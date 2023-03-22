@@ -11,6 +11,8 @@
 }
 
 body {
+  background-image: linear-gradient(to right top, #000d20, #0b091d, #000d20);
   position: relative;
+  overflow: hidden;
   z-index: -2;
 }

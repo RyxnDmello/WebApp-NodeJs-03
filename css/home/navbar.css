@@ -34,7 +34,7 @@ nav {
   grid-auto-flow: column;
   align-items: center;
   display: grid;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .nav-link {
@@ -102,6 +102,10 @@ nav {
 
 .nav-link:hover::before {
   width: 100%;
+}
+
+.nav-link:focus::before {
+  background-color: #a50032;
 }
 
 .nav-register-link.login:hover .nav-register-link-text {
