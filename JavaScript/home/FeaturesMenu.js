@@ -1,6 +1,6 @@
 import Data from "./FeaturesData.js";
 
-const options = document.querySelectorAll(".features-option-image");
+const options = document.querySelectorAll(".features-option");
 const points = document.querySelectorAll(".features-point");
 
 const titles = document.querySelectorAll(".features-point-title");
@@ -17,30 +17,39 @@ export default function FeaturesMenu() {
 function ChangeData(optionIndex) {
   OptionAnimation(optionIndex);
 
-  PointRevealAnimation(0);
+  PointAnimation(0);
 
   titles.forEach((title, index) => {
-    title.textContent = Data.options[optionIndex][index].title;
+    let dataTitle = Data.options[optionIndex][index].title;
+
+    if (dataTitle === "NONE") {
+      points[index].style.opacity = 0;
+      return;
+    }
+
+    title = dataTitle;
   });
 
   descriptions.forEach((description, index) => {
     description.textContent = Data.options[optionIndex][index].description;
   });
 
-  PointRevealAnimation(500);
+  PointAnimation(500);
 }
 
 function OptionAnimation(optionIndex) {
   options.forEach((option, index) => {
     if (index !== optionIndex) {
-      option.style.opacity = 0.25;
+      option.style.opacity = "0.2";
+      option.style.translate = "0";
     } else {
-      option.style.opacity = 1;
+      option.style.translate = "2.5rem 0";
+      option.style.opacity = "1";
     }
   });
 }
 
-function PointRevealAnimation(revealDuration) {
+function PointAnimation(revealDuration) {
   setTimeout(() => {
     points.forEach((point) => {
       if (point.classList.contains("feature-hide")) {
