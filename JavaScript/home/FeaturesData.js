@@ -1,39 +1,57 @@
-const FeaturesData = {
+const Data = {
   options: [
     [
       {
-        title: "1",
+        title: "Clean & Elegant Design",
+        description:
+          "We have designed our interface with simplicity so you wont have to worry about any distractions.",
       },
       {
-        title: "2",
+        title: "Clean & Elegant Design",
+        description:
+          "We have designed our interface with simplicity so you wont have to worry about any distractions.",
       },
       {
-        title: "3",
-      },
-    ],
-    [
-      {
-        title: "4",
-      },
-      {
-        title: "5",
-      },
-      {
-        title: "6",
+        title: "Clean & Elegant Design",
+        description:
+          "We have designed our interface with simplicity so you wont have to worry about any distractions.",
       },
     ],
     [
       {
-        title: "7",
+        title: "Clean & Elegant Design",
+        description:
+          "We have designed our interface with simplicity so you wont have to worry about any distractions.",
       },
       {
-        title: "8",
+        title: "Clean & Elegant Design",
+        description:
+          "We have designed our interface with simplicity so you wont have to worry about any distractions.",
       },
       {
-        title: "9",
+        title: "Clean & Elegant Design",
+        description:
+          "We have designed our interface with simplicity so you wont have to worry about any distractions.",
+      },
+    ],
+    [
+      {
+        title: "Clean & Elegant Design",
+        description:
+          "We have designed our interface with simplicity so you wont have to worry about any distractions.",
+      },
+      {
+        title: "Clean & Elegant Design",
+        description:
+          "We have designed our interface with simplicity so you wont have to worry about any distractions.",
+      },
+      {
+        title: "Clean & Elegant Design",
+        description:
+          "We have designed our interface with simplicity so you wont have to worry about any distractions.",
       },
     ],
   ],
 };
 
-export default FeaturesData;
+export default Data;

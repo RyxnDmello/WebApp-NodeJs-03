@@ -1,0 +1,22 @@
+<article class="features-options-container">
+  <img class="features-option-image" src="/home/features/design.png" />
+  <img class="features-option-image" src="/home/features/design.png" />
+  <img class="features-option-image" src="/home/features/design.png" />
+</article>
+
+<article class="features-points-container">
+  <% for(let i = 0; i < 3; i++) { %>
+  <div class="features-point">
+    <img class="features-point-image" src="/home/features/<%= i + 1 %>.png" />
+
+    <div class="features-text-container">
+      <h3 class="features-point-title">Clean & Elegant Design</h3>
+
+      <p class="features-point-description">
+        We have designed our interface with simplicity so you wont have to worry
+        about any distractions.
+      </p>
+    </div>
+  </div>
+  <% } %>
+</article>
