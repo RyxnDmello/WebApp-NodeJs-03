@@ -9,12 +9,12 @@ const descriptions = document.querySelectorAll(".features-point-description");
 export default function FeaturesMenu() {
   options.forEach((option, optionIndex) => {
     option.addEventListener("click", () => {
-      ChangeData(optionIndex);
+      FeatureSelection(optionIndex);
     });
   });
 }
 
-function ChangeData(optionIndex) {
+function FeatureSelection(optionIndex) {
   OptionAnimation(optionIndex);
 
   PointAnimation(0);
