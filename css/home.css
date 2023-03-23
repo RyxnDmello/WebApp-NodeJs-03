@@ -2,6 +2,7 @@
 
 @import url("./home/navbar.css");
 @import url("./home/introduction.css");
+@import url("./home/features.css");
 
 * {
   text-decoration: none;
@@ -13,6 +14,5 @@
 body {
   background-image: linear-gradient(to right top, #000d20, #0b091d, #000d20);
   position: relative;
-  overflow: hidden;
   z-index: -2;
 }
