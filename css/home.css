@@ -4,6 +4,7 @@
 @import url("./home/introduction.css");
 @import url("./home/features.css");
 @import url("./home/template.css");
+@import url("./home/custom.css");
 
 * {
   text-decoration: none;

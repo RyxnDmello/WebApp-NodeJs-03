@@ -1,0 +1,33 @@
+#custom-section {
+  grid-template-columns: auto;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 0;
+  display: grid;
+}
+
+.custom-title-container {
+  grid-template-columns: auto;
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  gap: 1rem;
+}
+
+.custom-title {
+  font-family: "Josephin Regular", sans-serif;
+  text-shadow: 4px 4px #000;
+  text-align: center;
+  line-height: 1.25;
+  font-weight: 500;
+  font-size: 4rem;
+  cursor: default;
+  color: #fff;
+}
+
+.custom-divider {
+  border-bottom: 2px solid #ffffff15;
+  border-right: none;
+  border-left: none;
+  border-top: none;
+}
