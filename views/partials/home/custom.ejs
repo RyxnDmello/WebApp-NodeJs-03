@@ -1,8 +1,18 @@
-<article class="custom-title-container">
-  <h1 class="custom-title">
-    CREATE AND CUSTOMIZE <br />
-    YOUR OWN PERSONAL LIST
-  </h1>
+<h1 class="custom-section-title">CREATE AND CUSTOMIZE YOUR OWN</h1>
 
-  <hr class="custom-divider" />
+<article class="custom-features-container">
+  <% for(let i = 0; i < 6; i++) { %>
+  <div class="custom-feature">
+    <img class="custom-feature-image" src="/home/custom/color.png" />
+
+    <div class="custom-feature-text-container">
+      <h2 class="custom-feature-title">Some Random Title</h2>
+
+      <p class="custom-feature-description">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique,
+        perferendis.
+      </p>
+    </div>
+  </div>
+  <% } %>
 </article>
