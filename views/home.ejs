@@ -62,17 +62,17 @@
           <div class="intro-links-container">
             <a class="intro-link primary" href="">
               <p class="intro-link-text">View My Collection</p>
-              <img class="intro-link-image" src="/home/intro/arrow.png" />
+              <img class="intro-link-image" src="/buttons/arrow.png" />
             </a>
 
             <a class="intro-link secondary" href="">
-              <img class="intro-link-image" src="/home/intro/add.png" />
+              <img class="intro-link-image" src="/buttons/add.png" />
               <p class="intro-link-text">Create A Custom List</p>
             </a>
           </div>
         </div>
 
-        <img class="intro-image" src="/home/intro/todo.png" />
+        <img class="intro-image" src="/home/introduction/todo.png" />
       </section>
 
       <section id="features-section">
@@ -88,23 +88,7 @@
       </section>
 
       <section id="sharing-section">
-        <article class="share-container">
-          <div class="share-text-container">
-            <h1 class="share-title">SHARE YOUR TASKS</h1>
-
-            <p class="share-description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt,
-              quia! Sint molestiae alias dignissimos vitae voluptatem aut ea
-              dolorem est.
-            </p>
-
-            <a class="share-link tasks" href="">
-              <h4 class="share-link-text">Share Tasks</h4>
-            </a>
-          </div>
-
-          <img class="share-image" src="/home/share/share.png" />
-        </article>
+        <%- include("./partials/home/shares.ejs") %>
       </section>
     </main>
 

@@ -1,6 +1,7 @@
 <img class="template-image" src="/home/templates/notes.png" />
 
 <article class="template-carousel">
+  <% for(let i = 0; i < 3; i++) { %>
   <div class="template-slide">
     <div class="template-slide-text-container">
       <h2 class="template-slide-title">YOUR DAILY NEEDS</h2>
@@ -13,50 +14,19 @@
 
     <a class="template-slide-link" href="">
       <h4 class="template-slide-link-text">Start Editing</h4>
-      <img class="template-slide-link-image" src="/home/templates/arrow.png" />
+      <img class="template-slide-link-image" src="/buttons/arrow.png" />
     </a>
   </div>
-
-  <div class="template-slide">
-    <div class="template-slide-text-container">
-      <h2 class="template-slide-title">YOUR MONTHLY NEEDS</h2>
-      <p class="template-slide-description">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse delectus
-        incidunt cupiditate at magnam, deserunt maiores non iure exercitationem
-        consequatur?
-      </p>
-    </div>
-
-    <a class="template-slide-link" href="">
-      <h4 class="template-slide-link-text">Start Editing</h4>
-      <img class="template-slide-link-image" src="/home/templates/arrow.png" />
-    </a>
-  </div>
-
-  <div class="template-slide">
-    <div class="template-slide-text-container">
-      <h2 class="template-slide-title">YOUR YEARLY NEEDS</h2>
-      <p class="template-slide-description">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse delectus
-        incidunt cupiditate at magnam, deserunt maiores non iure exercitationem
-        consequatur?
-      </p>
-    </div>
-
-    <a class="template-slide-link" href="">
-      <h4 class="template-slide-link-text">Start Editing</h4>
-      <img class="template-slide-link-image" src="/home/templates/arrow.png" />
-    </a>
-  </div>
+  <% } %>
 </article>
 
 <article class="template-carousel-controller">
   <img class="template-controller left" src="/home/templates/slide-left.png" />
 
   <div class="template-indicator-container">
-    <img class="template-indicator" src="/home/templates/slide-indicator.png" />
-    <img class="template-indicator" src="/home/templates/slide-indicator.png" />
-    <img class="template-indicator" src="/home/templates/slide-indicator.png" />
+    <img class="template-indicator" src="/buttons/indicator.png" />
+    <img class="template-indicator" src="/buttons/indicator.png" />
+    <img class="template-indicator" src="/buttons/indicator.png" />
   </div>
 
   <img
