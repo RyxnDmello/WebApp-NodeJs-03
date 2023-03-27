@@ -122,6 +122,7 @@
 
 .template-controller {
   transition: opacity 450ms, scale 450ms;
+  filter: drop-shadow(2px 2px 2.5px);
   cursor: pointer;
   width: 45px;
 }
@@ -144,6 +145,7 @@
 
 .template-indicator {
   transition: scale 450ms, opacity 450ms;
+  filter: drop-shadow(1px 1px 2px);
   opacity: 0.25;
   width: 20px;
 }
