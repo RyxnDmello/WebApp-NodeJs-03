@@ -1,0 +1,51 @@
+<h1 class="account-section-title">SOME DUMMY TEXT FOR NOW</h1>
+
+<article class="account-carousel">
+  <% for(let i = 1; i <= 2; i++) { %>
+  <article class="account-slide">
+    <% if(i === 2) { %>
+    <img class="account-image" src="/home/account/login.png" />
+    <% } %>
+
+    <form class="login-form" action="">
+      <div class="input-container email">
+        <h3 class="input-label">Email</h3>
+        <input class="input" type="text" />
+      </div>
+
+      <div class="input-container password">
+        <h3 class="input-label">Password</h3>
+        <input class="input" type="password" />
+      </div>
+
+      <% if(i === 1) { %>
+      <div class="input-container password">
+        <h3 class="input-label">Password</h3>
+        <input class="input" type="password" />
+      </div>
+      <% } %>
+
+      <div class="input-buttons-container">
+        <button class="input-button login" type="submit">
+          <img class="input-button-image" src="/buttons/login.png" />
+          <h3 class="input-button-text">Login Profile</h3>
+        </button>
+
+        <button class="input-button reset" type="reset">
+          <img class="input-button-image" src="/buttons/reset.png" />
+          <h3 class="input-button-text">Clear Form</h3>
+        </button>
+
+        <a class="input-button sign" href="">
+          <img class="input-button-image" src="/buttons/signup.png" />
+          <h3 class="input-button-text">Signup Instead?</h3>
+        </a>
+      </div>
+    </form>
+
+    <% if(i === 1) { %>
+    <img class="account-image" src="/home/account/login.png" />
+    <% } %>
+  </article>
+  <% } %>
+</article>

@@ -6,6 +6,7 @@
 @import url("./home/template.css");
 @import url("./home/custom.css");
 @import url("./home/share.css");
+@import url("./home/account.css");
 
 * {
   text-decoration: none;

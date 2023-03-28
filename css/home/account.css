@@ -1,0 +1,203 @@
+/*--------------------------------------------------------------*/
+/*----------------------- ACCOUNT STYLES -----------------------*/
+/*--------------------------------------------------------------*/
+
+#account-section {
+  grid-template-columns: auto;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 5rem;
+  margin-top: 2rem;
+  display: grid;
+  gap: 2rem;
+}
+
+.account-section-title {
+  font-family: "Josephin Regular", sans-serif;
+  text-shadow: 4px 4px #000;
+  text-align: center;
+  line-height: 1.25;
+  font-weight: 500;
+  font-size: 5rem;
+  cursor: default;
+  color: #fff;
+}
+
+/*-------------------------------------------*/
+/*--------------- INFORMATION ---------------*/
+/*-------------------------------------------*/
+
+.account-carousel {
+  box-shadow: 0 0 5px, 2.5px 2.5px 5px;
+  border: 2px solid #ff004c25;
+  justify-content: flex-start;
+  grid-auto-flow: column;
+  align-items: center;
+  overflow: hidden;
+  margin: 0 auto;
+  display: grid;
+  width: 1064px;
+}
+
+.account-slide {
+  justify-content: center;
+  align-items: flex-start;
+  grid-auto-flow: column;
+  border-radius: 2.5px;
+  padding: 2rem 0;
+  margin: 0 auto;
+  width: 1064px;
+  display: grid;
+  gap: 5rem;
+}
+
+/*------------------------------------*/
+/*------------ LOGIN FORM ------------*/
+/*------------------------------------*/
+
+.login-form {
+  grid-template-columns: auto;
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.input-container {
+  grid-template-columns: auto;
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  gap: 0.25rem;
+}
+
+/*----------------------------------------*/
+/*------------- INPUT STYLES -------------*/
+/*----------------------------------------*/
+
+.input-label {
+  font-family: "Poppins", sans-serif;
+  text-shadow: 2.5px 2.5px #000;
+  justify-content: center;
+  letter-spacing: 0.5px;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 300;
+  cursor: default;
+  color: #fff;
+}
+
+.input {
+  font-family: "Poppins", sans-serif;
+  box-shadow: 2.5px 2.5px 5px #000;
+  border: 2px solid #0000ff50;
+  background-color: transparent;
+  letter-spacing: 0.5px;
+  border-radius: 2.5px;
+  font-size: 1.25rem;
+  font-weight: 200;
+  padding: 0.5rem;
+  outline: none;
+  color: #fff;
+  width: 25rem;
+}
+
+/*-----------------------------------------*/
+/*------------- BUTTON STYLES -------------*/
+/*-----------------------------------------*/
+
+.input-buttons-container {
+  grid-template-columns: repeat(2, auto);
+  justify-content: stretch;
+  align-items: center;
+  margin-top: 0.25rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.input-button {
+  transition: background-color 450ms;
+  box-shadow: 2.5px 2.5px 5px #000;
+  justify-content: center;
+  grid-auto-flow: column;
+  border-radius: 2.5px;
+  align-items: center;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  display: grid;
+  border: none;
+  gap: 0.5rem;
+}
+
+.input-button.login {
+  background-color: #0004ff;
+}
+
+.input-button.reset {
+  background-color: #d50047;
+}
+
+.input-button.sign {
+  border: 2px solid #e0bf00;
+  border-radius: 40px;
+  grid-column: span 2;
+}
+
+.input-button-image {
+  transition: filter 450ms;
+  width: 20px;
+}
+
+.input-button.reset .input-button-image {
+  width: 18px;
+}
+
+.input-button-text {
+  font-family: "Poppins", sans-serif;
+  transition: color 450ms;
+  letter-spacing: 0.5px;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #fff;
+}
+
+.account-image {
+  filter: drop-shadow(5px 5px 5px);
+  width: 400px;
+}
+
+/*-------------------------------------------*/
+/*--------------- TRANSITIONS ---------------*/
+/*-------------------------------------------*/
+
+.input-button.login:hover {
+  background-color: #0003ce;
+}
+
+.input-button.login:focus {
+  background-color: #00039d;
+}
+
+.input-button.reset:hover {
+  background-color: #be003f;
+}
+
+.input-button.reset:focus {
+  background-color: #980033;
+}
+
+.input-button.sign:hover {
+  background-color: #e0bf00;
+}
+
+.input-button.sign:hover .input-button-text {
+  color: #000;
+}
+
+.input-button.sign:hover .input-button-image {
+  filter: invert(1);
+}
+
+/*--------------------------------------------------*/
+/*------------------- END OF CSS -------------------*/
+/*--------------------------------------------------*/
