@@ -1,0 +1,75 @@
+/*-----------------------------------------------------*/
+/*------------------ COMMENTS STYLES ------------------*/
+/*-----------------------------------------------------*/
+
+#comments-section {
+  justify-content: center;
+  grid-auto-flow: column;
+  align-items: center;
+  padding: 4rem 0;
+  display: grid;
+}
+
+/*------------------------------------*/
+/*------------- CAROUSEL -------------*/
+/*------------------------------------*/
+
+.comment-carousel {
+  justify-content: flex-start;
+  grid-auto-flow: column;
+  align-items: center;
+  overflow: hidden;
+  width: 1350px;
+  display: grid;
+}
+
+.comment-slide {
+  transition: translate 500ms;
+  justify-content: center;
+  grid-auto-flow: column;
+  align-items: center;
+  padding: 2rem 0;
+  display: grid;
+  width: 1350px;
+  gap: 1.5rem;
+}
+
+/*--------------------------------------*/
+/*------------- CONTAINERS -------------*/
+/*--------------------------------------*/
+
+.comment-container {
+  border: 2px solid #ff004850;
+  box-shadow: 3px 3px 5px;
+  justify-content: center;
+  grid-auto-flow: column;
+  align-items: center;
+  cursor: default;
+  padding: 1rem;
+  display: grid;
+  width: 600px;
+  gap: 1.5rem;
+}
+
+.comment-image {
+  width: 140px;
+}
+
+.comment-name {
+  font-family: "Poppins", sans-serif;
+  text-shadow: 3px 3px #000;
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: #fff;
+}
+
+.comment-description {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 200;
+  color: #c6c6c6;
+}
+
+/*----------------------------------------------*/
+/*----------------- END OF CSS -----------------*/
+/*----------------------------------------------*/

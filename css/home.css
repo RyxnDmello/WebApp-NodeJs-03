@@ -7,6 +7,7 @@
 @import url("./home/custom.css");
 @import url("./home/share.css");
 @import url("./home/account.css");
+@import url("./home/comments.css");
 
 * {
   text-decoration: none;
