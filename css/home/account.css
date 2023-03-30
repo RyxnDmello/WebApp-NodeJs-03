@@ -40,22 +40,22 @@
 }
 
 .account-slide {
+  grid-template-columns: repeat(2, auto);
   justify-content: center;
-  align-items: flex-start;
-  grid-auto-flow: column;
   border-radius: 2.5px;
+  align-items: center;
+  gap: 3.5rem 5rem;
   padding: 2rem 0;
   margin: 0 auto;
   width: 1064px;
   display: grid;
-  gap: 5rem;
 }
 
-/*------------------------------------*/
-/*------------ LOGIN FORM ------------*/
-/*------------------------------------*/
+/*---------------------------------------*/
+/*------------ REGISTER FORM ------------*/
+/*---------------------------------------*/
 
-.login-form {
+.register-form {
   grid-template-columns: auto;
   justify-content: center;
   align-items: center;
@@ -137,12 +137,6 @@
   background-color: #d50047;
 }
 
-.input-button.sign {
-  border: 2px solid #e0bf00;
-  border-radius: 40px;
-  grid-column: span 2;
-}
-
 .input-button-image {
   transition: filter 450ms;
   width: 20px;
@@ -166,6 +160,39 @@
   width: 400px;
 }
 
+/*---------------------------------------*/
+/*----------- FORM CONTROLLER -----------*/
+/*---------------------------------------*/
+
+.form-switch-button {
+  transition: background-color 450ms;
+  box-shadow: 2.5px 2.5px 5px;
+  border: 2px solid #e0bf00;
+  justify-content: center;
+  grid-auto-flow: column;
+  align-items: center;
+  border-radius: 40px;
+  grid-column: span 2;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.form-switch-button-text {
+  font-family: "Poppins", sans-serif;
+  transition: color 450ms;
+  letter-spacing: 0.5px;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #fff;
+}
+
+.form-switch-button-image {
+  transition: filter 450ms;
+  width: 20px;
+}
+
 /*-------------------------------------------*/
 /*--------------- TRANSITIONS ---------------*/
 /*-------------------------------------------*/
@@ -186,15 +213,15 @@
   background-color: #980033;
 }
 
-.input-button.sign:hover {
+.form-switch-button:hover {
   background-color: #e0bf00;
 }
 
-.input-button.sign:hover .input-button-text {
+.form-switch-button:hover .form-switch-button-text {
   color: #000;
 }
 
-.input-button.sign:hover .input-button-image {
+.form-switch-button:hover .form-switch-button-image {
   filter: invert(1);
 }
 
