@@ -7,18 +7,14 @@ const indicators = document.querySelectorAll(".share-indicator");
 let currentContainer = 0;
 
 export default function ShareCarousel() {
-  SwitchContainers();
-}
-
-function SwitchContainers() {
   next.addEventListener("click", () => {
-    MovementDirection();
+    SwitchDirection();
+    SwitchContainers();
     IndicatorAnimation();
-    MoveContainers();
   });
 }
 
-function MovementDirection() {
+function SwitchDirection() {
   if (currentContainer === 1) {
     currentContainer = 0;
     return;
@@ -27,7 +23,7 @@ function MovementDirection() {
   currentContainer = 1;
 }
 
-function MoveContainers() {
+function SwitchContainers() {
   MovementAnimation(0);
 
   setTimeout(() => {
@@ -36,9 +32,9 @@ function MoveContainers() {
         -currentContainer * carousel.clientWidth
       }px)`;
     });
-  }, 450);
+  }, 400);
 
-  MovementAnimation(500);
+  MovementAnimation(700);
 }
 
 function MovementAnimation(timeoutDuration) {

@@ -193,6 +193,42 @@
   width: 20px;
 }
 
+/*------------------------------------------*/
+/*--------------- ANIMATIONS ---------------*/
+/*------------------------------------------*/
+
+.register-hide {
+  animation: RegisterHide 400ms forwards;
+}
+
+.register-reveal {
+  animation: RegisterReveal 400ms forwards;
+}
+
+@keyframes RegisterHide {
+  0% {
+    translate: 0;
+    opacity: 1;
+  }
+
+  100% {
+    translate: -25px 0;
+    opacity: 0;
+  }
+}
+
+@keyframes RegisterReveal {
+  0% {
+    translate: 25px 0;
+    opacity: 0;
+  }
+
+  100% {
+    translate: 0;
+    opacity: 1;
+  }
+}
+
 /*-------------------------------------------*/
 /*--------------- TRANSITIONS ---------------*/
 /*-------------------------------------------*/

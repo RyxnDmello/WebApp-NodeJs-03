@@ -140,11 +140,11 @@
 /*----------------------------------------*/
 
 .share-reveal {
-  animation: ShareReveal 450ms forwards;
+  animation: ShareReveal 400ms forwards;
 }
 
 .share-hide {
-  animation: ShareHide 450ms forwards;
+  animation: ShareHide 400ms forwards;
 }
 
 @keyframes ShareReveal {
