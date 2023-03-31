@@ -96,25 +96,7 @@
       </section>
 
       <section id="comments-section">
-        <article class="comment-carousel">
-          <% for(let i = 0; i < 3; i++) { %>
-          <article class="comment-slide">
-            <% for(let j = 0; j < 2; j++) { %>
-            <div class="comment-container">
-              <img class="comment-image" src="/home/comments/com-1.png" />
-
-              <div class="comment-info-container">
-                <h2 class="comment-name">Slide <%= i %> | Container <%= j+1 %></h2>
-                <h2 class="comment-description">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Reiciendis, officia.
-                </h2>
-              </div>
-            </div>
-            <% } %>
-          </article>
-          <% } %>
-        </article>
+        <%- include("./partials/home/comments.ejs") %>
       </section>
     </main>
 

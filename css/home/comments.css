@@ -3,11 +3,23 @@
 /*-----------------------------------------------------*/
 
 #comments-section {
+  grid-template-columns: auto;
   justify-content: center;
-  grid-auto-flow: column;
   align-items: center;
   padding: 4rem 0;
   display: grid;
+  gap: 1.5rem 0;
+}
+
+.comments-section-title {
+  font-family: "Josephin Regular", sans-serif;
+  text-shadow: 4px 4px #000;
+  text-align: center;
+  line-height: 1.25;
+  font-weight: 500;
+  font-size: 5rem;
+  cursor: default;
+  color: #fff;
 }
 
 /*------------------------------------*/
@@ -24,7 +36,6 @@
 }
 
 .comment-slide {
-  transition: translate 500ms;
   justify-content: center;
   grid-auto-flow: column;
   align-items: center;
@@ -34,15 +45,15 @@
   gap: 1.5rem;
 }
 
-/*--------------------------------------*/
-/*------------- CONTAINERS -------------*/
-/*--------------------------------------*/
+/*-------------------------------------------*/
+/*---------------- CONTAINER ----------------*/
+/*-------------------------------------------*/
 
 .comment-container {
-  border: 2px solid #ff004850;
+  border: 2px solid #4800ff50;
+  grid-template-columns: auto;
   box-shadow: 3px 3px 5px;
   justify-content: center;
-  grid-auto-flow: column;
   align-items: center;
   cursor: default;
   padding: 1rem;
@@ -51,16 +62,68 @@
   gap: 1.5rem;
 }
 
+/*------------------------------------------*/
+/*------------ HEADER CONTAINER ------------*/
+/*------------------------------------------*/
+
+.comment-header-container {
+  grid-template-columns: repeat(2, auto);
+  justify-content: left;
+  align-items: center;
+  display: grid;
+  gap: 1.5rem;
+}
+
 .comment-image {
+  filter: drop-shadow(2px 2px 5px);
   width: 140px;
+}
+
+/*-----------------------------------------*/
+/*------------ TITLE CONTAINER ------------*/
+/*-----------------------------------------*/
+
+.comment-title-container {
+  grid-template-columns: auto;
+  justify-content: left;
+  align-items: center;
+  display: grid;
+  gap: 0.65rem;
 }
 
 .comment-name {
   font-family: "Poppins", sans-serif;
   text-shadow: 3px 3px #000;
-  font-size: 2.5rem;
+  font-size: 2.25rem;
   font-weight: 300;
   color: #fff;
+}
+
+.comment-socials-container {
+  grid-auto-flow: column;
+  justify-content: left;
+  align-items: center;
+  display: grid;
+  gap: 1rem;
+}
+
+.comment-social-image {
+  transition: translate 450ms, opacity 450ms;
+  cursor: pointer;
+  opacity: 0.25;
+  width: 25px;
+}
+
+/*----------------------------------------*/
+/*------------ INFO CONTAINER ------------*/
+/*----------------------------------------*/
+
+.comment-info-container {
+  grid-template-columns: auto;
+  justify-content: left;
+  align-items: center;
+  display: grid;
+  gap: 1.25rem;
 }
 
 .comment-description {
@@ -68,6 +131,109 @@
   font-size: 1.25rem;
   font-weight: 200;
   color: #c6c6c6;
+}
+
+.comment-link {
+  background-color: #c00040;
+  grid-template-columns: auto;
+  justify-content: center;
+  padding: 0.25rem 2rem;
+  border-radius: 2.5px;
+  align-items: center;
+  display: grid;
+}
+
+.comment-link-text {
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 1px;
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: #fff;
+}
+
+/*------------------------------------------------*/
+/*------------------ CONTROLLER ------------------*/
+/*------------------------------------------------*/
+
+.comments-controller-container {
+  justify-content: center;
+  grid-auto-flow: column;
+  align-items: center;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.comments-controller {
+  transition: scale 450ms, opacity 450ms;
+  filter: drop-shadow(2px 2px 2.5px);
+  cursor: pointer;
+  width: 35px;
+}
+
+.comments-controller.up {
+  opacity: 0.25;
+}
+
+.comments-indicator-container {
+  justify-content: center;
+  grid-auto-flow: column;
+  align-items: center;
+  display: grid;
+  gap: 0.25rem;
+}
+
+.comments-indicator {
+  filter: drop-shadow(2px 2px 2.5px);
+  width: 25px;
+}
+
+/*----------------------------------------------*/
+/*----------------- ANIMATIONS -----------------*/
+/*----------------------------------------------*/
+
+.comment-hide {
+  animation: CommentHide 400ms forwards;
+}
+
+.comment-reveal {
+  animation: CommentReveal 400ms forwards;
+}
+
+@keyframes CommentHide {
+  0% {
+    translate: 0;
+    opacity: 1;
+  }
+
+  100% {
+    translate: 0 -20px;
+    opacity: 0;
+  }
+}
+
+@keyframes CommentReveal {
+  0% {
+    translate: 0 20px;
+    opacity: 0;
+  }
+
+  100% {
+    translate: 0;
+    opacity: 1;
+  }
+}
+
+/*----------------------------------------*/
+/*-------------- TRANSITION --------------*/
+/*----------------------------------------*/
+
+.comment-social-image:hover {
+  translate: 0 -5px;
+  opacity: 1;
+}
+
+.comments-controller:hover {
+  scale: 1.2;
 }
 
 /*----------------------------------------------*/

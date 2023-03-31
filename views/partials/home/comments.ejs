@@ -1,0 +1,51 @@
+<h1 class="comments-section-title">SOME RANDOM TITLE HERE</h1>
+
+<article class="comment-carousel">
+  <% for(let i = 0; i < 3; i++) { %>
+  <article class="comment-slide">
+    <% for(let j = 0; j < 2; j++) { %>
+    <article class="comment-container">
+      <div class="comment-header-container">
+        <img class="comment-image" src="/home/comments/com-1.png" />
+
+        <div class="comment-title-container">
+          <h2 class="comment-name">
+            Slide 0<%= i + 1 %> & Container 0<%= j + 1 %>
+          </h2>
+
+          <div class="comment-socials-container">
+            <% for(let k = 0; k < 4; k++) { %>
+            <img class="comment-social-image" src="/home/comments/insta.png" />
+            <% } %>
+          </div>
+        </div>
+      </div>
+
+      <div class="comment-info-container">
+        <h2 class="comment-description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
+          itaque inventore adipisci architecto a ad quam magnam omnis cumque
+          provident?
+        </h2>
+
+        <a class="comment-link" href="">
+          <h3 class="comment-link-text">Visit GitHub Profile</h3>
+        </a>
+      </div>
+    </article>
+    <% } %>
+  </article>
+  <% } %>
+</article>
+
+<article class="comments-controller-container">
+  <img class="comments-controller up" src="/home/comments/up.png" />
+
+  <div class="comments-indicator-container">
+    <img class="comments-indicator" src="/buttons/indicator.png" />
+    <img class="comments-indicator" src="/buttons/indicator.png" />
+    <img class="comments-indicator" src="/buttons/indicator.png" />
+  </div>
+
+  <img class="comments-controller down" src="/home/comments/down.png" />
+</article>
