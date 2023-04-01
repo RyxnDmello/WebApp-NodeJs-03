@@ -8,6 +8,7 @@
 @import url("./home/share.css");
 @import url("./home/account.css");
 @import url("./home/comments.css");
+@import url("./home/inspired.css");
 
 * {
   text-decoration: none;

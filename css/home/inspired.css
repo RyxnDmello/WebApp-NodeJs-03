@@ -1,0 +1,52 @@
+/*-------------------------------------------------------------*/
+/*---------------------- INSPIRED STYLES ----------------------*/
+/*-------------------------------------------------------------*/
+
+#inspired-section {
+  grid-template-columns: auto;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 5rem 0;
+  display: grid;
+}
+
+#inspired-section::before {
+  background-image: linear-gradient(45deg, #2f0d65 40%, #510d37 60%);
+  position: absolute;
+  height: 1rem;
+  width: 100%;
+  content: "";
+  z-index: -1;
+  top: 0;
+}
+
+#inspired-section::after {
+  background-image: linear-gradient(45deg, #510d37 40%, #2f0d65 60%);
+  position: absolute;
+  height: 1rem;
+  width: 100%;
+  content: "";
+  z-index: -1;
+  bottom: 0;
+}
+
+/*-----------------------------------*/
+/*------------ CONTAINER ------------*/
+/*-----------------------------------*/
+
+.inspired-container {
+  justify-content: center;
+  grid-auto-flow: column;
+  align-items: center;
+  display: grid;
+  gap: 5rem;
+}
+
+.inspired-link-image {
+  width: 200px;
+}
+
+/*------------------------------------------*/
+/*--------------- END OF CSS ---------------*/
+/*------------------------------------------*/
