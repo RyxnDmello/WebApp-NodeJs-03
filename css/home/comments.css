@@ -183,8 +183,16 @@
 }
 
 .comments-indicator {
+  transition: opacity 450ms, scale 450ms;
   filter: drop-shadow(2px 2px 2.5px);
+  opacity: 0.25;
   width: 25px;
+  scale: 1;
+}
+
+.comments-indicator:nth-of-type(1) {
+  opacity: 1;
+  scale: 1.2;
 }
 
 /*----------------------------------------------*/

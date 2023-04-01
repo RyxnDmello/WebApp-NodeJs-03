@@ -3,6 +3,7 @@ const slides = document.querySelectorAll(".comment-slide");
 
 const up = document.querySelector(".comments-controller.up");
 const down = document.querySelector(".comments-controller.down");
+const indicators = document.querySelectorAll(".comments-indicator");
 
 let currentSlide = 0;
 
@@ -16,9 +17,9 @@ function ScrollUp() {
     if (currentSlide === 0) return;
     --currentSlide;
 
-    alert(currentSlide);
-
     ChangeSlides();
+    ControllerAnimation();
+    IndicatorAnimation();
   });
 }
 
@@ -27,14 +28,14 @@ function ScrollDown() {
     if (currentSlide === slides.length - 1) return;
     ++currentSlide;
 
-    alert(currentSlide);
-
     ChangeSlides();
+    ControllerAnimation();
+    IndicatorAnimation();
   });
 }
 
 function ChangeSlides() {
-  SlidesAnimation(0);
+  ScrollAnimation(0);
 
   setTimeout(() => {
     slides.forEach((slide) => {
@@ -44,10 +45,10 @@ function ChangeSlides() {
     });
   }, 400);
 
-  SlidesAnimation(800);
+  ScrollAnimation(800);
 }
 
-function SlidesAnimation(timeoutDuration) {
+function ScrollAnimation(timeoutDuration) {
   setTimeout(() => {
     slides.forEach((slide) => {
       if (slide.classList.contains("comment-hide")) {
@@ -59,4 +60,33 @@ function SlidesAnimation(timeoutDuration) {
       }
     });
   }, timeoutDuration);
+}
+
+function ControllerAnimation() {
+  if (currentSlide === 0) {
+    up.style.opacity = "0.25";
+    down.style.opacity = "1";
+    return;
+  }
+
+  if (currentSlide === slides.length - 1) {
+    up.style.opacity = "1";
+    down.style.opacity = "0.25";
+    return;
+  }
+
+  up.style.opacity = "1";
+  down.style.opacity = "1";
+}
+
+function IndicatorAnimation() {
+  indicators.forEach((indicator, index) => {
+    if (currentSlide === index) {
+      indicator.style.opacity = "1";
+      indicator.style.scale = "1.2";
+    } else {
+      indicator.style.opacity = "0.25";
+      indicator.style.scale = "1";
+    }
+  });
 }
