@@ -1,0 +1,148 @@
+/*-------------------------------------------------------*/
+/*-------------------- FOOTER STYLES --------------------*/
+/*-------------------------------------------------------*/
+
+footer {
+  background-image: linear-gradient(45deg, #2f0d65 30%, #510d37 60%);
+  grid-template-columns: auto;
+  justify-content: stretch;
+  box-shadow: 0 0 20px;
+  align-items: center;
+  padding: 4rem 0;
+  display: grid;
+}
+
+.footer-info-container {
+  justify-content: space-evenly;
+  grid-auto-flow: column;
+  align-items: center;
+  padding: 0 5rem;
+  display: grid;
+}
+
+/*------------------------------------------------*/
+/*-------------- CONTACTS CONTAINER --------------*/
+/*------------------------------------------------*/
+
+.footer-contacts-container {
+  grid-template-columns: auto;
+  justify-content: stretch;
+  align-items: center;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.footer-contacts-container-title {
+  font-family: "Poppins", sans-serif;
+  text-shadow: 3px 3px #000;
+  letter-spacing: 0.65px;
+  margin-bottom: 0.25rem;
+  font-weight: 400;
+  font-size: 3rem;
+  cursor: default;
+  color: #fff;
+}
+
+.footer-contact-link {
+  box-shadow: 2.5px 2.5px 2.5px #00000050;
+  transition: background-color 450ms;
+  justify-content: space-between;
+  padding: 0.4rem 1.25rem;
+  grid-auto-flow: column;
+  border-radius: 40px;
+  align-items: center;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.footer-contact-link:nth-of-type(1) {
+  background-color: #e10044;
+}
+
+.footer-contact-link:nth-of-type(2) {
+  background-color: #1f9a00;
+}
+
+.footer-contact-link:nth-of-type(3) {
+  background-color: #0a66c2;
+}
+
+.footer-contact-link-text {
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.65px;
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #fff;
+}
+
+.footer-contact-link-image {
+  width: 23px;
+}
+
+/*---------------------------------------------*/
+/*-------------- LINKS CONTAINER --------------*/
+/*---------------------------------------------*/
+
+.footer-links-container {
+  grid-template-columns: auto;
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.footer-links-container-title {
+  font-family: "Poppins", sans-serif;
+  text-shadow: 2.5px 2.5px #000;
+  letter-spacing: 0.65px;
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  font-weight: 400;
+  cursor: default;
+  color: #fff;
+}
+
+.footer-link {
+  width: fit-content;
+}
+
+.footer-link-text {
+  text-shadow: 1.5px 1.5px 2px #000;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.5px;
+  font-weight: 300;
+  font-size: 1rem;
+  color: #fff;
+}
+
+/*---------------------------------------------*/
+/*---------------- TRANSITIONS ----------------*/
+/*---------------------------------------------*/
+
+.footer-contact-link:nth-of-type(1):hover {
+  background-color: #c3003a;
+}
+
+.footer-contact-link:nth-of-type(1):focus {
+  background-color: #9d002f;
+}
+
+.footer-contact-link:nth-of-type(2):hover {
+  background-color: #1a8100;
+}
+
+.footer-contact-link:nth-of-type(2):focus {
+  background-color: #156800;
+}
+
+.footer-contact-link:nth-of-type(3):hover {
+  background-color: #0057ae;
+}
+
+.footer-contact-link:nth-of-type(3):focus {
+  background-color: #004489;
+}
+
+/*---------------------------------------------*/
+/*-------------- LINKS CONTAINER --------------*/
+/*---------------------------------------------*/

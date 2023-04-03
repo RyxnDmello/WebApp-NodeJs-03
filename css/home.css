@@ -9,8 +9,10 @@
 @import url("./home/account.css");
 @import url("./home/comments.css");
 @import url("./home/inspired.css");
+@import url("./home/footer.css");
 
 * {
+  scroll-behavior: smooth;
   text-decoration: none;
   outline: none;
   padding: 0;
