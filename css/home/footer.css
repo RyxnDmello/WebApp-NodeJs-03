@@ -5,24 +5,87 @@
 footer {
   background-image: linear-gradient(45deg, #2f0d65 30%, #510d37 60%);
   grid-template-columns: auto;
+  box-shadow: 0 -10px 15px;
   justify-content: stretch;
-  box-shadow: 0 0 20px;
   align-items: center;
-  padding: 4rem 0;
   display: grid;
 }
 
-.footer-info-container {
-  justify-content: space-evenly;
+/*--------------------------------------------------*/
+/*---------------- HEADER CONTAINER ----------------*/
+/*--------------------------------------------------*/
+
+.footer-header {
+  justify-content: space-between;
+  padding: 3rem 5rem 1rem 5rem;
   grid-auto-flow: column;
   align-items: center;
-  padding: 0 5rem;
   display: grid;
+  gap: 5rem;
+}
+
+.footer-header-title {
+  transition: translate 450ms, text-shadow 450ms;
+  font-family: "Josephin Regular", sans-serif;
+  text-shadow: 4px 4px #000;
+  width: fit-content;
+  font-weight: 500;
+  font-size: 4rem;
+  color: #fff;
+}
+
+.footer-header-links-container {
+  justify-content: center;
+  grid-auto-flow: column;
+  align-items: center;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.footer-header-link-image {
+  filter: drop-shadow(2px 2px 2px #00000080);
+  transition: translate 450ms;
+  width: 30px;
+}
+
+.footer-header-link.register {
+  box-shadow: 2.5px 2.5px 5px #00000080;
+  background-color: #fff700;
+  transition: scale 450ms;
+  justify-content: center;
+  grid-auto-flow: column;
+  padding: 0.25rem 2rem;
+  border-radius: 2.5px;
+  align-items: center;
+  margin-left: 2rem;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.footer-header-link-text {
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.5px;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #000;
+}
+
+.footer-header-link.register .footer-header-link-image {
+  filter: invert(1);
+  width: 26px;
 }
 
 /*------------------------------------------------*/
 /*-------------- CONTACTS CONTAINER --------------*/
 /*------------------------------------------------*/
+
+.footer-info-container {
+  justify-content: space-evenly;
+  padding: 2rem 0 4rem 0;
+  grid-auto-flow: column;
+  align-items: center;
+  display: grid;
+}
 
 .footer-contacts-container {
   grid-template-columns: auto;
@@ -35,10 +98,10 @@ footer {
 .footer-contacts-container-title {
   font-family: "Poppins", sans-serif;
   text-shadow: 3px 3px #000;
-  letter-spacing: 0.65px;
   margin-bottom: 0.25rem;
-  font-weight: 400;
-  font-size: 3rem;
+  letter-spacing: 1px;
+  font-size: 2.65rem;
+  font-weight: 300;
   cursor: default;
   color: #fff;
 }
@@ -60,7 +123,7 @@ footer {
 }
 
 .footer-contact-link:nth-of-type(2) {
-  background-color: #1f9a00;
+  background-color: #1e9400;
 }
 
 .footer-contact-link:nth-of-type(3) {
@@ -76,12 +139,12 @@ footer {
 }
 
 .footer-contact-link-image {
-  width: 23px;
+  width: 24px;
 }
 
-/*---------------------------------------------*/
-/*-------------- LINKS CONTAINER --------------*/
-/*---------------------------------------------*/
+/*--------------------------------------------*/
+/*-------------- CONTACTS LINKS --------------*/
+/*--------------------------------------------*/
 
 .footer-links-container {
   grid-template-columns: auto;
@@ -96,8 +159,8 @@ footer {
   text-shadow: 2.5px 2.5px #000;
   letter-spacing: 0.65px;
   margin-bottom: 0.5rem;
+  font-weight: 300;
   font-size: 2rem;
-  font-weight: 400;
   cursor: default;
   color: #fff;
 }
@@ -110,8 +173,8 @@ footer {
   text-shadow: 1.5px 1.5px 2px #000;
   font-family: "Poppins", sans-serif;
   letter-spacing: 0.5px;
+  font-size: 1.05rem;
   font-weight: 300;
-  font-size: 1rem;
   color: #fff;
 }
 
@@ -119,8 +182,21 @@ footer {
 /*---------------- TRANSITIONS ----------------*/
 /*---------------------------------------------*/
 
+.footer-header-title:hover {
+  text-shadow: 4px 6px #000;
+  translate: 0 -10px;
+}
+
+.footer-header-link-image:hover {
+  translate: 0 -5px;
+}
+
+.footer-header-link.register:hover {
+  scale: 1.1;
+}
+
 .footer-contact-link:nth-of-type(1):hover {
-  background-color: #c3003a;
+  background-color: #b10035;
 }
 
 .footer-contact-link:nth-of-type(1):focus {
@@ -136,13 +212,13 @@ footer {
 }
 
 .footer-contact-link:nth-of-type(3):hover {
-  background-color: #0057ae;
+  background-color: #0054a9;
 }
 
 .footer-contact-link:nth-of-type(3):focus {
   background-color: #004489;
 }
 
-/*---------------------------------------------*/
-/*-------------- LINKS CONTAINER --------------*/
-/*---------------------------------------------*/
+/*------------------------------------------------*/
+/*------------------ END OF CSS ------------------*/
+/*------------------------------------------------*/
