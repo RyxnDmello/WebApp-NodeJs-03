@@ -3,6 +3,8 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
+app.use(bodyParser.urlencoded({ extended: "true" }));
+
 app.use(express.static("./JavaScript"));
 app.use(express.static("./images"));
 app.use(express.static("./fonts"));
@@ -14,6 +16,12 @@ const PORT = 1000;
 
 app.get("/", (req, res) => {
   res.render("home");
+});
+
+app.get("/todo/:template", (req, res) => {
+  res.render("template", {
+    title: "Template",
+  });
 });
 
 app.listen(1000, () => {

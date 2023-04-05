@@ -109,8 +109,8 @@ footer {
 }
 
 .footer-contact-link {
-  box-shadow: 2.5px 2.5px 4px #00000060;
-  transition: background-color 450ms;
+  transition: background-color 450ms, box-shadow 450ms, translate 450ms;
+  box-shadow: 2.25px 2.25px #00000060;
   justify-content: space-between;
   padding: 0.4rem 1.25rem;
   grid-auto-flow: column;
@@ -129,7 +129,7 @@ footer {
 }
 
 .footer-contact-link:nth-of-type(3) {
-  background-color: #0a66c2;
+  background-color: #007cca;
 }
 
 .footer-contact-link-text {
@@ -252,11 +252,16 @@ footer {
 }
 
 .footer-contact-link:nth-of-type(3):hover {
-  background-color: #0054a9;
+  background-color: #006caf;
 }
 
 .footer-contact-link:nth-of-type(3):focus {
-  background-color: #004489;
+  background-color: #005e98;
+}
+
+.footer-contact-link:focus {
+  translate: 0 2.5px;
+  box-shadow: none;
 }
 
 .top:hover .top-image {

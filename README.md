@@ -8,14 +8,14 @@ TaskTonic is an **intractable Web Application** in which users can create their 
 
 <h3><strong>💻 FRONT-END TECHNOLOGY</strong></h3>
 
-- ❌ Hyper-Text Markup Language (HTML)
-- ❌ Cascading Stylesheet (CSS)
-- ❌ JavaScript (Js)
+- ✅ Hyper-Text Markup Language (HTML)
+- ✅ Cascading Stylesheet (CSS)
+- ✅ JavaScript (Js)
 
 <h3><strong>💻 BACK-END TECHNOLOGY</strong></h3>
 
-- ❌ Node Js (Framework)
-- ❌ Express Js (Server-Side Library)
+- ✅ Node Js (Framework)
+- ✅ Express Js (Server-Side Library)
 - ❌ Mongoose (Express Js Library)
 
 <h3><strong>💻 DATABASE & TOOLS</strong></h3>
@@ -31,7 +31,7 @@ I am a student developer and your feedback would mean the world to me. Your feed
 
 <h1><strong>🔗 SOCIALS</strong></h1>
 
-[![github](https://img.shields.io/badge/my_github-000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/RyanNolascoDmello)
+[![github](https://img.shields.io/badge/my_github-000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/RyxnDmello)
 [![portfolio](https://img.shields.io/badge/my_portfolio-03005C?style=for-the-badge&logo=ko-fi&logoColor=white)]()
 [![instagram](https://img.shields.io/badge/my_instagram-f02114?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/ryxndmello10/)
 [![linkedin](https://img.shields.io/badge/my_linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ryanndmello)
