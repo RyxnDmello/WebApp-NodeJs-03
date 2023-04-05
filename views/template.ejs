@@ -20,7 +20,7 @@
     />
     <!-- #endregion Google Font Server -->
     <link rel="stylesheet" href="/template.css" />
-    <title>TaskTonic | <%= title %></title>
+    <title>TaskTonic | Template</title>
   </head>
 
   <body>
@@ -28,7 +28,8 @@
 
     <main>
       <section id="list-section">
-        <%- include("./partials/template/list.ejs", { tasks: tasks }) %>
+        <%- include("./partials/template/list.ejs", { tasks: tasks, account:
+        account }) %>
       </section>
     </main>
   </body>

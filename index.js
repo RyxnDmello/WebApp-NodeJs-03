@@ -1,5 +1,8 @@
+const mongoose = require("mongoose");
 const express = require("express");
 const bodyParser = require("body-parser");
+
+const database = require(__dirname + "/database/ListManager.js");
 
 const app = express();
 
@@ -14,33 +17,33 @@ app.set("view engine", "ejs");
 
 const PORT = 1000;
 
-let tasks = [];
-
 app.get("/", (req, res) => {
   res.render("home");
 });
 
-app.get("/todo/:template", (req, res) => {
-  res.render("template", {
-    title: "Template",
-    tasks: tasks,
-  });
+app.get("/account/:email/:password/todo/:template", (req, res) => {
+  const account = {
+    email: req.params.email,
+    password: req.params.password,
+    template: req.params.template,
+  };
+
+  database.DisplayTasks(account, res);
 });
 
-app.post("/posted", (req, res) => {
-  if (req.body.removeButton >= "0") {
-    tasks.pop(req.body.removeButton);
-    res.redirect("/todo/daily");
-    return;
-  }
+app.post("/account/:email/:password/todo/:template", async (req, res) => {
+  const account = {
+    email: req.params.email,
+    password: req.params.password,
+  };
 
-  if (req.body.delete === "delete") {
-    res.redirect("/todo/daily");
-    tasks.pop();
-  }
+  const task = req.body.newTask;
 
-  tasks.push(req.body.newTask);
-  res.redirect("/todo/daily");
+  database.AddTask(account, task, res);
+
+  res.redirect(
+    `/account/${req.params.email}/${req.params.password}/todo/${req.params.template}`
+  );
 });
 
 app.listen(1000, () => {

@@ -1,7 +1,11 @@
 <article class="list">
   <% tasks.forEach((task, index) => { %>
-  <form class="task" action="/posted" method="post">
-    <h3 class="task-text"><%= task %></h3>
+  <form
+    action="/account/<%= account.email %>/<%= account.password %>/todo/<%= account.template %>"
+    class="task"
+    method="post"
+  >
+    <h3 class="task-text"><%= task %> : <%= index %></h3>
 
     <button
       type="submit"
@@ -15,7 +19,11 @@
   <% }) %>
 </article>
 
-<form id="list-form" action="/posted" method="post">
+<form
+  action="/account/<%= account.email %>/<%= account.password %>/todo/<%= account.template %>"
+  id="list-form"
+  method="post"
+>
   <input
     class="list-form-input"
     placeholder="Add Task"
