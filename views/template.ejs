@@ -24,12 +24,12 @@
   </head>
 
   <body>
-    <header id="header">
-      <nav>
-        <a class="nav-logo-link" href="/">
-          <h1 class="nav-logo">TaskTonic</h1>
-        </a>
-      </nav>
-    </header>
+    <header id="header"><%- include("./partials/common/navbar.ejs") %></header>
+
+    <main>
+      <section id="list-section">
+        <%- include("./partials/template/list.ejs", { tasks: tasks }) %>
+      </section>
+    </main>
   </body>
 </html>

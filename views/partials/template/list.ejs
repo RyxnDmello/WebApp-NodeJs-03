@@ -1,0 +1,36 @@
+<article class="list">
+  <% tasks.forEach((task, index) => { %>
+  <form class="task" action="/posted" method="post">
+    <h3 class="task-text"><%= task %></h3>
+
+    <button
+      type="submit"
+      class="task-button"
+      name="removeButton"
+      value="<%= index %>"
+    >
+      <img class="task-button-image" src="/lists/delete.png" />
+    </button>
+  </form>
+  <% }) %>
+</article>
+
+<form id="list-form" action="/posted" method="post">
+  <input
+    class="list-form-input"
+    placeholder="Add Task"
+    maxlength="50"
+    name="newTask"
+    type="text"
+  />
+
+  <div class="list-form-button-container">
+    <button class="list-form-button add" type="submit" name="addButton">
+      <img class="list-form-button-image" src="/lists/add.png" />
+    </button>
+
+    <button class="list-form-button add" type="reset">
+      <img class="list-form-button-image" src="/lists/reset.png" />
+    </button>
+  </div>
+</form>
