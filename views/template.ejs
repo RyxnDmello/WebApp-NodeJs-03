@@ -27,9 +27,8 @@
     <header id="header"><%- include("./partials/common/navbar.ejs") %></header>
 
     <main>
-      <section id="list-section">
-        <%- include("./partials/template/list.ejs", { tasks: tasks, account:
-        account }) %>
+      <section id="todo-section">
+        <%- include("./partials/template/todo.ejs", { todo: todo }) %>
       </section>
     </main>
   </body>

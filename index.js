@@ -1,8 +1,7 @@
-const mongoose = require("mongoose");
 const express = require("express");
 const bodyParser = require("body-parser");
 
-const database = require(__dirname + "/database/ListManager.js");
+const TodoManager = require(__dirname + "/database/TodoManager.js");
 
 const app = express();
 
@@ -28,22 +27,21 @@ app.get("/account/:email/:password/todo/:template", (req, res) => {
     template: req.params.template,
   };
 
-  database.DisplayTasks(account, res);
+  TodoManager.Display(account, res);
 });
 
 app.post("/account/:email/:password/todo/:template", async (req, res) => {
+  const todo = {
+    button: req.body.todoButton,
+    task: req.body.task,
+  };
+
   const account = {
     email: req.params.email,
     password: req.params.password,
   };
 
-  const task = req.body.newTask;
-
-  database.AddTask(account, task, res);
-
-  res.redirect(
-    `/account/${req.params.email}/${req.params.password}/todo/${req.params.template}`
-  );
+  TodoManager.Manage(account, todo, res);
 });
 
 app.listen(1000, () => {

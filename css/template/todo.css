@@ -2,7 +2,7 @@
 /*---------------------- LISTS STYLES ----------------------*/
 /*----------------------------------------------------------*/
 
-#list-section {
+#todo-section {
   grid-template-columns: auto;
   justify-content: center;
   align-items: center;
@@ -11,7 +11,11 @@
   gap: 2rem;
 }
 
-.list {
+/*-------------------------------------------*/
+/*---------------- task LIST ----------------*/
+/*-------------------------------------------*/
+
+#todo-list {
   grid-template-columns: auto;
   justify-content: stretch;
   align-items: center;
@@ -53,11 +57,11 @@
   width: 35px;
 }
 
-/*-------------------------------------------------------*/
-/*--------------------- FORM STYLES ---------------------*/
-/*-------------------------------------------------------*/
+/*-----------------------------------------------------*/
+/*--------------------- TODO FORM ---------------------*/
+/*-----------------------------------------------------*/
 
-#list-form {
+#todo-form {
   grid-template-columns: auto;
   justify-content: stretch;
   align-items: stretch;
@@ -65,7 +69,7 @@
   display: grid;
 }
 
-.list-form-input {
+.todo-input {
   font-family: "Poppins", sans-serif;
   background-color: transparent;
   border: 2px solid #ffffff10;
@@ -78,18 +82,18 @@
   color: #fff;
 }
 
-.list-form-input::placeholder {
+.todo-input::placeholder {
   transition: opacity 300ms;
   letter-spacing: 0.5px;
   color: #fff;
   opacity: 0.25;
 }
 
-.list-form-input:hover::placeholder {
+.todo-input:hover::placeholder {
   opacity: 0;
 }
 
-.list-form-button-container {
+.todo-form-button-container {
   justify-content: center;
   grid-auto-flow: column;
   align-items: center;
@@ -102,13 +106,13 @@
   bottom: 0;
 }
 
-.list-form-button {
+.todo-form-button {
   background-color: transparent;
   cursor: pointer;
   border: none;
 }
 
-.list-form-button-image {
+.todo-form-button-image {
   transition: opacity 450ms, scale 450ms;
   filter: drop-shadow(2.5px 2.5px);
   background-color: transparent;
@@ -130,12 +134,12 @@
   scale: 1;
 }
 
-.list-form-button:hover .list-form-button-image {
+.todo-form-button:hover .todo-form-button-image {
   scale: 1.1;
   opacity: 1;
 }
 
-.list-form-button:focus .list-form-button-image {
+.todo-form-button:focus .todo-form-button-image {
   scale: 0.9;
 }
 
