@@ -4,6 +4,10 @@ mongoose.connect(
   "mongodb+srv://WebApp-Personal-03:RyanDmelloWebApp03@client-account-informat.kquhslf.mongodb.net/accountDB"
 );
 
+/*---------------------------------------------------*/
+/*----------------- SCHEMA & MODELS -----------------*/
+/*---------------------------------------------------*/
+
 const accountSchema = new mongoose.Schema({
   email: {
     required: true,
@@ -21,6 +25,10 @@ const accountSchema = new mongoose.Schema({
 });
 
 const accountModel = mongoose.model("profile", accountSchema);
+
+/*------------------------------------------------------*/
+/*----------------- ACCOUNT MANAGEMENT -----------------*/
+/*------------------------------------------------------*/
 
 module.exports.CreateProfile = () => {
   const profile = new profileModel({
@@ -52,14 +60,20 @@ module.exports.Display = (account, response) => {
 module.exports.Manage = async (account, todo, response) => {
   const getURL = `/account/${account.email}/${account.password}/todo/template`;
 
-  if (todo.button === "add") {
-    AddTask(account, todo.task);
+  if (todo.button !== "add") {
+    DeleteTask(account, todo.deleteTask);
     response.redirect(getURL);
     return;
   }
 
-  DeleteTask(account, todo.button);
+  if (todo.addTask.length !== 0) {
+    AddTask(account, todo.addTask);
+    response.redirect(getURL);
+    return;
+  }
+
   response.redirect(getURL);
+  return;
 };
 
 /*-----------------------------------------------------*/
@@ -67,8 +81,6 @@ module.exports.Manage = async (account, todo, response) => {
 /*-----------------------------------------------------*/
 
 const AddTask = async (account, task) => {
-  if (task.length == 0) return;
-
   await accountModel.findOneAndUpdate(
     { email: account.email },
     { $push: { list: task } }

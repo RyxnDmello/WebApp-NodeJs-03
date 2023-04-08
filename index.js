@@ -33,7 +33,8 @@ app.get("/account/:email/:password/todo/:template", (req, res) => {
 app.post("/account/:email/:password/todo/:template", async (req, res) => {
   const todo = {
     button: req.body.todoButton,
-    task: req.body.task,
+    addTask: req.body.addTask,
+    deleteTask: req.body.deleteTask,
   };
 
   const account = {

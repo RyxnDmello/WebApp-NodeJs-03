@@ -1,25 +1,17 @@
-<article id="todo-list">
-  <% todo.list.forEach((task) => { %>
-  <form class="task" action="<%= todo.postURL %>" method="post">
-    <h3 class="task-text"><%= task %></h3>
-
-    <button class="task-button" name="todoButton" value="<%= task %>">
-      <img class="task-button-image" src="/lists/delete.png" />
-    </button>
-  </form>
-  <% }) %>
-</article>
+<section id="todo-list-types">
+  <% for(let i = 0; i < 2; i++) { %>
+  <article id="list">
+    <%- include("./todo-progress.ejs", { list: todo.list }) %>
+  </article>
+  <% } %>
+</section>
 
 <form id="todo-form" action="<%= todo.postURL %>" method="post">
-  <input class="todo-input" maxlength="50" type="text" name="task" />
+  <input class="todo-input" maxlength="50" type="text" name="addTask" />
 
   <div class="todo-form-button-container">
     <button class="todo-form-button add" name="todoButton" value="add">
       <img class="todo-form-button-image" src="/lists/add.png" />
-    </button>
-
-    <button class="todo-form-button reset" type="reset">
-      <img class="todo-form-button-image" src="/lists/reset.png" />
     </button>
   </div>
 </form>
