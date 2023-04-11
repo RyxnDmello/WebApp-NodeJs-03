@@ -1,9 +1,11 @@
 <section id="todo-list-types">
-  <% for(let i = 0; i < 2; i++) { %>
   <article id="list">
-    <%- include("./todo-progress.ejs", { list: todo.list }) %>
+    <%- include("./todo-progress.ejs", { todo: todo }) %>
   </article>
-  <% } %>
+
+  <article id="list">
+    <%- include("./todo-completed.ejs", { todo: todo }) %>
+  </article>
 </section>
 
 <form id="todo-form" action="<%= todo.postURL %>" method="post">

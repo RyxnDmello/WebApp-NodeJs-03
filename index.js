@@ -20,17 +20,17 @@ app.get("/", (req, res) => {
   res.render("home");
 });
 
-app.get("/account/:email/:password/todo/:template", (req, res) => {
+app.get("/account/:email/:password/todo/template/:type", (req, res) => {
   const account = {
     email: req.params.email,
     password: req.params.password,
-    template: req.params.template,
+    type: req.params.type,
   };
 
-  TodoManager.Display(account, res);
+  TodoManager.TemplateDisplay(account, res);
 });
 
-app.post("/account/:email/:password/todo/:template", async (req, res) => {
+app.post("/account/:email/:password/todo/template/:type", async (req, res) => {
   const todo = {
     button: req.body.todoButton,
     addTask: req.body.addTask,
@@ -40,9 +40,10 @@ app.post("/account/:email/:password/todo/:template", async (req, res) => {
   const account = {
     email: req.params.email,
     password: req.params.password,
+    type: req.params.type,
   };
 
-  TodoManager.Manage(account, todo, res);
+  TodoManager.TemplateManager(account, todo, res);
 });
 
 app.listen(1000, () => {
