@@ -7,21 +7,21 @@
     <img class="account-image" src="/home/account/login.png" />
     <% } %>
 
-    <form class="register-form" action="">
+    <form class="register-form" action="/account/register" method="post">
       <div class="input-container email">
         <h3 class="input-label">Email</h3>
-        <input class="input" type="text" />
+        <input class="input" type="email" name="email" />
       </div>
 
       <div class="input-container password">
         <h3 class="input-label">Password</h3>
-        <input class="input" type="password" />
+        <input class="input" type="password" name="password" />
       </div>
 
       <% if(i === 1) { %>
       <div class="input-container password">
-        <h3 class="input-label">Password</h3>
-        <input class="input" type="password" />
+        <h3 class="input-label">Retype Password</h3>
+        <input class="input" type="password" name="retype" />
       </div>
       <% } %>
 

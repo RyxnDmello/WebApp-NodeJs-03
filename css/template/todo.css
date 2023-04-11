@@ -25,7 +25,7 @@
 #todo-list-types {
   grid-template-columns: repeat(2, auto);
   justify-content: stretch;
-  align-items: center;
+  align-items: flex-start;
   display: grid;
   gap: 2rem;
 }

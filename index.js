@@ -20,6 +20,16 @@ app.get("/", (req, res) => {
   res.render("home");
 });
 
+app.post("/account/register", (req, res) => {
+  const account = {
+    email: req.body.email,
+    password: req.body.password,
+    retypePassword: req.body.retype,
+  };
+
+  TodoManager.CreateAccount(account, res);
+});
+
 app.get("/account/:email/:password/todo/template/:type", (req, res) => {
   const account = {
     email: req.params.email,
@@ -27,7 +37,7 @@ app.get("/account/:email/:password/todo/template/:type", (req, res) => {
     type: req.params.type,
   };
 
-  TodoManager.TemplateDisplay(account, res);
+  TodoManager.DisplayTodo(account, res);
 });
 
 app.post("/account/:email/:password/todo/template/:type", async (req, res) => {
@@ -43,7 +53,7 @@ app.post("/account/:email/:password/todo/template/:type", async (req, res) => {
     type: req.params.type,
   };
 
-  TodoManager.TemplateManager(account, todo, res);
+  TodoManager.ManageTodo(account, todo, res);
 });
 
 app.listen(1000, () => {
