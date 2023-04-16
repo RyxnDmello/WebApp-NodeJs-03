@@ -2,7 +2,11 @@
   <% todo.completed.forEach((task) => { %>
   <form class="task" action="<%= todo.postURL %>" method="post">
     <div class="task-controller">
-      <button class="task-button" name="deleteTask" value="<%= task %>">
+      <button
+        class="task-button"
+        name="deleteCompletedTask"
+        value="<%= task %>"
+      >
         <img class="task-button-image" src="/lists/delete.png" />
       </button>
     </div>

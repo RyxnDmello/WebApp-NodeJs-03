@@ -34,7 +34,7 @@ const AddTask = async (account, task) => {
   }
 };
 
-const DeleteTask = async (account, task) => {
+const DeleteProgressTask = async (account, task) => {
   if (account.type === "daily") {
     await AccountModel.findOneAndUpdate(
       { email: account.email },
@@ -68,5 +68,40 @@ const DeleteTask = async (account, task) => {
   }
 };
 
+const DeleteCompletedTask = async (account, task) => {
+  if (account.type === "daily") {
+    await AccountModel.findOneAndUpdate(
+      { email: account.email },
+      { $pull: { "daily.completed": task } }
+    );
+    return;
+  }
+
+  if (account.type === "weekly") {
+    await AccountModel.findOneAndUpdate(
+      { email: account.email },
+      { $pull: { "weekly.completed": task } }
+    );
+    return;
+  }
+
+  if (account.type === "monthly") {
+    await AccountModel.findOneAndUpdate(
+      { email: account.email },
+      { $pull: { "monthly.completed": task } }
+    );
+    return;
+  }
+
+  if (account.type === "yearly") {
+    await AccountModel.findOneAndUpdate(
+      { email: account.email },
+      { $pull: { "yearly.completed": task } }
+    );
+    return;
+  }
+};
+
 module.exports.AddTask = AddTask;
-module.exports.DeleteTask = DeleteTask;
+module.exports.DeleteProgressTask = DeleteProgressTask;
+module.exports.DeleteCompletedTask = DeleteCompletedTask;
