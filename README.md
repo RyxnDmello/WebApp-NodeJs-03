@@ -16,12 +16,12 @@ TaskTonic is an **intractable Web Application** in which users can create their 
 
 - ✅ Node Js (Framework)
 - ✅ Express Js (Server-Side Library)
-- ❌ Mongoose (Express Js Library)
+- ✅ Mongoose (Express Js Library)
 
 <h3><strong>💻 DATABASE & TOOLS</strong></h3>
 
-- ❌ MongoDB (Cloud Database)
-- ❌ Mongoose (Express Js Library)
+- ✅ MongoDB (Cloud Database)
+- ✅ Mongoose (Express Js Library)
 
 <h1><strong>💎 FEEDBACK</strong></h1>
 
