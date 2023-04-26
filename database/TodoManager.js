@@ -7,25 +7,29 @@ module.exports.CreateAccount = (account, response) => {
   const profile = new AccountModel({
     email: account.email,
     password: account.password,
-    daily: {
-      progress: [],
-      completed: [],
-    },
-    weekly: {
-      progress: [],
-      completed: [],
-    },
-    monthly: {
-      progress: [],
-      completed: [],
-    },
-    yearly: {
-      progress: [],
-      completed: [],
+    lists: {
+      daily: {
+        progress: [],
+        completed: [],
+      },
+      weekly: {
+        progress: [],
+        completed: [],
+      },
+      monthly: {
+        progress: [],
+        completed: [],
+      },
+      yearly: {
+        progress: [],
+        completed: [],
+      },
     },
   });
 
   profile.save();
+
+  response.redirect("/");
 };
 
 module.exports.DisplayTodo = (account, response) => {
@@ -37,30 +41,29 @@ module.exports.DisplayTodo = (account, response) => {
 module.exports.ManageTodo = async (account, todo, response) => {
   const getURL = `/account/${account.email}/${account.password}/todo/template/${account.type}`;
 
-  console.clear();
-  console.log(account);
-  console.log(todo);
-
-  if (todo.addButton !== "add") {
-    if (todo.deleteProgressTask !== undefined) {
-      TaskManager.DeleteProgressTask(account, todo.deleteProgressTask);
-      response.redirect(getURL);
-      return;
+  if (todo.addTaskButton === "progress") {
+    if (todo.addProgressTask.length !== 0) {
+      TaskManager.AddProgressTask(account, todo.addProgressTask);
     }
 
-    if (todo.deleteCompletedTask !== undefined) {
-      TaskManager.DeleteCompletedTask(account, todo.deleteCompletedTask);
-      response.redirect(getURL);
-      return;
-    }
+    response.redirect(getURL);
   }
 
-  if (todo.addTask.length !== 0) {
-    TaskManager.AddTask(account, todo.addTask);
+  if (todo.deleteProgressTask !== undefined) {
+    TaskManager.DeleteProgressTask(account, todo.deleteProgressTask);
     response.redirect(getURL);
     return;
   }
 
-  response.redirect(getURL);
-  return;
+  if (todo.addCompletedTask !== undefined) {
+    console.log("SHIFTING | Progress -> Completed");
+    response.redirect(getURL);
+    return;
+  }
+
+  if (todo.deleteCompletedTask !== undefined) {
+    TaskManager.DeleteCompletedTask(account, todo.deleteCompletedTask);
+    response.redirect(getURL);
+    return;
+  }
 };

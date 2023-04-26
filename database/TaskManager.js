@@ -1,10 +1,14 @@
 const AccountModel = require("./ModelManager.js");
 
-const AddTask = async (account, task) => {
+const AddProgressTask = async (account, task) => {
   if (account.type === "daily") {
     await AccountModel.findOneAndUpdate(
       { email: account.email },
-      { $push: { "daily.progress": task } }
+      {
+        $push: {
+          "lists.daily.progress": { title: "TITLE", description: task },
+        },
+      }
     );
     return;
   }
@@ -12,7 +16,11 @@ const AddTask = async (account, task) => {
   if (account.type === "weekly") {
     await AccountModel.findOneAndUpdate(
       { email: account.email },
-      { $push: { "weekly.progress": task } }
+      {
+        $push: {
+          "lists.weekly.progress": { title: "YAY2", description: task },
+        },
+      }
     );
     return;
   }
@@ -20,7 +28,11 @@ const AddTask = async (account, task) => {
   if (account.type === "monthly") {
     await AccountModel.findOneAndUpdate(
       { email: account.email },
-      { $push: { "monthly.progress": task } }
+      {
+        $push: {
+          "lists.monthly.progress": { title: "YAY2", description: task },
+        },
+      }
     );
     return;
   }
@@ -28,17 +40,23 @@ const AddTask = async (account, task) => {
   if (account.type === "yearly") {
     await AccountModel.findOneAndUpdate(
       { email: account.email },
-      { $push: { "yearly.progress": task } }
+      {
+        $push: {
+          "lists.yearly.progress": { title: "YAY2", description: task },
+        },
+      }
     );
     return;
   }
 };
 
-const DeleteProgressTask = async (account, task) => {
+const DeleteProgressTask = async (account, data) => {
   if (account.type === "daily") {
     await AccountModel.findOneAndUpdate(
       { email: account.email },
-      { $pull: { "daily.progress": task } }
+      {
+        $pull: { "lists.daily.progress": { description: data } },
+      }
     );
     return;
   }
@@ -46,7 +64,7 @@ const DeleteProgressTask = async (account, task) => {
   if (account.type === "weekly") {
     await AccountModel.findOneAndUpdate(
       { email: account.email },
-      { $pull: { "weekly.progress": task } }
+      { $pull: { "lists.weekly.progress": { description: data } } }
     );
     return;
   }
@@ -54,7 +72,7 @@ const DeleteProgressTask = async (account, task) => {
   if (account.type === "monthly") {
     await AccountModel.findOneAndUpdate(
       { email: account.email },
-      { $pull: { "monthly.progress": task } }
+      { $pull: { "lists.monthly.progress": { description: data } } }
     );
     return;
   }
@@ -62,7 +80,7 @@ const DeleteProgressTask = async (account, task) => {
   if (account.type === "yearly") {
     await AccountModel.findOneAndUpdate(
       { email: account.email },
-      { $pull: { "yearly.progress": task } }
+      { $pull: { "lists.yearly.progress": { description: data } } }
     );
     return;
   }
@@ -72,7 +90,7 @@ const DeleteCompletedTask = async (account, task) => {
   if (account.type === "daily") {
     await AccountModel.findOneAndUpdate(
       { email: account.email },
-      { $pull: { "daily.completed": task } }
+      { $pull: { "lists.daily.completed": { description: data } } }
     );
     return;
   }
@@ -80,7 +98,7 @@ const DeleteCompletedTask = async (account, task) => {
   if (account.type === "weekly") {
     await AccountModel.findOneAndUpdate(
       { email: account.email },
-      { $pull: { "weekly.completed": task } }
+      { $pull: { "lists.weekly.completed": { description: data } } }
     );
     return;
   }
@@ -88,7 +106,7 @@ const DeleteCompletedTask = async (account, task) => {
   if (account.type === "monthly") {
     await AccountModel.findOneAndUpdate(
       { email: account.email },
-      { $pull: { "monthly.completed": task } }
+      { $pull: { "lists.monthly.completed": { description: data } } }
     );
     return;
   }
@@ -96,12 +114,12 @@ const DeleteCompletedTask = async (account, task) => {
   if (account.type === "yearly") {
     await AccountModel.findOneAndUpdate(
       { email: account.email },
-      { $pull: { "yearly.completed": task } }
+      { $pull: { "lists.yearly.completed": { description: data } } }
     );
     return;
   }
 };
 
-module.exports.AddTask = AddTask;
+module.exports.AddProgressTask = AddProgressTask;
 module.exports.DeleteProgressTask = DeleteProgressTask;
 module.exports.DeleteCompletedTask = DeleteCompletedTask;

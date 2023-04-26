@@ -5,7 +5,7 @@
       <button
         class="task-button"
         name="deleteCompletedTask"
-        value="<%= task %>"
+        value="<%= task.description %>"
       >
         <img class="task-button-image" src="/lists/delete.png" />
       </button>
@@ -13,7 +13,7 @@
 
     <hr class="task-divider" />
 
-    <h3 class="task-text"><%= task %></h3>
+    <h3 class="task-text"><%= task.description %></h3>
   </form>
   <% }) %>
 </article>

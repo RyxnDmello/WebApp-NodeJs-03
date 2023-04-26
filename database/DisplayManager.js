@@ -7,8 +7,8 @@ const DisplayTasks = (account, profile, response) => {
 
   if (account.type === "daily") {
     const todo = {
-      progress: profile.daily.progress,
-      completed: profile.daily.completed,
+      progress: profile.lists.daily.progress,
+      completed: profile.lists.daily.completed,
       postURL: postURL,
     };
 
@@ -18,8 +18,8 @@ const DisplayTasks = (account, profile, response) => {
 
   if (account.type === "weekly") {
     const todo = {
-      progress: profile.weekly.progress,
-      completed: profile.weekly.completed,
+      progress: profile.lists.weekly.progress,
+      completed: profile.lists.weekly.completed,
       postURL: postURL,
     };
 
@@ -29,8 +29,8 @@ const DisplayTasks = (account, profile, response) => {
 
   if (account.type === "monthly") {
     const todo = {
-      progress: profile.monthly.progress,
-      completed: profile.monthly.completed,
+      progress: profile.lists.monthly.progress,
+      completed: profile.lists.monthly.completed,
       postURL: postURL,
     };
 
@@ -40,8 +40,8 @@ const DisplayTasks = (account, profile, response) => {
 
   if (account.type === "yearly") {
     const todo = {
-      progress: profile.yearly.progress,
-      completed: profile.yearly.completed,
+      progress: profile.lists.yearly.progress,
+      completed: profile.lists.yearly.completed,
       postURL: postURL,
     };
 

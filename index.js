@@ -42,9 +42,10 @@ app.get("/account/:email/:password/todo/template/:type", (req, res) => {
 
 app.post("/account/:email/:password/todo/template/:type", async (req, res) => {
   const todo = {
-    addButton: req.body.addButton,
-    addTask: req.body.addTask,
+    addTaskButton: req.body.addTaskButton,
+    addProgressTask: req.body.addProgressTask,
     deleteProgressTask: req.body.deleteProgressTask,
+    addCompletedTask: req.body.addCompletedTask,
     deleteCompletedTask: req.body.deleteCompletedTask,
   };
 

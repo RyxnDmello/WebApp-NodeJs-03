@@ -2,18 +2,26 @@
   <% todo.progress.forEach((task) => { %>
   <form class="task" action="<%= todo.postURL %>" method="post">
     <div class="task-controller">
-      <button class="task-button" name="deleteProgressTask" value="<%= task %>">
+      <button
+        class="task-button"
+        name="deleteProgressTask"
+        value="<%= task.description %>"
+      >
         <img class="task-button-image" src="/lists/delete.png" />
       </button>
 
-      <button class="task-button" name="completeTask" value="<%= task %>">
+      <button
+        class="task-button"
+        name="addCompletedTask"
+        value="<%= task.description %>"
+      >
         <img class="task-button-image" src="/lists/complete.png" />
       </button>
     </div>
 
     <hr class="task-divider" />
 
-    <h3 class="task-text"><%= task %></h3>
+    <h3 class="task-text"><%= task.description %></h3>
   </form>
   <% }) %>
 </article>
