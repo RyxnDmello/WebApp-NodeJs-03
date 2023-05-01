@@ -27,7 +27,7 @@ app.post("/account/register", (req, res) => {
     retypePassword: req.body.retype,
   };
 
-  TodoManager.CreateAccount(account, res);
+  TodoManager.CreateTodoAccount(account, res);
 });
 
 app.get("/account/:email/:password/todo/template/:type", (req, res) => {
@@ -37,25 +37,29 @@ app.get("/account/:email/:password/todo/template/:type", (req, res) => {
     type: req.params.type,
   };
 
-  TodoManager.DisplayTodo(account, res);
+  TodoManager.DisplayTodoLists(account, res);
 });
 
 app.post("/account/:email/:password/todo/template/:type", async (req, res) => {
-  const todo = {
-    addTaskButton: req.body.addTaskButton,
-    addProgressTask: req.body.addProgressTask,
-    deleteProgressTask: req.body.deleteProgressTask,
-    addCompletedTask: req.body.addCompletedTask,
-    deleteCompletedTask: req.body.deleteCompletedTask,
-  };
-
   const account = {
     email: req.params.email,
     password: req.params.password,
     type: req.params.type,
   };
 
-  TodoManager.ManageTodo(account, todo, res);
+  const todo = {
+    deleteProgressTask: req.body.deleteProgressTask,
+    addCompletedTask: req.body.addCompletedTask,
+    deleteCompletedTask: req.body.deleteCompletedTask,
+  };
+
+  const task = {
+    taskButton: req.body.taskButton,
+    taskTitle: req.body.taskTitle,
+    taskDescription: req.body.taskDescription,
+  };
+
+  TodoManager.ManageTodoLists(account, todo, task, res);
 });
 
 app.listen(1000, () => {

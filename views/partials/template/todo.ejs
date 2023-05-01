@@ -9,11 +9,40 @@
 </section>
 
 <form id="todo-form" action="<%= todo.postURL %>" method="post">
-  <input class="todo-input" maxlength="50" type="text" name="addProgressTask" />
+  <div class="input-block">
+    <input
+      placeholder="Title"
+      class="todo-input"
+      name="taskTitle"
+      required="true"
+      maxlength="50"
+      type="text"
+    />
+
+    <input
+      placeholder="Description"
+      name="taskDescription"
+      class="todo-input"
+      required="true"
+      maxlength="50"
+      type="text"
+    />
+  </div>
 
   <div class="todo-form-button-container">
-    <button class="todo-form-button add" name="addTaskButton" value="progress">
+    <button
+      class="todo-form-button add"
+      name="taskButton"
+      value="progress"
+      type="submit"
+    >
+      <h4 class="todo-form-button-text">Add Task</h4>
       <img class="todo-form-button-image" src="/lists/add.png" />
+    </button>
+
+    <button class="todo-form-button clear" type="reset">
+      <h4 class="todo-form-button-text">Clear Details</h4>
+      <img class="todo-form-button-image" src="/lists/clear.png" />
     </button>
   </div>
 </form>

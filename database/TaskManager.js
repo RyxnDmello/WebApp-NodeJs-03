@@ -6,7 +6,10 @@ const AddProgressTask = async (account, task) => {
       { email: account.email },
       {
         $push: {
-          "lists.daily.progress": { title: "TITLE", description: task },
+          "lists.daily.progress": {
+            title: task.taskTitle,
+            description: task.taskDescription,
+          },
         },
       }
     );
@@ -18,7 +21,10 @@ const AddProgressTask = async (account, task) => {
       { email: account.email },
       {
         $push: {
-          "lists.weekly.progress": { title: "YAY2", description: task },
+          "lists.weekly.progress": {
+            title: task.taskTitle,
+            description: task.taskDescription,
+          },
         },
       }
     );
@@ -30,7 +36,10 @@ const AddProgressTask = async (account, task) => {
       { email: account.email },
       {
         $push: {
-          "lists.monthly.progress": { title: "YAY2", description: task },
+          "lists.monthly.progress": {
+            title: task.taskTitle,
+            description: task.taskDescription,
+          },
         },
       }
     );
@@ -42,7 +51,10 @@ const AddProgressTask = async (account, task) => {
       { email: account.email },
       {
         $push: {
-          "lists.yearly.progress": { title: "YAY2", description: task },
+          "lists.yearly.progress": {
+            title: task.taskTitle,
+            description: task.taskDescription,
+          },
         },
       }
     );
@@ -50,12 +62,12 @@ const AddProgressTask = async (account, task) => {
   }
 };
 
-const DeleteProgressTask = async (account, data) => {
+const DeleteProgressTask = async (account, task) => {
   if (account.type === "daily") {
     await AccountModel.findOneAndUpdate(
       { email: account.email },
       {
-        $pull: { "lists.daily.progress": { description: data } },
+        $pull: { "lists.daily.progress": { description: task } },
       }
     );
     return;
@@ -64,7 +76,7 @@ const DeleteProgressTask = async (account, data) => {
   if (account.type === "weekly") {
     await AccountModel.findOneAndUpdate(
       { email: account.email },
-      { $pull: { "lists.weekly.progress": { description: data } } }
+      { $pull: { "lists.weekly.progress": { description: task } } }
     );
     return;
   }
@@ -72,7 +84,7 @@ const DeleteProgressTask = async (account, data) => {
   if (account.type === "monthly") {
     await AccountModel.findOneAndUpdate(
       { email: account.email },
-      { $pull: { "lists.monthly.progress": { description: data } } }
+      { $pull: { "lists.monthly.progress": { description: task } } }
     );
     return;
   }
@@ -80,7 +92,53 @@ const DeleteProgressTask = async (account, data) => {
   if (account.type === "yearly") {
     await AccountModel.findOneAndUpdate(
       { email: account.email },
-      { $pull: { "lists.yearly.progress": { description: data } } }
+      { $pull: { "lists.yearly.progress": { description: task } } }
+    );
+    return;
+  }
+};
+
+const AddCompletedTask = async (account, task) => {
+  if (account.type === "daily") {
+    await AccountModel.findOneAndUpdate(
+      { email: account.email },
+      {
+        $pull: { "lists.daily.progress": { description: task } },
+        $push: { "lists.daily.completed": { description: task } },
+      }
+    );
+    return;
+  }
+
+  if (account.type === "weekly") {
+    await AccountModel.findOneAndUpdate(
+      { email: account.email },
+      {
+        $pull: { "lists.weekly.progress": { description: task } },
+        $push: { "lists.weekly.completed": { description: task } },
+      }
+    );
+    return;
+  }
+
+  if (account.type === "monthly") {
+    await AccountModel.findOneAndUpdate(
+      { email: account.email },
+      {
+        $pull: { "lists.monthly.progress": { description: task } },
+        $push: { "lists.monthly.completed": { description: task } },
+      }
+    );
+    return;
+  }
+
+  if (account.type === "yearly") {
+    await AccountModel.findOneAndUpdate(
+      { email: account.email },
+      {
+        $pull: { "lists.yearly.progress": { description: task } },
+        $push: { "lists.yearly.completed": { description: task } },
+      }
     );
     return;
   }
@@ -90,7 +148,7 @@ const DeleteCompletedTask = async (account, task) => {
   if (account.type === "daily") {
     await AccountModel.findOneAndUpdate(
       { email: account.email },
-      { $pull: { "lists.daily.completed": { description: data } } }
+      { $pull: { "lists.daily.completed": { description: task } } }
     );
     return;
   }
@@ -98,7 +156,7 @@ const DeleteCompletedTask = async (account, task) => {
   if (account.type === "weekly") {
     await AccountModel.findOneAndUpdate(
       { email: account.email },
-      { $pull: { "lists.weekly.completed": { description: data } } }
+      { $pull: { "lists.weekly.completed": { description: task } } }
     );
     return;
   }
@@ -106,7 +164,7 @@ const DeleteCompletedTask = async (account, task) => {
   if (account.type === "monthly") {
     await AccountModel.findOneAndUpdate(
       { email: account.email },
-      { $pull: { "lists.monthly.completed": { description: data } } }
+      { $pull: { "lists.monthly.completed": { description: task } } }
     );
     return;
   }
@@ -114,7 +172,7 @@ const DeleteCompletedTask = async (account, task) => {
   if (account.type === "yearly") {
     await AccountModel.findOneAndUpdate(
       { email: account.email },
-      { $pull: { "lists.yearly.completed": { description: data } } }
+      { $pull: { "lists.yearly.completed": { description: task } } }
     );
     return;
   }
@@ -122,4 +180,5 @@ const DeleteCompletedTask = async (account, task) => {
 
 module.exports.AddProgressTask = AddProgressTask;
 module.exports.DeleteProgressTask = DeleteProgressTask;
+module.exports.AddCompletedTask = AddCompletedTask;
 module.exports.DeleteCompletedTask = DeleteCompletedTask;

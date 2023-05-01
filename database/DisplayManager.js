@@ -1,8 +1,4 @@
-const RenderTemplate = (todo, response) => {
-  response.render("template", { todo: todo });
-};
-
-const DisplayTasks = (account, profile, response) => {
+const DisplayLists = (account, profile, response) => {
   const postURL = `/account/${account.email}/${account.password}/todo/template/${account.type}`;
 
   if (account.type === "daily") {
@@ -50,4 +46,8 @@ const DisplayTasks = (account, profile, response) => {
   }
 };
 
-module.exports.DisplayTasks = DisplayTasks;
+const RenderTemplate = (todo, response) => {
+  response.render("template", { todo: todo });
+};
+
+module.exports.DisplayLists = DisplayLists;

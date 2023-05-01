@@ -1,0 +1,84 @@
+/*----------------------------------------------------------*/
+/*-------------------- TODO LIST STYLES --------------------*/
+/*----------------------------------------------------------*/
+
+#todo-list-types {
+  grid-template-columns: repeat(2, auto);
+  justify-content: stretch;
+  align-items: flex-start;
+  display: grid;
+  gap: 2rem;
+}
+
+#list {
+  grid-template-columns: auto;
+  justify-content: stretch;
+  align-items: center;
+  max-width: 650px;
+  min-width: 300px;
+  display: grid;
+  gap: 1rem;
+}
+
+.task {
+  padding: 1rem 0.8rem 0.45rem 0.8rem;
+  border: 2px solid #ffffff10;
+  grid-template-columns: auto;
+  box-shadow: 4px 4px #000;
+  justify-content: stretch;
+  align-items: center;
+  border-radius: 5px;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.task-text {
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.25px;
+  font-size: 1.25rem;
+  font-weight: 200;
+  cursor: default;
+  color: #fff;
+}
+
+/*---------------------------------------------*/
+/*-------------- TASK CONTROLLER --------------*/
+/*---------------------------------------------*/
+
+.task-controller {
+  grid-template-columns: repeat(2, auto);
+  justify-content: right;
+  align-items: center;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.task-button {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+}
+
+.task-button-image {
+  transition: opacity 450ms, scale 450ms;
+  filter: drop-shadow(2.5px 2.5px);
+  opacity: 0.65;
+  width: 35px;
+}
+
+/*-----------------------------------------------*/
+/*----------------- TRANSITIONS -----------------*/
+/*-----------------------------------------------*/
+
+.task-button:hover .task-button-image {
+  scale: 1.125;
+  opacity: 1;
+}
+
+.task-button:focus .task-button-image {
+  scale: 0.9;
+}
+
+/*------------------------------------------*/
+/*--------------- END OF CSS ---------------*/
+/*------------------------------------------*/

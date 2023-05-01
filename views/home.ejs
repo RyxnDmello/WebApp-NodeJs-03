@@ -24,39 +24,7 @@
   </head>
 
   <body>
-    <header id="header">
-      <nav>
-        <h1 class="nav-logo">TaskTonic</h1>
-
-        <div class="nav-links-container">
-          <a class="nav-link" href="">
-            <p class="nav-link-text">Daily</p>
-          </a>
-
-          <a class="nav-link" href="">
-            <p class="nav-link-text">Monthly</p>
-          </a>
-
-          <a class="nav-link" href="">
-            <p class="nav-link-text">Yearly</p>
-          </a>
-
-          <a class="nav-link" href="">
-            <p class="nav-link-text">Custom</p>
-          </a>
-        </div>
-
-        <div class="nav-register-links-container">
-          <a class="nav-register-link login" href="">
-            <p class="nav-register-link-text">Log in</p>
-          </a>
-
-          <a class="nav-register-link sign" href="">
-            <p class="nav-register-link-text">Sign Up</p>
-          </a>
-        </div>
-      </nav>
-    </header>
+    <header id="header"><%- include("./partials/home/header.ejs") %></header>
 
     <main>
       <section id="introduction-section">
