@@ -14,32 +14,33 @@ module.exports.DisplayTodoLists = (account, response) => {
   });
 };
 
-module.exports.ManageTodoLists = async (account, todo, task, response) => {
+module.exports.ManageTodoLists = async (account, todo, response) => {
   const getURL = `/account/${account.email}/${account.password}/todo/template/${account.type}`;
 
-  if (task.taskButton === "progress") {
-    if (task.taskTitle.length !== 0) {
-      TaskManager.AddProgressTask(account, task);
-    }
+  console.log(todo.taskButton);
+  console.log(todo.taskTitle);
+  console.log(todo.taskDescription);
 
+  if (todo.taskButton === "AddProgressTask") {
+    TaskManager.AddProgressTask(account, todo);
     response.redirect(getURL);
     return;
   }
 
-  if (todo.deleteProgressTask !== undefined) {
-    TaskManager.DeleteProgressTask(account, todo.deleteProgressTask);
+  if (todo.taskButton === "DeleteProgressTask") {
+    TaskManager.DeleteProgressTask(account, todo);
     response.redirect(getURL);
     return;
   }
 
-  if (todo.addCompletedTask !== undefined) {
-    TaskManager.AddCompletedTask(account, todo.addCompletedTask);
+  if (todo.taskButton === "AddCompletedTask") {
+    TaskManager.AddCompletedTask(account, todo);
     response.redirect(getURL);
     return;
   }
 
-  if (todo.deleteCompletedTask !== undefined) {
-    TaskManager.DeleteCompletedTask(account, todo.deleteCompletedTask);
+  if (todo.taskButton === "DeleteCompletedTask") {
+    TaskManager.DeleteCompletedTask(account, todo);
     response.redirect(getURL);
     return;
   }

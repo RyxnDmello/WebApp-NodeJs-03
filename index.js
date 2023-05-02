@@ -48,18 +48,12 @@ app.post("/account/:email/:password/todo/template/:type", async (req, res) => {
   };
 
   const todo = {
-    deleteProgressTask: req.body.deleteProgressTask,
-    addCompletedTask: req.body.addCompletedTask,
-    deleteCompletedTask: req.body.deleteCompletedTask,
-  };
-
-  const task = {
     taskButton: req.body.taskButton,
     taskTitle: req.body.taskTitle,
     taskDescription: req.body.taskDescription,
   };
 
-  TodoManager.ManageTodoLists(account, todo, task, res);
+  TodoManager.ManageTodoLists(account, todo, res);
 });
 
 app.listen(1000, () => {

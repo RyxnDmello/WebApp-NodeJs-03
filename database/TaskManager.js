@@ -1,14 +1,14 @@
 const AccountModel = require("./ModelManager.js");
 
-const AddProgressTask = async (account, task) => {
+const AddProgressTask = async (account, todo) => {
   if (account.type === "daily") {
     await AccountModel.findOneAndUpdate(
       { email: account.email },
       {
         $push: {
           "lists.daily.progress": {
-            title: task.taskTitle,
-            description: task.taskDescription,
+            title: todo.taskTitle,
+            description: todo.taskDescription,
           },
         },
       }
@@ -22,8 +22,8 @@ const AddProgressTask = async (account, task) => {
       {
         $push: {
           "lists.weekly.progress": {
-            title: task.taskTitle,
-            description: task.taskDescription,
+            title: todo.taskTitle,
+            description: todo.taskDescription,
           },
         },
       }
@@ -37,8 +37,8 @@ const AddProgressTask = async (account, task) => {
       {
         $push: {
           "lists.monthly.progress": {
-            title: task.taskTitle,
-            description: task.taskDescription,
+            title: todo.taskTitle,
+            description: todo.taskDescription,
           },
         },
       }
@@ -52,8 +52,8 @@ const AddProgressTask = async (account, task) => {
       {
         $push: {
           "lists.yearly.progress": {
-            title: task.taskTitle,
-            description: task.taskDescription,
+            title: todo.taskTitle,
+            description: todo.taskDescription,
           },
         },
       }
@@ -62,49 +62,17 @@ const AddProgressTask = async (account, task) => {
   }
 };
 
-const DeleteProgressTask = async (account, task) => {
+const DeleteProgressTask = async (account, todo) => {
   if (account.type === "daily") {
     await AccountModel.findOneAndUpdate(
       { email: account.email },
       {
-        $pull: { "lists.daily.progress": { description: task } },
-      }
-    );
-    return;
-  }
-
-  if (account.type === "weekly") {
-    await AccountModel.findOneAndUpdate(
-      { email: account.email },
-      { $pull: { "lists.weekly.progress": { description: task } } }
-    );
-    return;
-  }
-
-  if (account.type === "monthly") {
-    await AccountModel.findOneAndUpdate(
-      { email: account.email },
-      { $pull: { "lists.monthly.progress": { description: task } } }
-    );
-    return;
-  }
-
-  if (account.type === "yearly") {
-    await AccountModel.findOneAndUpdate(
-      { email: account.email },
-      { $pull: { "lists.yearly.progress": { description: task } } }
-    );
-    return;
-  }
-};
-
-const AddCompletedTask = async (account, task) => {
-  if (account.type === "daily") {
-    await AccountModel.findOneAndUpdate(
-      { email: account.email },
-      {
-        $pull: { "lists.daily.progress": { description: task } },
-        $push: { "lists.daily.completed": { description: task } },
+        $pull: {
+          "lists.daily.progress": {
+            title: todo.taskTitle,
+            description: todo.taskDescription,
+          },
+        },
       }
     );
     return;
@@ -114,8 +82,12 @@ const AddCompletedTask = async (account, task) => {
     await AccountModel.findOneAndUpdate(
       { email: account.email },
       {
-        $pull: { "lists.weekly.progress": { description: task } },
-        $push: { "lists.weekly.completed": { description: task } },
+        $pull: {
+          "lists.weekly.progress": {
+            title: todo.taskTitle,
+            description: todo.taskDescription,
+          },
+        },
       }
     );
     return;
@@ -125,8 +97,12 @@ const AddCompletedTask = async (account, task) => {
     await AccountModel.findOneAndUpdate(
       { email: account.email },
       {
-        $pull: { "lists.monthly.progress": { description: task } },
-        $push: { "lists.monthly.completed": { description: task } },
+        $pull: {
+          "lists.monthly.progress": {
+            title: todo.taskTitle,
+            description: todo.taskDescription,
+          },
+        },
       }
     );
     return;
@@ -136,19 +112,36 @@ const AddCompletedTask = async (account, task) => {
     await AccountModel.findOneAndUpdate(
       { email: account.email },
       {
-        $pull: { "lists.yearly.progress": { description: task } },
-        $push: { "lists.yearly.completed": { description: task } },
+        $pull: {
+          "lists.yearly.progress": {
+            title: todo.taskTitle,
+            description: todo.taskDescription,
+          },
+        },
       }
     );
     return;
   }
 };
 
-const DeleteCompletedTask = async (account, task) => {
+const AddCompletedTask = async (account, todo) => {
   if (account.type === "daily") {
     await AccountModel.findOneAndUpdate(
       { email: account.email },
-      { $pull: { "lists.daily.completed": { description: task } } }
+      {
+        $pull: {
+          "lists.daily.progress": {
+            title: todo.taskTitle,
+            description: todo.taskDescription,
+          },
+        },
+        $push: {
+          "lists.daily.completed": {
+            title: todo.taskTitle,
+            description: todo.taskDescription,
+          },
+        },
+      }
     );
     return;
   }
@@ -156,7 +149,20 @@ const DeleteCompletedTask = async (account, task) => {
   if (account.type === "weekly") {
     await AccountModel.findOneAndUpdate(
       { email: account.email },
-      { $pull: { "lists.weekly.completed": { description: task } } }
+      {
+        $pull: {
+          "lists.weekly.progress": {
+            title: todo.taskTitle,
+            description: todo.taskDescription,
+          },
+        },
+        $push: {
+          "lists.weekly.completed": {
+            title: todo.taskTitle,
+            description: todo.taskDescription,
+          },
+        },
+      }
     );
     return;
   }
@@ -164,7 +170,20 @@ const DeleteCompletedTask = async (account, task) => {
   if (account.type === "monthly") {
     await AccountModel.findOneAndUpdate(
       { email: account.email },
-      { $pull: { "lists.monthly.completed": { description: task } } }
+      {
+        $pull: {
+          "lists.monthly.progress": {
+            title: todo.taskTitle,
+            description: todo.taskDescription,
+          },
+        },
+        $push: {
+          "lists.monthly.completed": {
+            title: todo.taskTitle,
+            description: todo.taskDescription,
+          },
+        },
+      }
     );
     return;
   }
@@ -172,7 +191,82 @@ const DeleteCompletedTask = async (account, task) => {
   if (account.type === "yearly") {
     await AccountModel.findOneAndUpdate(
       { email: account.email },
-      { $pull: { "lists.yearly.completed": { description: task } } }
+      {
+        $pull: {
+          "lists.yearly.progress": {
+            title: todo.taskTitle,
+            description: todo.taskDescription,
+          },
+        },
+        $push: {
+          "lists.yearly.completed": {
+            title: todo.taskTitle,
+            description: todo.taskDescription,
+          },
+        },
+      }
+    );
+    return;
+  }
+};
+
+const DeleteCompletedTask = async (account, todo) => {
+  if (account.type === "daily") {
+    await AccountModel.findOneAndUpdate(
+      { email: account.email },
+      {
+        $pull: {
+          "lists.daily.completed": {
+            title: todo.taskTitle,
+            description: todo.taskDescription,
+          },
+        },
+      }
+    );
+    return;
+  }
+
+  if (account.type === "weekly") {
+    await AccountModel.findOneAndUpdate(
+      { email: account.email },
+      {
+        $pull: {
+          "lists.weekly.completed": {
+            title: todo.taskTitle,
+            description: todo.taskDescription,
+          },
+        },
+      }
+    );
+    return;
+  }
+
+  if (account.type === "monthly") {
+    await AccountModel.findOneAndUpdate(
+      { email: account.email },
+      {
+        $pull: {
+          "lists.monthly.completed": {
+            title: todo.taskTitle,
+            description: todo.taskDescription,
+          },
+        },
+      }
+    );
+    return;
+  }
+
+  if (account.type === "yearly") {
+    await AccountModel.findOneAndUpdate(
+      { email: account.email },
+      {
+        $pull: {
+          "lists.yearly.completed": {
+            title: todo.taskTitle,
+            description: todo.taskDescription,
+          },
+        },
+      }
     );
     return;
   }

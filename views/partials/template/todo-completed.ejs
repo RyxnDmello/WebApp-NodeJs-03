@@ -1,19 +1,32 @@
 <article id="list">
   <% todo.completed.forEach((task) => { %>
   <form class="task" action="<%= todo.postURL %>" method="post">
-    <div class="task-controller">
-      <button
-        class="task-button"
-        name="deleteCompletedTask"
-        value="<%= task.description %>"
-      >
-        <img class="task-button-image" src="/lists/delete.png" />
-      </button>
-    </div>
+    <input type="hidden" name="taskTitle" value="<%= task.title %>" />
+    <input
+      type="hidden"
+      name="taskDescription"
+      value="<%= task.description %>"
+    />
+
+    <article class="task-header">
+      <h2 class="task-title"><%= task.title %></h2>
+
+      <div class="task-controller">
+        <button
+          value="DeleteCompletedTask"
+          class="task-button"
+          name="taskButton"
+        >
+          <img class="task-button-image" src="/lists/delete.png" />
+        </button>
+      </div>
+    </article>
 
     <hr class="task-divider" />
 
-    <h3 class="task-text"><%= task.description %></h3>
+    <article class="task-body">
+      <h3 class="task-description"><%= task.description %></h3>
+    </article>
   </form>
   <% }) %>
 </article>

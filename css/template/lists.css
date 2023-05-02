@@ -20,6 +20,18 @@
   gap: 1rem;
 }
 
+/*-------------------------------------*/
+/*------------ TASK HEADER ------------*/
+/*-------------------------------------*/
+
+.task-header {
+  justify-content: space-between;
+  grid-auto-flow: column;
+  align-items: center;
+  display: grid;
+  gap: 2rem;
+}
+
 .task {
   padding: 1rem 0.8rem 0.45rem 0.8rem;
   border: 2px solid #ffffff10;
@@ -32,13 +44,30 @@
   gap: 0.65rem;
 }
 
-.task-text {
+.task-index {
   font-family: "Poppins", sans-serif;
-  letter-spacing: 0.25px;
-  font-size: 1.25rem;
-  font-weight: 200;
+  letter-spacing: 0.5px;
+  font-size: 1.5rem;
+  font-weight: 300;
   cursor: default;
   color: #fff;
+}
+
+.task-title {
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.5px;
+  font-size: 1.5rem;
+  font-weight: 400;
+  cursor: default;
+  color: #fff;
+}
+
+.task-description {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: #a0a0a0;
+  cursor: default;
 }
 
 /*---------------------------------------------*/
@@ -47,8 +76,10 @@
 
 .task-controller {
   grid-template-columns: repeat(2, auto);
+  border-left: 2px solid #ffffff10;
   justify-content: right;
   align-items: center;
+  padding-left: 1rem;
   display: grid;
   gap: 0.65rem;
 }
