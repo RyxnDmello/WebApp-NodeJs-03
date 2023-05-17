@@ -2,26 +2,21 @@ const bcrypt = require("bcrypt");
 
 const AccountModel = require("./ModelManager.js");
 
-const CreateAccount = (account, request, response) => {
-  AccountModel.findOne({ email: account.email })
+const ManageAccount = async (account, request, response) => {
+  await AccountModel.findOne({ email: account.email })
     .then((profile) => {
       if (account.password !== account.retypePassword) {
-        console.log("PASSWORD MISMATCH");
         response.redirect("/");
         return;
       }
 
       bcrypt.compare(account.password, profile.password).then((isValid) => {
         if (!isValid) {
-          console.log("PASSWORD INCORRECT");
           response.redirect("/");
           return;
         }
 
-        console.log("LOGGED IN");
-
         request.session.email = profile.email;
-
         response.redirect("/");
       });
     })
@@ -60,13 +55,10 @@ const DatabaseCreateAccount = (account, request, response) => {
     });
 
     request.session.email = account.email;
-
     ClientAccount.save();
   });
-
-  console.log("ACCOUNT CREATED");
 
   response.redirect("/");
 };
 
-module.exports.CreateAccount = CreateAccount;
+module.exports.ManageAccount = ManageAccount;

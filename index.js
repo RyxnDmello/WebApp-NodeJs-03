@@ -29,14 +29,25 @@ app.get("/", (req, res) => {
   res.render("home");
 });
 
-app.post("/account/register", (req, res) => {
+app.post("/account/:type", async (req, res) => {
+  if (req.params.type === "create") {
+    const account = {
+      email: req.body.email,
+      password: req.body.password,
+      retypePassword: req.body.password,
+    };
+
+    TodoManager.ManageTodoAccount(account, req, res);
+    return;
+  }
+
   const account = {
     email: req.body.email,
     password: req.body.password,
-    retypePassword: req.body.retype,
+    retypePassword: req.body.retypePassword,
   };
 
-  TodoManager.CreateTodoAccount(account, req, res);
+  TodoManager.ManageTodoAccount(account, req, res);
 });
 
 app.get("/todo/:type", (req, res) => {

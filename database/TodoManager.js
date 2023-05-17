@@ -4,8 +4,8 @@ const AccountManager = require("./AccountManager.js");
 const DisplayManager = require("./DisplayManager.js");
 const TaskManager = require("./TaskManager.js");
 
-module.exports.CreateTodoAccount = (account, request, response) => {
-  AccountManager.CreateAccount(account, request, response);
+module.exports.ManageTodoAccount = async (account, request, response) => {
+  AccountManager.ManageAccount(account, request, response);
 };
 
 module.exports.DisplayTodoLists = (account, response) => {
