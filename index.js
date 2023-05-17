@@ -1,11 +1,20 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const session = require("express-session");
 
 const TodoManager = require(__dirname + "/database/TodoManager.js");
 
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: "true" }));
+
+app.use(
+  session({
+    secret: "WebApp-Personal-03",
+    saveUninitialized: false,
+    resave: false,
+  })
+);
 
 app.use(express.static("./JavaScript"));
 app.use(express.static("./images"));
@@ -27,23 +36,33 @@ app.post("/account/register", (req, res) => {
     retypePassword: req.body.retype,
   };
 
-  TodoManager.CreateTodoAccount(account, res);
+  TodoManager.CreateTodoAccount(account, req, res);
 });
 
-app.get("/account/:email/:password/todo/template/:type", (req, res) => {
+app.get("/todo/:type", (req, res) => {
+  if (req.session.email === undefined) {
+    res.redirect("/");
+    return;
+  }
+
   const account = {
-    email: req.params.email,
-    password: req.params.password,
+    email: req.session.email,
+    password: req.session.password,
     type: req.params.type,
   };
 
   TodoManager.DisplayTodoLists(account, res);
 });
 
-app.post("/account/:email/:password/todo/template/:type", async (req, res) => {
+app.post("/todo/:type", async (req, res) => {
+  if (req.session.email === undefined) {
+    res.redirect("/");
+    return;
+  }
+
   const account = {
-    email: req.params.email,
-    password: req.params.password,
+    email: req.session.email,
+    password: req.session.password,
     type: req.params.type,
   };
 
@@ -51,6 +70,7 @@ app.post("/account/:email/:password/todo/template/:type", async (req, res) => {
     taskButton: req.body.taskButton,
     taskTitle: req.body.taskTitle,
     taskDescription: req.body.taskDescription,
+    taskPriority: "Priority",
   };
 
   TodoManager.ManageTodoLists(account, todo, res);

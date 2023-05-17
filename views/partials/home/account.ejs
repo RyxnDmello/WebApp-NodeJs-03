@@ -10,18 +10,36 @@
     <form class="register-form" action="/account/register" method="post">
       <div class="input-container email">
         <h3 class="input-label">Email</h3>
-        <input class="input" type="email" name="email" />
+        <input
+          autocomplete="off"
+          class="input"
+          type="email"
+          name="email"
+          required
+        />
       </div>
 
       <div class="input-container password">
         <h3 class="input-label">Password</h3>
-        <input class="input" type="password" name="password" />
+        <input
+          autocomplete="off"
+          type="password"
+          name="password"
+          class="input"
+          required
+        />
       </div>
 
       <% if(i === 1) { %>
       <div class="input-container password">
         <h3 class="input-label">Retype Password</h3>
-        <input class="input" type="password" name="retype" />
+        <input
+          autocomplete="off"
+          type="password"
+          name="retype"
+          class="input"
+          required
+        />
       </div>
       <% } %>
 

@@ -1,5 +1,16 @@
 const DisplayLists = (account, profile, response) => {
-  const postURL = `/account/${account.email}/${account.password}/todo/template/${account.type}`;
+  const postURL = `/todo/${account.type}`;
+
+  if (account.type === "personal") {
+    const todo = {
+      progress: profile.lists.personal.progress,
+      completed: profile.lists.personal.completed,
+      postURL: postURL,
+    };
+
+    RenderTemplate(todo, response);
+    return;
+  }
 
   if (account.type === "daily") {
     const todo = {

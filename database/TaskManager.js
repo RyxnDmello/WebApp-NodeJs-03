@@ -1,6 +1,27 @@
+const { DateTime } = require("luxon");
+
 const AccountModel = require("./ModelManager.js");
 
+const currentDate = DateTime.now().toFormat("MM/dd/yyyy");
+
 const AddProgressTask = async (account, todo) => {
+  if (account.type === "personal") {
+    await AccountModel.findOneAndUpdate(
+      { email: account.email },
+      {
+        $push: {
+          "lists.personal.progress": {
+            title: todo.taskTitle,
+            description: todo.taskDescription,
+            priority: todo.taskPriority,
+            date: currentDate,
+          },
+        },
+      }
+    );
+    return;
+  }
+
   if (account.type === "daily") {
     await AccountModel.findOneAndUpdate(
       { email: account.email },
@@ -9,6 +30,8 @@ const AddProgressTask = async (account, todo) => {
           "lists.daily.progress": {
             title: todo.taskTitle,
             description: todo.taskDescription,
+            priority: todo.taskPriority,
+            date: currentDate,
           },
         },
       }
@@ -24,6 +47,8 @@ const AddProgressTask = async (account, todo) => {
           "lists.weekly.progress": {
             title: todo.taskTitle,
             description: todo.taskDescription,
+            priority: todo.taskPriority,
+            date: currentDate,
           },
         },
       }
@@ -39,6 +64,8 @@ const AddProgressTask = async (account, todo) => {
           "lists.monthly.progress": {
             title: todo.taskTitle,
             description: todo.taskDescription,
+            priority: todo.taskPriority,
+            date: currentDate,
           },
         },
       }
@@ -54,6 +81,8 @@ const AddProgressTask = async (account, todo) => {
           "lists.yearly.progress": {
             title: todo.taskTitle,
             description: todo.taskDescription,
+            priority: todo.taskPriority,
+            date: currentDate,
           },
         },
       }
@@ -63,6 +92,22 @@ const AddProgressTask = async (account, todo) => {
 };
 
 const DeleteProgressTask = async (account, todo) => {
+  if (account.type === "personal") {
+    await AccountModel.findOneAndUpdate(
+      { email: account.email },
+      {
+        $pull: {
+          "lists.personal.progress": {
+            title: todo.taskTitle,
+            description: todo.taskDescription,
+            priority: todo.taskPriority,
+          },
+        },
+      }
+    );
+    return;
+  }
+
   if (account.type === "daily") {
     await AccountModel.findOneAndUpdate(
       { email: account.email },
@@ -71,6 +116,7 @@ const DeleteProgressTask = async (account, todo) => {
           "lists.daily.progress": {
             title: todo.taskTitle,
             description: todo.taskDescription,
+            priority: todo.taskPriority,
           },
         },
       }
@@ -86,6 +132,7 @@ const DeleteProgressTask = async (account, todo) => {
           "lists.weekly.progress": {
             title: todo.taskTitle,
             description: todo.taskDescription,
+            priority: todo.taskPriority,
           },
         },
       }
@@ -101,6 +148,7 @@ const DeleteProgressTask = async (account, todo) => {
           "lists.monthly.progress": {
             title: todo.taskTitle,
             description: todo.taskDescription,
+            priority: todo.taskPriority,
           },
         },
       }
@@ -116,6 +164,7 @@ const DeleteProgressTask = async (account, todo) => {
           "lists.yearly.progress": {
             title: todo.taskTitle,
             description: todo.taskDescription,
+            priority: todo.taskPriority,
           },
         },
       }
@@ -125,6 +174,30 @@ const DeleteProgressTask = async (account, todo) => {
 };
 
 const AddCompletedTask = async (account, todo) => {
+  if (account.type === "personal") {
+    await AccountModel.findOneAndUpdate(
+      { email: account.email },
+      {
+        $pull: {
+          "lists.personal.progress": {
+            title: todo.taskTitle,
+            description: todo.taskDescription,
+            priority: todo.taskPriority,
+          },
+        },
+        $push: {
+          "lists.personal.completed": {
+            title: todo.taskTitle,
+            description: todo.taskDescription,
+            priority: todo.taskPriority,
+            date: currentDate,
+          },
+        },
+      }
+    );
+    return;
+  }
+
   if (account.type === "daily") {
     await AccountModel.findOneAndUpdate(
       { email: account.email },
@@ -133,12 +206,15 @@ const AddCompletedTask = async (account, todo) => {
           "lists.daily.progress": {
             title: todo.taskTitle,
             description: todo.taskDescription,
+            priority: todo.taskPriority,
           },
         },
         $push: {
           "lists.daily.completed": {
             title: todo.taskTitle,
             description: todo.taskDescription,
+            priority: todo.taskPriority,
+            date: currentDate,
           },
         },
       }
@@ -154,12 +230,15 @@ const AddCompletedTask = async (account, todo) => {
           "lists.weekly.progress": {
             title: todo.taskTitle,
             description: todo.taskDescription,
+            priority: todo.taskPriority,
           },
         },
         $push: {
           "lists.weekly.completed": {
             title: todo.taskTitle,
             description: todo.taskDescription,
+            priority: todo.taskPriority,
+            date: currentDate,
           },
         },
       }
@@ -175,12 +254,15 @@ const AddCompletedTask = async (account, todo) => {
           "lists.monthly.progress": {
             title: todo.taskTitle,
             description: todo.taskDescription,
+            priority: todo.taskPriority,
           },
         },
         $push: {
           "lists.monthly.completed": {
             title: todo.taskTitle,
             description: todo.taskDescription,
+            priority: todo.taskPriority,
+            date: currentDate,
           },
         },
       }
@@ -196,12 +278,15 @@ const AddCompletedTask = async (account, todo) => {
           "lists.yearly.progress": {
             title: todo.taskTitle,
             description: todo.taskDescription,
+            priority: todo.taskPriority,
           },
         },
         $push: {
           "lists.yearly.completed": {
             title: todo.taskTitle,
             description: todo.taskDescription,
+            priority: todo.taskPriority,
+            date: currentDate,
           },
         },
       }
@@ -211,6 +296,22 @@ const AddCompletedTask = async (account, todo) => {
 };
 
 const DeleteCompletedTask = async (account, todo) => {
+  if (account.type === "personal") {
+    await AccountModel.findOneAndUpdate(
+      { email: account.email },
+      {
+        $pull: {
+          "lists.personal.completed": {
+            title: todo.taskTitle,
+            description: todo.taskDescription,
+            priority: todo.taskPriority,
+          },
+        },
+      }
+    );
+    return;
+  }
+
   if (account.type === "daily") {
     await AccountModel.findOneAndUpdate(
       { email: account.email },
@@ -219,6 +320,7 @@ const DeleteCompletedTask = async (account, todo) => {
           "lists.daily.completed": {
             title: todo.taskTitle,
             description: todo.taskDescription,
+            priority: todo.taskPriority,
           },
         },
       }
@@ -234,6 +336,7 @@ const DeleteCompletedTask = async (account, todo) => {
           "lists.weekly.completed": {
             title: todo.taskTitle,
             description: todo.taskDescription,
+            priority: todo.taskPriority,
           },
         },
       }
@@ -249,6 +352,7 @@ const DeleteCompletedTask = async (account, todo) => {
           "lists.monthly.completed": {
             title: todo.taskTitle,
             description: todo.taskDescription,
+            priority: todo.taskPriority,
           },
         },
       }
@@ -264,6 +368,7 @@ const DeleteCompletedTask = async (account, todo) => {
           "lists.yearly.completed": {
             title: todo.taskTitle,
             description: todo.taskDescription,
+            priority: todo.taskPriority,
           },
         },
       }

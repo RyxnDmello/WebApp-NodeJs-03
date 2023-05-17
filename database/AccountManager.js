@@ -1,50 +1,70 @@
+const bcrypt = require("bcrypt");
+
 const AccountModel = require("./ModelManager.js");
 
-const CreateAccount = (account, response) => {
+const CreateAccount = (account, request, response) => {
   AccountModel.findOne({ email: account.email })
     .then((profile) => {
-      if (profile.password !== account.password) {
+      if (account.password !== account.retypePassword) {
+        console.log("PASSWORD MISMATCH");
         response.redirect("/");
         return;
       }
 
-      if (profile.password !== account.retypePassword) {
-        response.redirect("/");
-        return;
-      }
+      bcrypt.compare(account.password, profile.password).then((isValid) => {
+        if (!isValid) {
+          console.log("PASSWORD INCORRECT");
+          response.redirect("/");
+          return;
+        }
 
-      response.redirect("/");
+        console.log("LOGGED IN");
+
+        request.session.email = profile.email;
+
+        response.redirect("/");
+      });
     })
     .catch(() => {
-      DatabaseCreateAccount(account, response);
+      DatabaseCreateAccount(account, request, response);
     });
 };
 
-const DatabaseCreateAccount = (account, response) => {
-  const profile = new AccountModel({
-    email: account.email,
-    password: account.password,
-    lists: {
-      daily: {
-        progress: [],
-        completed: [],
+const DatabaseCreateAccount = (account, request, response) => {
+  bcrypt.hash(account.password, 10).then(function (hash) {
+    const ClientAccount = new AccountModel({
+      email: account.email,
+      password: hash,
+      lists: {
+        personal: {
+          progress: [],
+          completed: [],
+        },
+        daily: {
+          progress: [],
+          completed: [],
+        },
+        weekly: {
+          progress: [],
+          completed: [],
+        },
+        monthly: {
+          progress: [],
+          completed: [],
+        },
+        yearly: {
+          progress: [],
+          completed: [],
+        },
       },
-      weekly: {
-        progress: [],
-        completed: [],
-      },
-      monthly: {
-        progress: [],
-        completed: [],
-      },
-      yearly: {
-        progress: [],
-        completed: [],
-      },
-    },
+    });
+
+    request.session.email = account.email;
+
+    ClientAccount.save();
   });
 
-  profile.save();
+  console.log("ACCOUNT CREATED");
 
   response.redirect("/");
 };

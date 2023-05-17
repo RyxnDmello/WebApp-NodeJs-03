@@ -7,20 +7,42 @@ mongoose.connect(
 
 const TaskSchema = new mongoose.Schema({
   title: {
-    require: true,
+    required: true,
     type: String,
   },
   description: {
-    require: true,
+    required: true,
+    type: String,
+  },
+  priority: {
+    required: true,
     type: String,
   },
   date: {
-    require: true,
+    required: true,
     type: String,
   },
 });
 
 const ListsSchema = new mongoose.Schema({
+  personal: {
+    _id: false,
+    type: {
+      progress: [
+        {
+          type: TaskSchema,
+          _id: false,
+        },
+      ],
+      completed: [
+        {
+          type: TaskSchema,
+          _id: false,
+        },
+      ],
+    },
+    required: true,
+  },
   daily: {
     _id: false,
     type: {
@@ -37,7 +59,7 @@ const ListsSchema = new mongoose.Schema({
         },
       ],
     },
-    require: true,
+    required: true,
   },
   weekly: {
     _id: false,
@@ -55,7 +77,7 @@ const ListsSchema = new mongoose.Schema({
         },
       ],
     },
-    require: true,
+    required: true,
   },
   monthly: {
     _id: false,
@@ -73,7 +95,7 @@ const ListsSchema = new mongoose.Schema({
         },
       ],
     },
-    require: true,
+    required: true,
   },
   yearly: {
     _id: false,
@@ -91,7 +113,7 @@ const ListsSchema = new mongoose.Schema({
         },
       ],
     },
-    require: true,
+    required: true,
   },
 });
 
@@ -107,7 +129,7 @@ const AccountSchema = new mongoose.Schema({
   lists: {
     _id: false,
     type: ListsSchema,
-    require: true,
+    required: true,
   },
 });
 
