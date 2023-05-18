@@ -9,10 +9,12 @@
 </section>
 
 <form id="todo-form" action="<%= todo.postURL %>" method="post">
-  <div class="input-block">
+  <hr class="todo-form-divider" />
+
+  <div class="todo-form-inputs-container">
     <input
+      class="todo-form-input"
       placeholder="Title"
-      class="todo-input"
       name="taskTitle"
       required="true"
       maxlength="25"
@@ -21,15 +23,52 @@
 
     <input
       placeholder="Description"
+      class="todo-form-input"
       name="taskDescription"
-      class="todo-input"
       required="true"
       maxlength="50"
       type="text"
     />
   </div>
 
-  <div class="todo-form-button-container">
+  <hr class="todo-form-divider" />
+
+  <div class="todo-form-priority-container">
+    <div class="todo-form-radio-block">
+      <input
+        id="todo-form-radio-high"
+        name="taskPriority"
+        value="high"
+        type="radio"
+        required
+      />
+      <label for="todo-form-radio-high">High Priority</label>
+    </div>
+
+    <div class="todo-form-radio-block">
+      <input
+        id="todo-form-radio-medium"
+        name="taskPriority"
+        value="medium"
+        type="radio"
+        required
+      />
+      <label for="todo-form-radio-medium">Medium Priority</label>
+    </div>
+
+    <div class="todo-form-radio-block">
+      <input
+        id="todo-form-radio-low"
+        name="taskPriority"
+        type="radio"
+        value="low"
+        required
+      />
+      <label for="todo-form-radio-low">Low Priority</label>
+    </div>
+  </div>
+
+  <div class="todo-form-buttons-container">
     <button
       class="todo-form-button add"
       value="AddProgressTask"

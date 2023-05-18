@@ -38,7 +38,6 @@
   border-radius: 5px;
   position: relative;
   display: grid;
-  gap: 0.5rem;
 }
 
 /*----------------------------------------------*/
@@ -94,69 +93,72 @@
 /*----------- TASK SECONDARY DETAILS -----------*/
 /*----------------------------------------------*/
 
-.task.progress .task-secondary-details {
+.task.task.progress .task-secondary-details,
+.task.task.completed .task-secondary-details {
   grid-template-columns: auto;
-  justify-content: left;
   align-items: center;
   display: grid;
+}
+
+.task.progress .task-secondary-details {
+  justify-content: left;
 }
 
 .task.completed .task-secondary-details {
   grid-template-columns: auto;
   justify-content: right;
-  align-items: center;
-  display: grid;
 }
 
 .task-date {
   font-family: "Poppins", sans-serif;
+  margin-top: 0.65rem;
   font-weight: 300;
   color: #a0a0a0;
   font-size: 1rem;
   cursor: default;
 }
 
-/*----------------------------------------------*/
+/*---------------------------------------------*/
 /*----------- TASK PRIORITY DETAILS -----------*/
-/*----------------------------------------------*/
+/*---------------------------------------------*/
 
-.task.high::before {
+.task::after,
+.task::before {
+  box-shadow: 2.5px 2.5px #000;
+  border-radius: 40px;
+  height: 100%;
+  content: "";
+  width: 5px;
+}
+
+.task.progress.high::before,
+.task.completed.high::after {
   background-color: #ff0000a8;
-  border-radius: 40px;
   position: absolute;
-  height: 100%;
-  content: "";
-  width: 5px;
 }
 
-.task.medium::before {
+.task.progress.medium::before,
+.task.completed.medium::after {
   background-color: #0026ffa8;
-  border-radius: 40px;
   position: absolute;
-  height: 100%;
-  content: "";
-  width: 5px;
 }
 
-.task.low::before {
+.task.progress.low::before,
+.task.completed.low::after {
   background-color: #48ff00a8;
-  border-radius: 40px;
   position: absolute;
-  height: 100%;
-  content: "";
-  width: 5px;
 }
 
 .task.progress.task.high::before,
 .task.progress.task.task.medium::before,
 .task.progress.task.task.task.low::before {
-  left: 15px;
+  left: -15px;
 }
 
 .task.completed.task.high::after,
 .task.completed.task.task.medium::after,
 .task.completed.task.task.task.low::after {
-  right: 15px;
+  right: -15px;
 }
 
 /*---------------------------------------------*/

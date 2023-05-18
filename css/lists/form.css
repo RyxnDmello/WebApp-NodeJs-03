@@ -7,14 +7,21 @@
   justify-content: stretch;
   align-items: stretch;
   display: grid;
-  gap: 1rem;
+  gap: 1.25rem;
+}
+
+.todo-form-divider {
+  border-top: 2px solid #ffffff08;
+  border-bottom: none;
+  border-right: none;
+  border-left: none;
 }
 
 /*----------------------------------*/
 /*------------- INPUTS -------------*/
 /*----------------------------------*/
 
-.input-block {
+.todo-form-inputs-container {
   grid-template-columns: auto;
   justify-content: stretch;
   align-items: center;
@@ -22,12 +29,12 @@
   gap: 0.65rem;
 }
 
-.todo-input {
+.todo-form-input {
+  padding: 0.65rem 0.65rem 0.5rem 0.65rem;
   font-family: "Poppins", sans-serif;
   background-color: transparent;
   border: 2px solid #ffffff10;
   box-shadow: 4px 4px #000;
-  padding: 0.65rem 0.65rem;
   outline: transparent;
   font-size: 1.5rem;
   font-weight: 300;
@@ -35,7 +42,7 @@
   color: #fff;
 }
 
-.todo-input::placeholder {
+.todo-form-input::placeholder {
   font-family: "Poppins", sans-serif;
   transition: opacity 300ms;
   letter-spacing: 0.5px;
@@ -44,15 +51,63 @@
   color: #fff;
 }
 
-.todo-input:hover::placeholder {
+.todo-form-input:hover::placeholder {
   opacity: 0;
+}
+
+/*----------------------------------*/
+/*------------- RADIOS -------------*/
+/*----------------------------------*/
+
+.todo-form-priority-container {
+  justify-content: stretch;
+  grid-auto-flow: column;
+  align-items: center;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.todo-form-radio-block {
+  box-shadow: 4px 4px #000;
+  justify-content: stretch;
+  grid-auto-flow: column;
+  align-items: center;
+  display: grid;
+}
+
+.todo-form-radio-block > label {
+  transition: background-color 250ms, border-color 400ms;
+  font-family: "Poppins", sans-serif;
+  border: 2px solid #ffffff10;
+  padding: 0.5rem 0 0.3rem 0;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 200;
+  cursor: pointer;
+  color: #fff;
+}
+
+.todo-form-radio-block:nth-of-type(1) > label:hover {
+  border: 2px solid #ff000050;
+}
+
+.todo-form-radio-block:nth-of-type(2) > label:hover {
+  border: 2px solid #0400ff50;
+}
+
+.todo-form-radio-block:nth-of-type(3) > label:hover {
+  border: 2px solid #00ff0050;
+}
+
+input[type="radio"] {
+  display: none;
 }
 
 /*---------------------------------*/
 /*------------ BUTTONS ------------*/
 /*---------------------------------*/
 
-.todo-form-button-container {
+.todo-form-buttons-container {
   justify-content: stretch;
   grid-auto-flow: column;
   align-items: center;
@@ -97,6 +152,18 @@
 /*-----------------------------------------------*/
 /*----------------- TRANSITIONS -----------------*/
 /*-----------------------------------------------*/
+
+.todo-form-radio-block:nth-of-type(1) > input[type="radio"]:checked + label {
+  background-color: #ff000070;
+}
+
+.todo-form-radio-block:nth-of-type(2) > input[type="radio"]:checked + label {
+  background-color: #0400ff70;
+}
+
+.todo-form-radio-block:nth-of-type(3) > input[type="radio"]:checked + label {
+  background-color: #00ff0070;
+}
 
 .todo-form-button.add:hover {
   background-color: #000097;

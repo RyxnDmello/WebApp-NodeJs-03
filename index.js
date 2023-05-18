@@ -83,7 +83,7 @@ app.post("/todo/:type", async (req, res) => {
     taskButton: req.body.taskButton,
     taskTitle: req.body.taskTitle,
     taskDescription: req.body.taskDescription,
-    taskPriority: "Priority",
+    taskPriority: req.body.taskPriority,
   };
 
   TodoManager.ManageTodoLists(account, todo, res);
