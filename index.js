@@ -26,6 +26,8 @@ app.set("view engine", "ejs");
 const PORT = 1000;
 
 app.get("/", (req, res) => {
+  req.session.email = "test@gmail.com";
+  // console.log(`Session Email: ${req.session.email}`);
   res.render("home");
 });
 

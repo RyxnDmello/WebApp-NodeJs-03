@@ -16,7 +16,7 @@ const ManageAccount = async (account, request, response) => {
           return;
         }
 
-        request.session.email = profile.email;
+        request.session.email = account.email;
         response.redirect("/");
       });
     })

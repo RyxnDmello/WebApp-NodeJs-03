@@ -7,7 +7,7 @@
   justify-content: stretch;
   align-items: flex-start;
   display: grid;
-  gap: 2rem;
+  gap: 0 3rem;
 }
 
 #list {
@@ -17,12 +17,44 @@
   max-width: 650px;
   min-width: 300px;
   display: grid;
-  gap: 1rem;
+  gap: 2rem;
 }
 
-/*-------------------------------------*/
-/*------------ TASK HEADER ------------*/
-/*-------------------------------------*/
+.list-title {
+  font-family: "Poppins", sans-serif;
+  margin-bottom: -1rem;
+  font-weight: 100;
+  font-size: 4rem;
+  color: #fff;
+}
+
+/*---------------------------------------*/
+/*------------- TASK STYLES -------------*/
+/*---------------------------------------*/
+
+.task {
+  grid-template-columns: auto;
+  justify-content: stretch;
+  border-radius: 5px;
+  position: relative;
+  display: grid;
+  gap: 0.5rem;
+}
+
+/*----------------------------------------------*/
+/*------------ TASK PRIMARY DETAILS ------------*/
+/*----------------------------------------------*/
+
+.task-primary-details {
+  padding: 1rem 0.8rem 0.45rem 0.8rem;
+  border: 2px solid #ffffff10;
+  grid-template-columns: auto;
+  box-shadow: 4px 4px #000;
+  justify-content: stretch;
+  align-items: center;
+  display: grid;
+  gap: 0.65rem;
+}
 
 .task-header {
   justify-content: space-between;
@@ -30,18 +62,6 @@
   align-items: center;
   display: grid;
   gap: 2rem;
-}
-
-.task {
-  padding: 1rem 0.8rem 0.45rem 0.8rem;
-  border: 2px solid #ffffff10;
-  grid-template-columns: auto;
-  box-shadow: 4px 4px #000;
-  justify-content: stretch;
-  align-items: center;
-  border-radius: 5px;
-  display: grid;
-  gap: 0.65rem;
 }
 
 .task-index {
@@ -68,6 +88,75 @@
   font-weight: 300;
   color: #a0a0a0;
   cursor: default;
+}
+
+/*----------------------------------------------*/
+/*----------- TASK SECONDARY DETAILS -----------*/
+/*----------------------------------------------*/
+
+.task.progress .task-secondary-details {
+  grid-template-columns: auto;
+  justify-content: left;
+  align-items: center;
+  display: grid;
+}
+
+.task.completed .task-secondary-details {
+  grid-template-columns: auto;
+  justify-content: right;
+  align-items: center;
+  display: grid;
+}
+
+.task-date {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  color: #a0a0a0;
+  font-size: 1rem;
+  cursor: default;
+}
+
+/*----------------------------------------------*/
+/*----------- TASK PRIORITY DETAILS -----------*/
+/*----------------------------------------------*/
+
+.task.high::before {
+  background-color: #ff0000a8;
+  border-radius: 40px;
+  position: absolute;
+  height: 100%;
+  content: "";
+  width: 5px;
+}
+
+.task.medium::before {
+  background-color: #0026ffa8;
+  border-radius: 40px;
+  position: absolute;
+  height: 100%;
+  content: "";
+  width: 5px;
+}
+
+.task.low::before {
+  background-color: #48ff00a8;
+  border-radius: 40px;
+  position: absolute;
+  height: 100%;
+  content: "";
+  width: 5px;
+}
+
+.task.progress.task.high::before,
+.task.progress.task.task.medium::before,
+.task.progress.task.task.task.low::before {
+  left: 15px;
+}
+
+.task.completed.task.high::after,
+.task.completed.task.task.medium::after,
+.task.completed.task.task.task.low::after {
+  right: 15px;
 }
 
 /*---------------------------------------------*/

@@ -2,7 +2,7 @@ const { DateTime } = require("luxon");
 
 const AccountModel = require("./ModelManager.js");
 
-const currentDate = DateTime.now().toFormat("MM/dd/yyyy");
+const currentDate = DateTime.now().toFormat("MMMM dd, yyyy");
 
 const AddProgressTask = async (account, todo) => {
   if (account.type === "personal") {

@@ -1,0 +1,54 @@
+<% if(todo.progress.length !== 0) { %>
+<h1 class="list-title">PROGRESS</h1>
+<% } %>
+
+<article id="list">
+  <% todo.progress.forEach((task) => { %>
+  <form
+    class="task progress <%= task.priority %>"
+    action="<%= todo.postURL %>"
+    method="post"
+  >
+    <input type="hidden" name="taskTitle" value="<%= task.title %>" />
+    <input
+      type="hidden"
+      name="taskDescription"
+      value="<%= task.description %>"
+    />
+
+    <article class="task-primary-details">
+      <div class="task-header">
+        <h2 class="task-title"><%= task.title %></h2>
+
+        <div class="task-controller">
+          <button
+            value="DeleteProgressTask"
+            class="task-button"
+            name="taskButton"
+          >
+            <img class="task-button-image" src="/lists/delete.png" />
+          </button>
+
+          <button
+            class="task-button"
+            name="taskButton"
+            value="AddCompletedTask"
+          >
+            <img class="task-button-image" src="/lists/complete.png" />
+          </button>
+        </div>
+      </div>
+
+      <hr class="task-divider" />
+
+      <div class="task-body">
+        <h3 class="task-description"><%= task.description %></h3>
+      </div>
+    </article>
+
+    <article class="task-secondary-details">
+      <h3 class="task-date"><%= task.date %></h3>
+    </article>
+  </form>
+  <% }) %>
+</article>
