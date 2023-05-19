@@ -1,11 +1,11 @@
 const progressLength = document.querySelectorAll(".task.progress").length;
 const completedLength = document.querySelectorAll(".task.completed").length;
 
-const bar = document.querySelector(".todo-form-progress-bar-container");
-const fill = document.querySelector(".todo-form-progress-bar-fill");
+const bar = document.querySelector(".controller-progress-bar-container");
+const fill = document.querySelector(".controller-progress-bar-fill");
 
-const barPercent = document.querySelector(".todo-form-progress-bar-percentage");
-const barText = document.querySelector(".todo-form-progress-bar-text");
+const barPercent = document.querySelector(".controller-progress-bar-percentage");
+const barText = document.querySelector(".controller-progress-bar-text");
 
 export default function ProgressBar() {
   setTimeout(() => {

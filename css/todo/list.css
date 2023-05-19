@@ -1,0 +1,60 @@
+/*-----------------------------------------------------*/
+/*----------------- TASK LIST SECTION -----------------*/
+/*-----------------------------------------------------*/
+
+#task-list-section {
+  grid-template-columns: repeat(2, auto);
+  justify-content: stretch;
+  align-items: flex-start;
+  display: grid;
+  gap: 0 5rem;
+}
+
+.task-list-section-title {
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.5px;
+  margin-bottom: -1rem;
+  grid-column: span 2;
+  text-align: center;
+  font-weight: 200;
+  font-size: 3rem;
+  color: #fff;
+}
+
+/*---------------------------------------------*/
+/*------------ TASK LIST CONTAINER ------------*/
+/*---------------------------------------------*/
+
+.task-list-container {
+  grid-template-columns: auto;
+  justify-content: stretch;
+  align-items: center;
+  max-width: 600px;
+  min-width: 300px;
+  display: grid;
+  gap: 2rem;
+}
+
+.task-list-container-title {
+  font-family: "Poppins", sans-serif;
+  margin-bottom: -1rem;
+  font-weight: 100;
+  font-size: 4rem;
+  color: #fff;
+}
+
+.task-list-container:nth-of-type(2) .task-list-container-title {
+  text-align: right;
+}
+
+#task-list {
+  grid-template-columns: auto;
+  justify-content: stretch;
+  align-items: center;
+  display: grid;
+  gap: 2rem;
+}
+
+/*----------------------------------------------*/
+/*----------------- END OF CSS -----------------*/
+/*----------------------------------------------*/

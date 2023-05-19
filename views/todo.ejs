@@ -19,7 +19,7 @@
       rel="stylesheet"
     />
     <!-- #endregion Google Font Server -->
-    <link rel="stylesheet" href="/lists.css" />
+    <link rel="stylesheet" href="/todo.css" />
     <title>TaskTonic | <%= todo.type %></title>
   </head>
 
@@ -27,8 +27,8 @@
     <header id="header"><%- include("./partials/common/navbar.ejs") %></header>
 
     <main>
-      <section id="todo-section">
-        <%- include("./partials/lists/todo.ejs", { todo: todo }) %>
+      <section id="todo-lists-section">
+        <%- include("./partials/todo/lists.ejs", { todo: todo }) %>
       </section>
     </main>
 

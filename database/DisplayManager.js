@@ -65,7 +65,7 @@ const DisplayLists = (account, profile, response) => {
 };
 
 const RenderTemplate = (todo, response) => {
-  response.render("lists", { todo: todo });
+  response.render("todo", { todo: todo });
 };
 
 module.exports.DisplayLists = DisplayLists;

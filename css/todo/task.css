@@ -1,58 +1,20 @@
-/*----------------------------------------------------------*/
-/*-------------------- TODO LIST STYLES --------------------*/
-/*----------------------------------------------------------*/
-
-#todo-list-types {
-  grid-template-columns: repeat(2, auto);
-  justify-content: stretch;
-  align-items: flex-start;
-  display: grid;
-  gap: 0 5rem;
-}
-
-.todo-list-types-title {
-  font-family: "Poppins", sans-serif;
-  letter-spacing: 0.5px;
-  margin-bottom: -1rem;
-  grid-column: span 2;
-  text-align: center;
-  font-weight: 200;
-  font-size: 3rem;
-  color: #fff;
-}
-
-#list {
-  grid-template-columns: auto;
-  justify-content: stretch;
-  align-items: center;
-  max-width: 600px;
-  min-width: 300px;
-  display: grid;
-  gap: 2rem;
-}
-
-.list-title {
-  font-family: "Poppins", sans-serif;
-  margin-bottom: -1rem;
-  font-weight: 100;
-  font-size: 4rem;
-  color: #fff;
-}
-
-#list:nth-of-type(2) .list-title {
-  text-align: right;
-}
-
-/*---------------------------------------*/
-/*------------- TASK STYLES -------------*/
-/*---------------------------------------*/
+/*---------------------------------------------------*/
+/*------------------- TASK STYLES -------------------*/
+/*---------------------------------------------------*/
 
 .task {
   grid-template-columns: auto;
   justify-content: stretch;
-  border-radius: 5px;
   position: relative;
+  border-radius: 5px;
   display: grid;
+}
+
+.task-divider {
+  border-top: 2px solid #ffffff08;
+  border-bottom: none;
+  border-right: none;
+  border-left: none;
 }
 
 /*----------------------------------------------*/
