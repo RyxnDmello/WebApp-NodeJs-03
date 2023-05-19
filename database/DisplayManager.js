@@ -1,3 +1,5 @@
+const { startCase } = require("lodash");
+
 const DisplayLists = (account, profile, response) => {
   const postURL = `/todo/${account.type}`;
 
@@ -5,6 +7,7 @@ const DisplayLists = (account, profile, response) => {
     const todo = {
       progress: profile.lists.personal.progress,
       completed: profile.lists.personal.completed,
+      type: startCase(account.type),
       postURL: postURL,
     };
 
@@ -16,6 +19,7 @@ const DisplayLists = (account, profile, response) => {
     const todo = {
       progress: profile.lists.daily.progress,
       completed: profile.lists.daily.completed,
+      type: startCase(account.type),
       postURL: postURL,
     };
 
@@ -27,6 +31,7 @@ const DisplayLists = (account, profile, response) => {
     const todo = {
       progress: profile.lists.weekly.progress,
       completed: profile.lists.weekly.completed,
+      type: startCase(account.type),
       postURL: postURL,
     };
 
@@ -38,6 +43,7 @@ const DisplayLists = (account, profile, response) => {
     const todo = {
       progress: profile.lists.monthly.progress,
       completed: profile.lists.monthly.completed,
+      type: startCase(account.type),
       postURL: postURL,
     };
 
@@ -49,6 +55,7 @@ const DisplayLists = (account, profile, response) => {
     const todo = {
       progress: profile.lists.yearly.progress,
       completed: profile.lists.yearly.completed,
+      type: startCase(account.type),
       postURL: postURL,
     };
 

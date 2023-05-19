@@ -20,7 +20,7 @@
     />
     <!-- #endregion Google Font Server -->
     <link rel="stylesheet" href="/lists.css" />
-    <title>TaskTonic | Template</title>
+    <title>TaskTonic | <%= todo.type %></title>
   </head>
 
   <body>
@@ -31,5 +31,7 @@
         <%- include("./partials/lists/todo.ejs", { todo: todo }) %>
       </section>
     </main>
+
+    <script src="/Lists.js" type="module"></script>
   </body>
 </html>

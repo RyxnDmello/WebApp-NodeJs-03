@@ -83,8 +83,8 @@
   text-align: center;
   font-size: 1.25rem;
   font-weight: 200;
+  color: #cdcdcd;
   cursor: pointer;
-  color: #fff;
 }
 
 .todo-form-radio-block:nth-of-type(1) > label:hover {
@@ -147,6 +147,54 @@ input[type="radio"] {
 
 .todo-form-button-image {
   width: 30px;
+}
+
+/*------------------------------------------------*/
+/*----------------- PROGRESS BAR -----------------*/
+/*------------------------------------------------*/
+
+.todo-form-progress-bar-container {
+  grid-template-columns: auto;
+  justify-content: stretch;
+  align-items: center;
+  display: none;
+  gap: 0.25rem;
+}
+
+.todo-form-progress-bar {
+  border: 2px solid #0004ff5f;
+  border-radius: 40px;
+  position: relative;
+  overflow: hidden;
+  height: 15px;
+}
+
+.todo-form-progress-bar-fill {
+  background-color: #0002865f;
+  transition: width 1000ms;
+  border-radius: 40px;
+  position: absolute;
+  height: 100%;
+  content: "";
+  width: 0%;
+  left: 0;
+  top: 0;
+}
+
+.todo-form-progress-bar-details {
+  justify-content: space-between;
+  grid-auto-flow: column;
+  align-items: center;
+  display: grid;
+}
+
+.todo-form-progress-bar-percentage,
+.todo-form-progress-bar-text {
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.5px;
+  font-weight: 200;
+  font-size: 1rem;
+  color: #fff;
 }
 
 /*-----------------------------------------------*/

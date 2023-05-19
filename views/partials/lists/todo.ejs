@@ -1,4 +1,10 @@
 <section id="todo-list-types">
+  <% if(todo.progress.length === 0 && todo.completed.length === 0) { %>
+  <h1 class="todo-list-types-title">
+    MANAGE YOUR <%= todo.type.toUpperCase() %> TASKS
+  </h1>
+  <% } %>
+
   <article id="list">
     <%- include("./todo-progress.ejs", { todo: todo }) %>
   </article>
@@ -83,5 +89,18 @@
       <h4 class="todo-form-button-text">Clear Details</h4>
       <img class="todo-form-button-image" src="/lists/clear.png" />
     </button>
+  </div>
+
+  <hr class="todo-form-divider" />
+
+  <div class="todo-form-progress-bar-container">
+    <div class="todo-form-progress-bar">
+      <div class="todo-form-progress-bar-fill"></div>
+    </div>
+
+    <div class="todo-form-progress-bar-details">
+      <h4 class="todo-form-progress-bar-text">Empty List</h4>
+      <h4 class="todo-form-progress-bar-percentage">0% Completed</h4>
+    </div>
   </div>
 </form>
