@@ -4,16 +4,18 @@ const completedLength = document.querySelectorAll(".task.completed").length;
 const bar = document.querySelector(".controller-progress-bar-container");
 const fill = document.querySelector(".controller-progress-bar-fill");
 
-const barPercent = document.querySelector(".controller-progress-bar-percentage");
+const barPercent = document.querySelector(
+  ".controller-progress-bar-percentage"
+);
 const barText = document.querySelector(".controller-progress-bar-text");
 
 export default function ProgressBar() {
   setTimeout(() => {
-    SetPercentage();
+    SetProgressBarPercentage();
   }, 10);
 }
 
-function SetPercentage() {
+function SetProgressBarPercentage() {
   if (progressLength === 0 && completedLength === 0) {
     bar.style.display = "none";
     return;

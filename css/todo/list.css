@@ -2,6 +2,15 @@
 /*----------------- TASK LIST SECTION -----------------*/
 /*-----------------------------------------------------*/
 
+#todo-lists-section {
+  grid-template-columns: auto;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 0;
+  gap: 2.65rem 0;
+  display: grid;
+}
+
 #task-list-section {
   grid-template-columns: repeat(2, auto);
   justify-content: stretch;

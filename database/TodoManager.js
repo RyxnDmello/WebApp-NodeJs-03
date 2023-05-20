@@ -40,4 +40,10 @@ module.exports.ManageTodoLists = async (account, todo, response) => {
     response.redirect(getURL);
     return;
   }
+
+  if (todo.taskButton === "DeleteAllTasks") {
+    TaskManager.DeleteAllTasks(account);
+    response.redirect(getURL);
+    return;
+  }
 };

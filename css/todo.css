@@ -21,12 +21,3 @@ body {
   position: relative;
   z-index: -2;
 }
-
-#todo-lists-section {
-  grid-template-columns: auto;
-  justify-content: center;
-  align-items: center;
-  padding: 4rem 0;
-  gap: 2.65rem 0;
-  display: grid;
-}

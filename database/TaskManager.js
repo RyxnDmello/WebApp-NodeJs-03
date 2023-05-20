@@ -377,7 +377,60 @@ const DeleteCompletedTask = async (account, todo) => {
   }
 };
 
+const DeleteAllTasks = async (account) => {
+  if (account.type === "personal") {
+    await AccountModel.findOneAndUpdate(
+      { email: account.email },
+      {
+        $set: { "lists.personal.progress": [], "lists.personal.completed": [] },
+      }
+    );
+    return;
+  }
+
+  if (account.type === "daily") {
+    await AccountModel.findOneAndUpdate(
+      { email: account.email },
+      {
+        $set: { "lists.daily.progress": [], "lists.daily.completed": [] },
+      }
+    );
+    return;
+  }
+
+  if (account.type === "weekly") {
+    await AccountModel.findOneAndUpdate(
+      { email: account.email },
+      {
+        $set: { "lists.weekly.progress": [], "lists.weekly.completed": [] },
+      }
+    );
+    return;
+  }
+
+  if (account.type === "monthly") {
+    await AccountModel.findOneAndUpdate(
+      { email: account.email },
+      {
+        $set: { "lists.monthly.progress": [], "lists.monthly.completed": [] },
+      }
+    );
+    return;
+  }
+
+  if (account.type === "yearly") {
+    await AccountModel.findOneAndUpdate(
+      { email: account.email },
+      {
+        $set: { "lists.yearly.progress": [], "lists.yearly.completed": [] },
+      }
+    );
+    return;
+  }
+};
+
 module.exports.AddProgressTask = AddProgressTask;
 module.exports.DeleteProgressTask = DeleteProgressTask;
 module.exports.AddCompletedTask = AddCompletedTask;
 module.exports.DeleteCompletedTask = DeleteCompletedTask;
+module.exports.DeleteAllTasks = DeleteAllTasks;
