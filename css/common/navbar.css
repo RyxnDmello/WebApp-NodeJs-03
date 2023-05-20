@@ -7,8 +7,8 @@ nav {
   justify-content: space-between;
   box-shadow: 0 10px 20px;
   grid-auto-flow: column;
+  padding: 1.25rem 4rem;
   align-items: center;
-  padding: 2rem 4rem;
   display: grid;
 }
 
@@ -17,9 +17,52 @@ nav {
   transition: translate 450ms;
   text-shadow: 3px 3px #000;
   letter-spacing: 2px;
-  font-size: 2.25rem;
+  font-size: 2rem;
   cursor: pointer;
   color: #fff;
+}
+
+/*--------------------------------------*/
+/*------------- LIST LINKS -------------*/
+/*--------------------------------------*/
+
+.nav-links-container {
+  justify-content: center;
+  grid-auto-flow: column;
+  align-items: center;
+  display: grid;
+  gap: 2rem;
+}
+
+.nav-link-text {
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.5px;
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: #fff;
+}
+
+.nav-link.personal {
+  transition: background-color 400ms;
+  border: 2px solid #fff700;
+  padding: 0.25rem 1.5rem;
+  justify-content: center;
+  grid-auto-flow: column;
+  border-radius: 2.5px;
+  align-items: center;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.nav-link-image {
+  transition: filter 400ms;
+  width: 20px;
+}
+
+.nav-link.personal .nav-link-text {
+  transition: filter 400ms;
+  letter-spacing: 1px;
+  font-weight: 400;
 }
 
 /*---------------------------------------*/
@@ -28,6 +71,15 @@ nav {
 
 .nav-logo-link:hover .nav-logo {
   translate: 0 -5px;
+}
+
+.nav-link.personal:hover {
+  background-color: #fff700;
+}
+
+.nav-link.personal:hover .nav-link-text,
+.nav-link.personal:hover .nav-link-image {
+  filter: invert(1);
 }
 
 /*--------------------------------------------------*/

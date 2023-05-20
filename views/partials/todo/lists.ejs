@@ -1,7 +1,7 @@
 <% if(todo.progress.length !== 0 || todo.completed.length !== 0) { %>
 <form id="settings" action="<%= todo.postURL %>" method="post">
   <article class="settings-header">
-    <h1 class="settings-header-title">Daily Tasks</h1>
+    <h1 class="settings-header-title">My <%= todo.type %> List</h1>
   </article>
 
   <button
@@ -13,13 +13,15 @@
     <img class="settings-delete-button-image" src="/lists/remove.png" />
     <h4 class="settings-delete-button-text">Delete List</h4>
   </button>
+
+  <hr class="settings-divider" />
 </form>
 <% } %>
 
 <section id="task-list-section">
   <% if(todo.progress.length === 0 && todo.completed.length === 0) { %>
   <h1 class="task-list-section-title">
-    MANAGE YOUR <%= todo.type.toUpperCase() %> TASKS
+    ADD YOUR <%= todo.type.toUpperCase() %> TASKS
   </h1>
   <% } %>
 

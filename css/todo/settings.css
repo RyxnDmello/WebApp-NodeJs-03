@@ -3,11 +3,19 @@
 /*-------------------------------------------------------*/
 
 #settings {
+  grid-template-columns: repeat(2, auto);
   justify-content: space-between;
-  grid-auto-flow: column;
   align-content: center;
-  margin-bottom: 3rem;
   display: grid;
+  gap: 2rem 0;
+}
+
+.settings-divider {
+  border-bottom: 2px solid #ffffff08;
+  grid-column: span 2;
+  border-right: none;
+  border-left: none;
+  border-top: none;
 }
 
 /*-------------------------------------------*/
@@ -23,9 +31,9 @@
 
 .settings-header-title {
   font-family: "Poppins", sans-serif;
-  font-size: 1.5rem;
   font-weight: 200;
-  color: #fff;
+  color: #a0a0a0;
+  font-size: 2rem;
 }
 
 /*-----------------------------------------*/

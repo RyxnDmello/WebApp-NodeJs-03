@@ -1,5 +1,30 @@
 <nav>
   <a class="nav-logo-link" href="/">
-    <h1 class="nav-logo">TaskTonic</h1>
+    <h4 class="nav-logo">TaskTonic</h4>
   </a>
+
+  <div class="nav-links-container">
+    <% if(todo.type !== "Daily") { %>
+    <a class="nav-link" href="/todo/daily">
+      <h4 class="nav-link-text">Daily</h4>
+    </a>
+    <% } %> <% if(todo.type !== "Weekly") { %>
+    <a class="nav-link" href="/todo/weekly">
+      <h4 class="nav-link-text">Weekly</h4>
+    </a>
+    <% } %> <% if(todo.type !== "Monthly") { %>
+    <a class="nav-link" href="/todo/monthly">
+      <h4 class="nav-link-text">Monthly</h4>
+    </a>
+    <% } %> <% if(todo.type !== "Yearly") { %>
+    <a class="nav-link" href="/todo/yearly">
+      <h4 class="nav-link-text">Yearly</h4>
+    </a>
+    <% } %> <% if(todo.type !== "Personal") { %>
+    <a class="nav-link personal" href="/todo/personal">
+      <img class="nav-link-image" src="/buttons/personal.png" />
+      <h4 class="nav-link-text">Personal</h4>
+    </a>
+    <% } %>
+  </div>
 </nav>
