@@ -39,10 +39,17 @@
   <% } %>
 
   <div class="input-buttons-container">
+    <% if(type === "login") { %>
     <button class="input-button login" type="submit">
       <img class="input-button-image" src="/buttons/login.png" />
       <h3 class="input-button-text">Login Profile</h3>
     </button>
+    <% } else { %>
+    <button class="input-button login" type="submit">
+      <img class="input-button-image" src="/buttons/signup.png" />
+      <h3 class="input-button-text">Create Profile</h3>
+    </button>
+    <% } %>
 
     <button class="input-button reset" type="reset">
       <img class="input-button-image" src="/buttons/reset.png" />

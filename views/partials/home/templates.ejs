@@ -1,30 +1,26 @@
 <img class="template-image" src="/home/templates/notes.png" />
 
 <article class="template-carousel">
-  <% for(let i = 0; i < 4; i++) { %>
+  <% templates.forEach((template) => { %>
   <div class="template-slide">
     <div class="template-slide-text-container">
-      <h2 class="template-slide-title">YOUR DAILY NEEDS</h2>
-      <p class="template-slide-description">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse delectus
-        incidunt cupiditate at magnam, deserunt maiores non iure exercitationem
-        consequatur?
-      </p>
+      <h2 class="template-slide-title"><%= template.title %></h2>
+      <p class="template-slide-description"><%= template.description %></p>
     </div>
 
-    <a class="template-slide-link" href="">
+    <a class="template-slide-link" href="<%= template.URL %>">
       <h4 class="template-slide-link-text">Start Editing</h4>
       <img class="template-slide-link-image" src="/buttons/arrow.png" />
     </a>
   </div>
-  <% } %>
+  <% }) %>
 </article>
 
 <article class="template-carousel-controller">
   <img class="template-controller left" src="/home/templates/slide-left.png" />
 
   <div class="template-indicator-container">
-    <% for(let i = 0; i < 4; i++) { %>
+    <% for(let i = 0; i < templates.length; i++) { %>
     <img class="template-indicator" src="/buttons/indicator.png" />
     <% } %>
   </div>

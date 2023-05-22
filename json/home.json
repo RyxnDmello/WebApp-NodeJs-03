@@ -1,0 +1,114 @@
+{
+  "header": {
+    "lists": [
+      {
+        "URL": "todo/personal",
+        "name": "Personal"
+      },
+      {
+        "URL": "todo/daily",
+        "name": "Daily"
+      },
+      {
+        "URL": "todo/weekly",
+        "name": "Weekly"
+      },
+      {
+        "URL": "todo/monthly",
+        "name": "Monthly"
+      },
+      {
+        "URL": "todo/yearly",
+        "name": "Yearly"
+      }
+    ]
+  },
+  "templates": [
+    {
+      "title": "YOUR DAILY NEEDS",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse delectus incidunt cupiditate at magnam, deserunt maiores non iure exercitationem consequatur?",
+      "URL": "todo/daily"
+    },
+    {
+      "title": "YOUR WEEKLY NEEDS",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse delectus incidunt cupiditate at magnam, deserunt maiores non iure exercitationem consequatur?",
+      "URL": "todo/daily"
+    },
+    {
+      "title": "YOUR MONTHLY NEEDS",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse delectus incidunt cupiditate at magnam, deserunt maiores non iure exercitationem consequatur?",
+      "URL": "todo/daily"
+    },
+    {
+      "title": "YOUR YEARLY NEEDS",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse delectus incidunt cupiditate at magnam, deserunt maiores non iure exercitationem consequatur?",
+      "URL": "todo/daily"
+    }
+  ],
+  "custom": [
+    {
+      "image": "/home/custom/color.png",
+      "title": "Some Random Title",
+      "description": "Some Random Description Some Random Description Some Random Description Some Random Description"
+    },
+    {
+      "image": "/home/custom/color.png",
+      "title": "Some Random Title",
+      "description": "Some Random Description Some Random Description Some Random Description Some Random Description"
+    },
+    {
+      "image": "/home/custom/color.png",
+      "title": "Some Random Title",
+      "description": "Some Random Description Some Random Description Some Random Description Some Random Description"
+    },
+    {
+      "image": "/home/custom/color.png",
+      "title": "Some Random Title",
+      "description": "Some Random Description Some Random Description Some Random Description Some Random Description"
+    },
+    {
+      "image": "/home/custom/color.png",
+      "title": "Some Random Title",
+      "description": "Some Random Description Some Random Description Some Random Description Some Random Description"
+    },
+    {
+      "image": "/home/custom/color.png",
+      "title": "Some Random Title",
+      "description": "Some Random Description Some Random Description Some Random Description Some Random Description"
+    }
+  ],
+  "personal": [
+    {
+      "title": "FIRST SLIDE",
+      "description": "First slide description First slide description First slide description First slide description",
+      "image": "/home/personal/personal-1.png",
+      "linkURL": "/todo/personal",
+      "linkText": "Personal List"
+    },
+    {
+      "title": "SECOND SLIDE",
+      "description": "Second slide description Second slide description Second slide description Second slide description",
+      "image": "/home/personal/personal-2.png",
+      "linkURL": "#custom-section",
+      "linkText": "Explore Features"
+    }
+  ],
+  "inspired": [
+    {
+      "URL": "",
+      "image": "/home/inspired/trello.png"
+    },
+    {
+      "URL": "",
+      "image": "/home/inspired/trello.png"
+    },
+    {
+      "URL": "",
+      "image": "/home/inspired/trello.png"
+    },
+    {
+      "URL": "",
+      "image": "/home/inspired/trello.png"
+    }
+  ]
+}

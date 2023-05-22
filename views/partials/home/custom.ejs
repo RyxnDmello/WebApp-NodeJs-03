@@ -1,18 +1,14 @@
 <h1 class="custom-section-title">CREATE AND CUSTOMIZE YOUR OWN</h1>
 
 <article class="custom-features-container">
-  <% for(let i = 0; i < 6; i++) { %>
+  <% custom.forEach((custom) => { %>
   <div class="custom-feature">
-    <img class="custom-feature-image" src="/home/custom/color.png" />
+    <img class="custom-feature-image" src="<%= custom.image %>" />
 
     <div class="custom-feature-text-container">
-      <h2 class="custom-feature-title">Some Random Title</h2>
-
-      <p class="custom-feature-description">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique,
-        perferendis.
-      </p>
+      <h2 class="custom-feature-title"><%= custom.title %></h2>
+      <p class="custom-feature-description"><%= custom.description %></p>
     </div>
   </div>
-  <% } %>
+  <% }) %>
 </article>

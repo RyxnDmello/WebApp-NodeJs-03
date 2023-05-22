@@ -62,15 +62,16 @@
       </section>
 
       <section id="templates-section">
-        <%- include("./partials/home/templates.ejs") %>
+        <%- include("./partials/home/templates.ejs", { templates: templates })
+        %>
       </section>
 
       <section id="custom-section">
-        <%- include("./partials/home/custom.ejs") %>
+        <%- include("./partials/home/custom.ejs", { custom: custom }) %>
       </section>
 
       <section id="personal-section">
-        <%- include("./partials/home/personal.ejs") %>
+        <%- include("./partials/home/personal.ejs", { personal: personal }) %>
       </section>
 
       <% if(account === false) { %>
@@ -80,7 +81,7 @@
       <% } %>
 
       <section id="inspired-section">
-        <%- include("./partials/home/inspired.ejs") %>
+        <%- include("./partials/home/inspired.ejs", { inspired: inspired }) %>
       </section>
 
       <section id="comments-section">

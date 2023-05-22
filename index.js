@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const session = require("express-session");
 
 const TodoManager = require(__dirname + "/database/TodoManager.js");
+const DataManager = require(__dirname + "/json/home.json");
 
 const app = express();
 
@@ -27,7 +28,14 @@ const PORT = 1000;
 
 app.get("/", (req, res) => {
   req.session.email = "test@gmail.com";
-  res.render("home", { account: false });
+  res.render("home", {
+    header: DataManager.header,
+    templates: DataManager.templates,
+    custom: DataManager.custom,
+    personal: DataManager.personal,
+    inspired: DataManager.inspired,
+    account: false,
+  });
 });
 
 app.post("/account/:type", async (req, res) => {

@@ -1,46 +1,27 @@
 <article class="personal-carousel">
+  <% personal.forEach((feature) => { %>
   <div class="personal-container">
     <div class="personal-text-container">
-      <h1 class="personal-title">FIRST SLIDE</h1>
+      <h1 class="personal-title"><%= feature.title %></h1>
+      <p class="personal-description"><%= feature.description %></p>
 
-      <p class="personal-description">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, quia!
-        Sint molestiae alias dignissimos vitae voluptatem aut ea dolorem est.
-      </p>
-
-      <a class="personal-link tasks" href="/todo/personal">
-        <h4 class="personal-link-text">Personal List</h4>
+      <a class="personal-link tasks" href="<%= feature.linkURL %>">
+        <h4 class="personal-link-text"><%= feature.linkText %></h4>
         <img class="personal-link-image" src="/buttons/arrow.png" />
       </a>
     </div>
 
-    <img class="personal-image" src="/home/personal/personal.png" />
+    <img class="personal-image" src="<%= feature.image %>" />
   </div>
-
-  <div class="personal-container">
-    <div class="personal-text-container">
-      <h1 class="personal-title">SECOND SLIDE</h1>
-
-      <p class="personal-description">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, quia!
-        Sint molestiae alias dignissimos vitae voluptatem aut ea dolorem est.
-      </p>
-
-      <a class="personal-link tasks" href="#custom-section">
-        <h4 class="personal-link-text">Explore Features</h4>
-        <img class="personal-link-image" src="/buttons/arrow.png" />
-      </a>
-    </div>
-
-    <img class="personal-image" src="/home/personal/personal.png" />
-  </div>
+  <% }) %>
 </article>
 
 <article class="personal-controller">
   <img class="personal-next" src="/home/personal/next.png" />
 
   <div class="personal-indicator-container">
+    <% personal.forEach(() => { %>
     <img class="personal-indicator" src="/buttons/indicator.png" />
-    <img class="personal-indicator" src="/buttons/indicator.png" />
+    <% }) %>
   </div>
 </article>

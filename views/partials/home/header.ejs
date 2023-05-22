@@ -4,26 +4,17 @@
   <article class="nav-links-container">
     <% if(account === true) { %>
     <div class="nav-list-links-container">
-      <a class="nav-link" href="/todo/personal">
-        <p class="nav-link-text">Personal</p>
+      <% header.lists.forEach((list) => { %>
+      <a class="nav-link" href="<%= list.URL %>">
+        <p class="nav-link-text"><%= list.name %></p>
       </a>
-
-      <a class="nav-link" href="/todo/daily">
-        <p class="nav-link-text">Daily</p>
-      </a>
-
-      <a class="nav-link" href="/todo/weekly">
-        <p class="nav-link-text">Weekly</p>
-      </a>
-
-      <a class="nav-link" href="/todo/monthly">
-        <p class="nav-link-text">Monthly</p>
-      </a>
-
-      <a class="nav-link" href="/todo/yearly">
-        <p class="nav-link-text">Yearly</p>
-      </a>
+      <% }) %>
     </div>
+
+    <a class="nav-collection-link" href="/collection">
+      <img class="nav-collection-link-image" src="/buttons/signup.png" />
+      <p class="nav-collection-link-text">Collection</p>
+    </a>
     <% } %> <% if(account === false) { %>
     <a class="nav-register-link" href="#account-section">
       <img class="nav-register-link-image" src="/buttons/signup.png" />
