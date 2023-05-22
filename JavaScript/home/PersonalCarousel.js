@@ -1,12 +1,12 @@
-const containers = document.querySelectorAll(".share-container");
-const carousel = document.querySelector(".share-carousel");
-const next = document.querySelector(".share-next");
+const containers = document.querySelectorAll(".personal-container");
+const carousel = document.querySelector(".personal-carousel");
+const next = document.querySelector(".personal-next");
 
-const indicators = document.querySelectorAll(".share-indicator");
+const indicators = document.querySelectorAll(".personal-indicator");
 
 let currentContainer = 0;
 
-export default function ShareCarousel() {
+export default function PersonalCarousel() {
   next.addEventListener("click", () => {
     SwitchDirection();
     SwitchContainers();
@@ -40,12 +40,12 @@ function SwitchContainers() {
 function MovementAnimation(timeoutDuration) {
   setTimeout(() => {
     containers.forEach((container) => {
-      if (container.classList.contains("share-hide")) {
-        container.classList.remove("share-hide");
-        container.classList.add("share-reveal");
+      if (container.classList.contains("personal-hide")) {
+        container.classList.remove("personal-hide");
+        container.classList.add("personal-reveal");
       } else {
-        container.classList.remove("share-reveal");
-        container.classList.add("share-hide");
+        container.classList.remove("personal-reveal");
+        container.classList.add("personal-hide");
       }
     });
   }, timeoutDuration);

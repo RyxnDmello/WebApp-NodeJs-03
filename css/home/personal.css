@@ -1,8 +1,8 @@
-/*--------------------------------------------------------------------*/
-/*-------------------------- SHARING STYLES --------------------------*/
-/*--------------------------------------------------------------------*/
+/*-------------------------------------------------------------------*/
+/*------------------------- PERSONAL STYLES -------------------------*/
+/*-------------------------------------------------------------------*/
 
-#sharing-section {
+#personal-section {
   grid-template-columns: auto;
   justify-content: center;
   align-items: center;
@@ -12,7 +12,7 @@
   display: grid;
 }
 
-#sharing-section::after {
+#personal-section::after {
   background-image: linear-gradient(45deg, #2f0d65 30%, #510d37 60%);
   transform: skewY(-5deg);
   box-shadow: 0 0 20px;
@@ -22,7 +22,11 @@
   inset: 0;
 }
 
-.share-carousel {
+/*------------------------------------------------*/
+/*------------------- CAROUSEL -------------------*/
+/*------------------------------------------------*/
+
+.personal-carousel {
   justify-content: flex-start;
   grid-auto-flow: column;
   align-items: center;
@@ -33,7 +37,7 @@
   gap: 1rem;
 }
 
-.share-container {
+.personal-container {
   justify-content: center;
   grid-auto-flow: column;
   align-items: center;
@@ -46,7 +50,7 @@
 /*--------------- TEXT CONTAINER ---------------*/
 /*----------------------------------------------*/
 
-.share-text-container {
+.personal-text-container {
   grid-template-columns: auto;
   justify-content: center;
   align-items: center;
@@ -54,26 +58,26 @@
   gap: 0.65rem;
 }
 
-.share-title {
+.personal-title {
   font-family: "Josephin Regular", sans-serif;
   text-shadow: 4px 4px #000;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 5rem;
   cursor: default;
   color: #fff;
 }
 
-.share-description {
+.personal-description {
   font-family: "Poppins", sans-serif;
   font-size: 1.25rem;
   font-weight: 300;
-  color: #bcbcbc;
+  color: #aeaeae;
   cursor: default;
 }
 
-.share-link {
-  box-shadow: 2.5px 2.5px 2.5px #00000050;
-  transition: background-color 450ms;
+.personal-link {
+  transition: background-color 450ms, translate 150ms, box-shadow 150ms;
+  box-shadow: 4px 4px 0 #00000070;
   background-color: #e10044;
   padding: 0.25rem 1.5rem;
   justify-content: center;
@@ -85,19 +89,19 @@
   gap: 0.5rem;
 }
 
-.share-link-text {
+.personal-link-text {
   font-family: "Poppins", sans-serif;
   font-size: 1.25rem;
   font-weight: 300;
   color: #fff;
 }
 
-.share-link-image {
+.personal-link-image {
   width: 25px;
 }
 
-.share-image {
-  filter: drop-shadow(0 0 5px);
+.personal-image {
+  filter: drop-shadow(4px 4px 0 #00000080);
   width: 325px;
 }
 
@@ -105,7 +109,7 @@
 /*-------------- CONTROLLER --------------*/
 /*----------------------------------------*/
 
-.share-controller {
+.personal-controller {
   grid-auto-flow: column;
   justify-content: left;
   align-items: center;
@@ -113,14 +117,14 @@
   gap: 1.5rem;
 }
 
-.share-next {
+.personal-next {
   transition: scale 400ms, opacity 400ms;
-  filter: drop-shadow(2px 2px 2.5px);
+  filter: drop-shadow(2px 2px 2px);
   cursor: pointer;
   width: 40px;
 }
 
-.share-indicator-container {
+.personal-indicator-container {
   grid-auto-flow: column;
   justify-content: left;
   align-items: center;
@@ -128,7 +132,7 @@
   gap: 0.5rem;
 }
 
-.share-indicator {
+.personal-indicator {
   transition: opacity 400ms, scale 400ms;
   filter: drop-shadow(1px 1px 2px);
   opacity: 0.25;
@@ -139,15 +143,15 @@
 /*-------------- ANIMATIONS --------------*/
 /*----------------------------------------*/
 
-.share-reveal {
-  animation: ShareReveal 400ms forwards;
+.personal-reveal {
+  animation: PersonalReveal 400ms forwards;
 }
 
-.share-hide {
-  animation: ShareHide 400ms forwards;
+.personal-hide {
+  animation: PersonalHide 400ms forwards;
 }
 
-@keyframes ShareReveal {
+@keyframes PersonalReveal {
   0% {
     translate: 0 10px;
     opacity: 0;
@@ -159,7 +163,7 @@
   }
 }
 
-@keyframes ShareHide {
+@keyframes PersonalHide {
   0% {
     translate: 0;
     opacity: 1;
@@ -175,19 +179,21 @@
 /*------------ TRANSITIONS ------------*/
 /*-------------------------------------*/
 
-.share-link:hover {
+.personal-link:hover {
   background-color: #b50036;
 }
 
-.share-link:focus {
+.personal-link:focus {
   background-color: #840028;
+  translate: 0 4px;
+  box-shadow: 0 0;
 }
 
-.share-next:hover {
+.personal-next:hover {
   scale: 1.2;
 }
 
-.share-indicator:nth-of-type(1) {
+.personal-indicator:nth-of-type(1) {
   scale: 1.4;
   opacity: 1;
 }

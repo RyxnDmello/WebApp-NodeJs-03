@@ -1,7 +1,7 @@
 <img class="template-image" src="/home/templates/notes.png" />
 
 <article class="template-carousel">
-  <% for(let i = 0; i < 3; i++) { %>
+  <% for(let i = 0; i < 4; i++) { %>
   <div class="template-slide">
     <div class="template-slide-text-container">
       <h2 class="template-slide-title">YOUR DAILY NEEDS</h2>
@@ -24,9 +24,9 @@
   <img class="template-controller left" src="/home/templates/slide-left.png" />
 
   <div class="template-indicator-container">
+    <% for(let i = 0; i < 4; i++) { %>
     <img class="template-indicator" src="/buttons/indicator.png" />
-    <img class="template-indicator" src="/buttons/indicator.png" />
-    <img class="template-indicator" src="/buttons/indicator.png" />
+    <% } %>
   </div>
 
   <img

@@ -27,8 +27,7 @@ const PORT = 1000;
 
 app.get("/", (req, res) => {
   req.session.email = "test@gmail.com";
-  // console.log(`Session Email: ${req.session.email}`);
-  res.render("home");
+  res.render("home", { account: false });
 });
 
 app.post("/account/:type", async (req, res) => {
