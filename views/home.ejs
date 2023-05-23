@@ -85,11 +85,13 @@
       </section>
 
       <section id="comments-section">
-        <%- include("./partials/home/comments.ejs") %>
+        <%- include("./partials/home/comments.ejs", { comments: comments }) %>
       </section>
     </main>
 
-    <footer id="footer"><%- include("./partials/home/footer.ejs") %></footer>
+    <footer id="footer">
+      <%- include("./partials/home/footer.ejs", { footer: footer }) %>
+    </footer>
 
     <script type="module" src="/Home.js"></script>
   </body>

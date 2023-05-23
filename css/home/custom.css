@@ -39,7 +39,7 @@
   transition: translate 450ms, scale 450ms;
   border: 2px solid #ffffff15;
   grid-template-columns: auto;
-  box-shadow: 2px 4px 5px;
+  box-shadow: 2.5px 2.5px 5px;
   justify-content: center;
   border-radius: 2.5px;
   align-items: center;
@@ -49,6 +49,7 @@
 }
 
 .custom-feature-image {
+  filter: drop-shadow(2.5px 2.5px 0);
   width: 50px;
 }
 

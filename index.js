@@ -20,6 +20,7 @@ app.use(
 app.use(express.static("./JavaScript"));
 app.use(express.static("./images"));
 app.use(express.static("./fonts"));
+app.use(express.static("./json"));
 app.use(express.static("./css"));
 
 app.set("view engine", "ejs");
@@ -34,6 +35,8 @@ app.get("/", (req, res) => {
     custom: DataManager.custom,
     personal: DataManager.personal,
     inspired: DataManager.inspired,
+    comments: DataManager.comments,
+    footer: DataManager.footer,
     account: false,
   });
 });

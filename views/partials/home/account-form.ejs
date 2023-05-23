@@ -1,5 +1,5 @@
 <% if(type === "create") { %>
-<img class="account-image" src="/home/account/login.png" />
+<img class="account-image" src="/home/account/signup.png" />
 <% } %>
 
 <form class="register-form" action="/account/<%= type %>" method="post">
@@ -27,7 +27,7 @@
 
   <% if(type === "login") { %>
   <div class="input-container password">
-    <h3 class="input-label">Retype Password</h3>
+    <h3 class="input-label">Confirm Password</h3>
     <input
       name="retypePassword"
       autocomplete="LOL"

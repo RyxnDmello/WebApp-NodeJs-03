@@ -38,7 +38,7 @@
 .comment-slide {
   justify-content: center;
   grid-auto-flow: column;
-  align-items: center;
+  align-items: stretch;
   padding: 2rem 0;
   display: grid;
   width: 1350px;

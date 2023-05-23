@@ -1,5 +1,3 @@
-import Data from "./FeaturesData.js";
-
 const options = document.querySelectorAll(".features-option");
 const points = document.querySelectorAll(".features-point");
 
@@ -16,25 +14,26 @@ export default function FeaturesMenu() {
 
 function FeatureSelection(optionIndex) {
   OptionAnimation(optionIndex);
-
   PointAnimation(0);
+  SwitchContent(optionIndex, 505);
+  PointAnimation(510);
+}
 
-  titles.forEach((title, index) => {
-    let dataTitle = Data.options[optionIndex][index].title;
+function SwitchContent(optionIndex, changeDuration) {
+  setTimeout(() => {
+    fetch("/home.json")
+      .then((response) => response.json())
+      .then((data) => {
+        titles.forEach((title, index) => {
+          title.textContent = data.features[optionIndex][index].title;
+        });
 
-    if (dataTitle === "NONE") {
-      points[index].style.opacity = 0;
-      return;
-    }
-
-    title = dataTitle;
-  });
-
-  descriptions.forEach((description, index) => {
-    description.textContent = Data.options[optionIndex][index].description;
-  });
-
-  PointAnimation(500);
+        descriptions.forEach((description, index) => {
+          description.textContent =
+            data.features[optionIndex][index].description;
+        });
+      });
+  }, changeDuration);
 }
 
 function OptionAnimation(optionIndex) {

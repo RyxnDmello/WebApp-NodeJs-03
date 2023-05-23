@@ -3,18 +3,10 @@
     <h1 class="footer-header-title">TaskTonic</h1>
   </a>
 
-  <div class="footer-header-links-container">
-    <% for(let i = 0; i < 4; i++) { %>
-    <a class="footer-header-link social" href="">
-      <img class="footer-header-link-image" src="/home/footer/insta.png" />
-    </a>
-    <% } %>
-
-    <a class="footer-header-link register" href="#account-section">
-      <img class="footer-header-link-image" src="/buttons/signup.png" />
-      <h3 class="footer-header-link-text">Register</h3>
-    </a>
-  </div>
+  <a class="footer-header-link" href="#account-section">
+    <img class="footer-header-link-image" src="/buttons/signup.png" />
+    <h3 class="footer-header-link-text">Register</h3>
+  </a>
 </article>
 
 <article class="footer-body">
@@ -47,6 +39,16 @@
       <h3 class="footer-contact-link-text">Twitter</h3>
       <img class="footer-contact-link-image" src="/buttons/twitter.png" />
     </a>
+  </article>
+
+  <article class="footer-links-container">
+    <h2 class="footer-links-container-title">Socials</h2>
+
+    <% footer.socials.forEach((social) => { %>
+    <a class="footer-link" href="<%= social.URL %>">
+      <img class="footer-link-image" src="<%= social.image %>" />
+    </a>
+    <% }) %>
   </article>
 
   <article class="footer-links-container">

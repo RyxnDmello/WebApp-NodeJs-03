@@ -23,6 +23,50 @@
       }
     ]
   },
+  "features": [
+    [
+      {
+        "title": "Clean & Elegant",
+        "description": "Distractions lead to unproductivity and prevents you from getting work done. Thus, we have designed our interface with simplicity so you wont have to worry about any distractions."
+      },
+      {
+        "title": "Quick & Easy",
+        "description": "Our main aim when developing this platform was to make it hassle free. Simply create your account and dive straight into creating, managing and completing your tasks to success."
+      },
+      {
+        "title": "Details To Perfection",
+        "description": "Every list is perfected with rich features to help you monitor your tasks every step of the way. Monitory and keep track of your overall progress so you can reach the finish line."
+      }
+    ],
+    [
+      {
+        "title": "Safe & Secure",
+        "description": "Your account and all its related information is secure under layers of protection."
+      },
+      {
+        "title": "Swords & Shields",
+        "description": "The task are protected from all kinds of malicious bugs and viruses, keeping your data safe."
+      },
+      {
+        "title": "Backup Servers & Databases",
+        "description": "Your data is regularly backed up and the servers are refreshed ensuring high-level security."
+      }
+    ],
+    [
+      {
+        "title": "Simple Details",
+        "description": "We have ensured that the lists are as simple and efficient as possible with not too many options to worry about."
+      },
+      {
+        "title": "Priorities",
+        "description": "The task are protected from all kinds of malicious bugs and viruses, keeping your data safe."
+      },
+      {
+        "title": "NONE",
+        "description": "NONE"
+      }
+    ]
+  ],
   "templates": [
     {
       "title": "YOUR DAILY NEEDS",
@@ -110,5 +154,171 @@
       "URL": "",
       "image": "/home/inspired/trello.png"
     }
-  ]
+  ],
+  "comments": [
+    [
+      {
+        "image": "/home/comments/com-1.png",
+        "name": "Sarah Thompson",
+        "description": "TaskTonic has revolutionized my productivity! With its intuitive interface and powerful features, I can easily manage and prioritize my tasks like never before. As a developer, it has helped me tremendously in my projects.",
+        "socials": [
+          {
+            "URL": "https://www.github.com/",
+            "image": "/buttons/github.png"
+          },
+          {
+            "URL": "https://www.instagram.com/",
+            "image": "/buttons/insta.png"
+          },
+          {
+            "URL": "https://www.twitter.com/",
+            "image": "/buttons/twitter.png"
+          },
+          {
+            "URL": "https://www.facebook.com/",
+            "image": "/buttons/face.png"
+          }
+        ]
+      },
+      {
+        "image": "/home/comments/com-2.png",
+        "name": "John Anderson",
+        "description": "TaskTonic's user-friendly design makes task management a breeze. I appreciate the simplicity and efficiency of adding, editing, and completing tasks. It's a must-have for anyone looking to stay organized.",
+        "socials": [
+          {
+            "URL": "https://www.github.com/",
+            "image": "/buttons/github.png"
+          },
+          {
+            "URL": "https://www.instagram.com/",
+            "image": "/buttons/insta.png"
+          },
+          {
+            "URL": "https://www.twitter.com/",
+            "image": "/buttons/twitter.png"
+          },
+          {
+            "URL": "https://www.facebook.com/",
+            "image": "/buttons/face.png"
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "image": "/home/comments/com-3.png",
+        "name": "Emily Rodriguez",
+        "description": "TaskTonic's recurring task feature is a lifesaver. I can set up tasks that repeat daily, weekly, monthly, or yearly, saving me time and ensuring that I never forget important recurring responsibilities. Just simple and easy.",
+        "socials": [
+          {
+            "URL": "https://www.github.com/",
+            "image": "/buttons/github.png"
+          },
+          {
+            "URL": "https://www.instagram.com/",
+            "image": "/buttons/insta.png"
+          },
+          {
+            "URL": "https://www.twitter.com/",
+            "image": "/buttons/twitter.png"
+          },
+          {
+            "URL": "https://www.facebook.com/",
+            "image": "/buttons/face.png"
+          }
+        ]
+      },
+      {
+        "image": "/home/comments/com-4.png",
+        "name": "David Collins",
+        "description": "TaskTonic's progress tracking feature has greatly improved my accountability. With a quick glance, I can see how much I've accomplished and how much is left to do. It keeps me motivated and focused on reaching my goals.",
+        "socials": [
+          {
+            "URL": "https://www.github.com/",
+            "image": "/buttons/github.png"
+          },
+          {
+            "URL": "https://www.instagram.com/",
+            "image": "/buttons/insta.png"
+          },
+          {
+            "URL": "https://www.twitter.com/",
+            "image": "/buttons/twitter.png"
+          },
+          {
+            "URL": "https://www.facebook.com/",
+            "image": "/buttons/face.png"
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "image": "/home/comments/com-5.png",
+        "name": "Olivia Peterson",
+        "description": "TaskTonic's intuitive design and customizable task lists have revolutionized my productivity. I love how I can categorize tasks, set priorities, and track progress all in one place.",
+        "socials": [
+          {
+            "URL": "https://www.github.com/",
+            "image": "/buttons/github.png"
+          },
+          {
+            "URL": "https://www.instagram.com/",
+            "image": "/buttons/insta.png"
+          },
+          {
+            "URL": "https://www.twitter.com/",
+            "image": "/buttons/twitter.png"
+          },
+          {
+            "URL": "https://www.facebook.com/",
+            "image": "/buttons/face.png"
+          }
+        ]
+      },
+      {
+        "image": "/home/comments/com-6.png",
+        "name": "Ethan Miller",
+        "description": "TaskTonic has truly transformed the way I approach my daily tasks. With its seamless integration across devices, I can access my to-do list anytime and never miss a beat.",
+        "socials": [
+          {
+            "URL": "https://www.github.com/",
+            "image": "/buttons/github.png"
+          },
+          {
+            "URL": "https://www.instagram.com/",
+            "image": "/buttons/insta.png"
+          },
+          {
+            "URL": "https://www.twitter.com/",
+            "image": "/buttons/twitter.png"
+          },
+          {
+            "URL": "https://www.facebook.com/",
+            "image": "/buttons/face.png"
+          }
+        ]
+      }
+    ]
+  ],
+  "footer": {
+    "socials": [
+      {
+        "URL": "https://www.github.com/",
+        "image": "/buttons/github.png"
+      },
+      {
+        "URL": "https://www.instagram.com/",
+        "image": "/buttons/insta.png"
+      },
+      {
+        "URL": "https://www.twitter.com/",
+        "image": "/buttons/twitter.png"
+      },
+      {
+        "URL": "https://www.facebook.com/",
+        "image": "/buttons/face.png"
+      }
+    ]
+  }
 }
