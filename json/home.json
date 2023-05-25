@@ -91,34 +91,34 @@
   ],
   "custom": [
     {
-      "image": "/home/custom/color.png",
-      "title": "Some Random Title",
-      "description": "Some Random Description Some Random Description Some Random Description Some Random Description"
+      "image": "/home/custom/security.png",
+      "title": "Security",
+      "description": "There are several sentries monitoring every aspect of the website making sure that it is secure every step of the way."
     },
     {
-      "image": "/home/custom/color.png",
-      "title": "Some Random Title",
-      "description": "Some Random Description Some Random Description Some Random Description Some Random Description"
+      "image": "/home/custom/server.png",
+      "title": "Server",
+      "description": "Our server manages every aspect of the website, making sure that it is efficient, performant and smoothly functioning."
     },
     {
-      "image": "/home/custom/color.png",
-      "title": "Some Random Title",
-      "description": "Some Random Description Some Random Description Some Random Description Some Random Description"
+      "image": "/home/custom/database.png",
+      "title": "Database",
+      "description": "Your tasks are safely stored in our fortified database and encrypted with several layers of security for greater protection."
     },
     {
-      "image": "/home/custom/color.png",
-      "title": "Some Random Title",
-      "description": "Some Random Description Some Random Description Some Random Description Some Random Description"
+      "image": "/home/custom/design.png",
+      "title": "Design",
+      "description": "Experience a well-designed and modern user-interface to easily edit, create, and complete your tasks."
     },
     {
-      "image": "/home/custom/color.png",
-      "title": "Some Random Title",
-      "description": "Some Random Description Some Random Description Some Random Description Some Random Description"
+      "image": "/home/custom/priority.png",
+      "title": "Priority",
+      "description": "Prioritize your tasks by assigning different levels of importance, allowing you to focus on what matters most."
     },
     {
-      "image": "/home/custom/color.png",
-      "title": "Some Random Title",
-      "description": "Some Random Description Some Random Description Some Random Description Some Random Description"
+      "image": "/home/custom/date.png",
+      "title": "Date",
+      "description": "Each task keeps track of the date it was created and it was completed, this helps in monitoring your time management."
     }
   ],
   "personal": [
@@ -139,20 +139,20 @@
   ],
   "inspired": [
     {
-      "URL": "",
+      "URL": "https://trello.com/",
       "image": "/home/inspired/trello.png"
     },
     {
-      "URL": "",
-      "image": "/home/inspired/trello.png"
+      "URL": "https://www.notion.so/",
+      "image": "/home/inspired/notion.png"
     },
     {
-      "URL": "",
-      "image": "/home/inspired/trello.png"
+      "URL": "https://monday.com/",
+      "image": "/home/inspired/monday.png"
     },
     {
-      "URL": "",
-      "image": "/home/inspired/trello.png"
+      "URL": "https://www.atlassian.com/software/jira",
+      "image": "/home/inspired/jira.png"
     }
   ],
   "comments": [

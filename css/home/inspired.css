@@ -48,7 +48,19 @@
 .inspired-link-image {
   filter: drop-shadow(2.5px 2.5px 2.5px #000);
   transition: translate 450ms;
+}
+
+.inspired-link:nth-of-type(1) .inspired-link-image {
   width: 200px;
+}
+
+.inspired-link:nth-of-type(2) .inspired-link-image {
+  width: 100px;
+}
+
+.inspired-link:nth-of-type(3) .inspired-link-image,
+.inspired-link:nth-of-type(4) .inspired-link-image {
+  width: 250px;
 }
 
 /*-----------------------------------------*/

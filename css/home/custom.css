@@ -50,6 +50,7 @@
 
 .custom-feature-image {
   filter: drop-shadow(2.5px 2.5px 0);
+  transition: scale 250ms;
   width: 50px;
 }
 
@@ -87,6 +88,10 @@
 .custom-feature:hover {
   translate: 0 -10px;
   scale: 1.05;
+}
+
+.custom-feature:hover .custom-feature-image {
+  scale: 1.2;
 }
 
 /*----------------------------------------*/

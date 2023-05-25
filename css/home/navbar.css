@@ -81,7 +81,7 @@ nav {
 
 .nav-register-link {
   transition: background-color 450ms, scale 150ms;
-  box-shadow: 4px 4px #00000080;
+  box-shadow: 4px 4px 4px #00000080;
   border: 2px solid #fff700;
   justify-content: center;
   grid-auto-flow: column;
@@ -107,6 +107,49 @@ nav {
   width: 24px;
 }
 
+/*-----------------------------------------*/
+/*------------ COLLECTION LINK ------------*/
+/*-----------------------------------------*/
+
+.nav-collection-link {
+  transition: translate 250ms, box-shadow 250ms;
+  box-shadow: 4px 4px #00000080;
+  border: 2px solid #fff700;
+  padding: 0.25rem 1.25rem;
+  justify-content: center;
+  grid-auto-flow: column;
+  margin-left: -1.5rem;
+  border-radius: 2.5px;
+  align-items: center;
+  position: relative;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.nav-collection-link::before {
+  background-color: #fff700;
+  transition: width 250ms;
+  position: absolute;
+  height: 100%;
+  content: "";
+  width: 0%;
+  inset: 0;
+}
+
+.nav-collection-link-image {
+  transition: filter 250ms;
+  width: 20px;
+}
+
+.nav-collection-link-text {
+  font-family: "Poppins", sans-serif;
+  transition: color 250ms;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #fff;
+  z-index: 1;
+}
+
 /*---------------------------------------*/
 /*------------- TRANSITIONS -------------*/
 /*---------------------------------------*/
@@ -117,6 +160,23 @@ nav {
 
 .nav-register-link:focus {
   scale: 0.9;
+}
+
+.nav-collection-link:hover::before {
+  width: 100%;
+}
+
+.nav-collection-link:hover .nav-collection-link-image {
+  filter: invert(1);
+}
+
+.nav-collection-link:hover .nav-collection-link-text {
+  color: #000;
+}
+
+.nav-collection-link:focus {
+  box-shadow: 0 0 #000;
+  translate: 0 4px;
 }
 
 .nav-register-link:hover .nav-register-link-text,

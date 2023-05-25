@@ -54,11 +54,11 @@
       <section id="account-section">
         <%- include("./partials/home/account.ejs") %>
       </section>
-      <% } %>
-
+      <% } %> <% if(account === false) { %>
       <section id="inspired-section">
         <%- include("./partials/home/inspired.ejs", { inspired: inspired }) %>
       </section>
+      <% } %>
 
       <section id="comments-section">
         <%- include("./partials/home/comments.ejs", { comments: comments }) %>
