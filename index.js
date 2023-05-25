@@ -27,6 +27,10 @@ app.set("view engine", "ejs");
 
 const PORT = 1000;
 
+/*------------------------------------------*/
+/*-------------- GET REQUESTS --------------*/
+/*------------------------------------------*/
+
 app.get("/", (req, res) => {
   req.session.email = "test@gmail.com";
   res.render("home", {
@@ -40,6 +44,29 @@ app.get("/", (req, res) => {
     account: false,
   });
 });
+
+app.get("/todo/collection", (req, res) => {
+  res.send("COLLECTION PAGE");
+});
+
+app.get("/todo/:type", (req, res) => {
+  if (req.session.email === undefined) {
+    res.redirect("/");
+    return;
+  }
+
+  const account = {
+    email: req.session.email,
+    password: req.session.password,
+    type: req.params.type,
+  };
+
+  TodoManager.DisplayTodoLists(account, res);
+});
+
+/*-----------------------------------------*/
+/*------------- POST REQUESTS -------------*/
+/*-----------------------------------------*/
 
 app.post("/account/:type", async (req, res) => {
   if (req.params.type === "create") {
@@ -60,21 +87,6 @@ app.post("/account/:type", async (req, res) => {
   };
 
   TodoManager.ManageTodoAccount(account, req, res);
-});
-
-app.get("/todo/:type", (req, res) => {
-  if (req.session.email === undefined) {
-    res.redirect("/");
-    return;
-  }
-
-  const account = {
-    email: req.session.email,
-    password: req.session.password,
-    type: req.params.type,
-  };
-
-  TodoManager.DisplayTodoLists(account, res);
 });
 
 app.post("/todo/:type", async (req, res) => {

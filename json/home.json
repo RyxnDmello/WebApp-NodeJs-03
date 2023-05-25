@@ -35,58 +35,58 @@
       },
       {
         "title": "Details To Perfection",
-        "description": "Every list is perfected with rich features to help you monitor your tasks every step of the way. Monitory and keep track of your overall progress so you can reach the finish line."
+        "description": "Every list is perfected with rich features to help you monitor your tasks every step of the way. Monitor and keep track of your overall progress so you can reach the finish line on time."
       }
     ],
     [
       {
         "title": "Safe & Secure",
-        "description": "Your account and all its related information is secure under layers of protection."
+        "description": "TaskTonic uses advanced encryption to safeguard your data. All your tasks and personal details are encrypted during storage and transmission, ensuring only authorized users can access them."
       },
       {
         "title": "Swords & Shields",
-        "description": "The task are protected from all kinds of malicious bugs and viruses, keeping your data safe."
+        "description": "We utilize robust encryption and advanced security protocols to protect your data. With sentries at every corner, we ensure only authorized access and repel any malicious intent swiftly."
       },
       {
         "title": "Backup Servers & Databases",
-        "description": "Your data is regularly backed up and the servers are refreshed ensuring high-level security."
+        "description": "Our reliable backup servers and robust databases diligently protect your todo web application, preserving the integrity of your tasks and ensuring seamless continuity in any situation."
       }
     ],
     [
       {
-        "title": "Simple Details",
-        "description": "We have ensured that the lists are as simple and efficient as possible with not too many options to worry about."
+        "title": "Effortless & Quick",
+        "description": "Effortlessly create and manage tasks with our user-friendly interface, supported by reliable backup servers and databases for uninterrupted productivity. We keep it quick and efficient."
       },
       {
-        "title": "Priorities",
-        "description": "The task are protected from all kinds of malicious bugs and viruses, keeping your data safe."
+        "title": "Priorities & Importance",
+        "description": "Effortlessly manage and prioritize your tasks with our intuitive todo app. By assigning different levels of importance, you can effectively conquer your todo list, ensuring successful goal achievement."
       },
       {
-        "title": "NONE",
-        "description": "NONE"
+        "title": "Simplicity",
+        "description": "With TaskTonic's clean design and easy navigation, you can effortlessly create, organize, and manage your tasks, allowing you to stay focused and productive with minimal effort."
       }
     ]
   ],
   "templates": [
     {
       "title": "YOUR DAILY NEEDS",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse delectus incidunt cupiditate at magnam, deserunt maiores non iure exercitationem consequatur?",
+      "description": "Effortlessly manage daily tasks with our sleek and intuitive interface. edit, add, and complete tasks seamlessly while tracking your progress. Stay organized and productive with our user-friendly design.",
       "URL": "todo/daily"
     },
     {
       "title": "YOUR WEEKLY NEEDS",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse delectus incidunt cupiditate at magnam, deserunt maiores non iure exercitationem consequatur?",
-      "URL": "todo/daily"
+      "description": "Effortlessly manage weekly tasks with our sleek and intuitive interface. edit, add, and complete tasks seamlessly while tracking your progress. Stay organized and productive with our user-friendly design.",
+      "URL": "todo/weekly"
     },
     {
       "title": "YOUR MONTHLY NEEDS",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse delectus incidunt cupiditate at magnam, deserunt maiores non iure exercitationem consequatur?",
-      "URL": "todo/daily"
+      "description": "Effortlessly manage monthly tasks with our sleek and intuitive interface. edit, add, and complete tasks seamlessly while tracking your progress. Stay organized and productive with our user-friendly design.",
+      "URL": "todo/monthly"
     },
     {
       "title": "YOUR YEARLY NEEDS",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse delectus incidunt cupiditate at magnam, deserunt maiores non iure exercitationem consequatur?",
-      "URL": "todo/daily"
+      "description": "Effortlessly manage yearly tasks with our sleek and intuitive interface. edit, add, and complete tasks seamlessly while tracking your progress. Stay organized and productive with our user-friendly design.",
+      "URL": "todo/yearly"
     }
   ],
   "custom": [
@@ -123,15 +123,15 @@
   ],
   "personal": [
     {
-      "title": "FIRST SLIDE",
-      "description": "First slide description First slide description First slide description First slide description",
+      "title": "PERSONAL TASKS",
+      "description": "Do you need a list to organize your personal needs? Use this list to efficiently edit, create and complete your personal tasks easily. Experience amazing features and the simplicity we provide in our user-friendly interface.",
       "image": "/home/personal/personal-1.png",
       "linkURL": "/todo/personal",
       "linkText": "Personal List"
     },
     {
-      "title": "SECOND SLIDE",
-      "description": "Second slide description Second slide description Second slide description Second slide description",
+      "title": "FEATURES & MORE",
+      "description": "Your personal tasks are protected under an added layer of security and we make sure to back them twice as regularly. This ensures complete safety of your precious information, every step of the way.",
       "image": "/home/personal/personal-2.png",
       "linkURL": "#custom-section",
       "linkText": "Explore Features"
