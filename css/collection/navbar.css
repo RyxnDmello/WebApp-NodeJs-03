@@ -1,0 +1,35 @@
+/*---------------------------------------------------------------*/
+/*------------------------ NAVBAR STYLES ------------------------*/
+/*---------------------------------------------------------------*/
+
+nav {
+  background-image: linear-gradient(45deg, #2f0d65 20%, #510d37 60%);
+  justify-content: space-between;
+  box-shadow: 0 10px 20px;
+  grid-auto-flow: column;
+  padding: 1.25rem 4rem;
+  align-items: center;
+  display: grid;
+}
+
+.nav-logo {
+  font-family: "Josephin Black", sans-serif;
+  transition: translate 450ms;
+  text-shadow: 3px 3px #000;
+  letter-spacing: 2px;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+/*---------------------------------------*/
+/*------------- TRANSITIONS -------------*/
+/*---------------------------------------*/
+
+.nav-logo-link:hover .nav-logo {
+  translate: 0 -5px;
+}
+
+/*----------------------------------------------------*/
+/*-------------------- END OF CSS --------------------*/
+/*----------------------------------------------------*/

@@ -35,8 +35,8 @@ footer {
 }
 
 .footer-header-link {
-  transition: background-color 450ms, scale 150ms;
-  box-shadow: 2.5px 2.5px 5px #00000080;
+  transition: scale 150ms, box-shadow 150ms;
+  box-shadow: 4px 4px #00000060;
   background-color: #fff700;
   justify-content: center;
   grid-auto-flow: column;
@@ -167,6 +167,7 @@ footer {
 }
 
 .footer-link-image {
+  filter: drop-shadow(1.5px 1.5px 2px #000);
   transition: translate 350ms, opacity 350ms;
   opacity: 0.25;
   width: 30px;
@@ -220,11 +221,8 @@ footer {
 }
 
 .footer-header-link:focus {
+  box-shadow: 0 0 #00000060;
   scale: 0.9;
-}
-
-.footer-header-link:focus {
-  background-color: #9c9700;
 }
 
 .footer-contact-link:nth-of-type(1):hover {

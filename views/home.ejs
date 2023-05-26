@@ -25,7 +25,7 @@
 
   <body>
     <header id="header">
-      <%- include("./partials/home/header.ejs", { account: account }) %>
+      <%- include("./partials/home/navbar.ejs", { account: account }) %>
     </header>
 
     <main>
@@ -54,7 +54,7 @@
       <section id="account-section">
         <%- include("./partials/home/account.ejs") %>
       </section>
-      <% } %> <% if(account === false) { %>
+
       <section id="inspired-section">
         <%- include("./partials/home/inspired.ejs", { inspired: inspired }) %>
       </section>

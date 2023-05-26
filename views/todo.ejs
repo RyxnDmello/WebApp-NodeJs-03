@@ -24,7 +24,9 @@
   </head>
 
   <body>
-    <header id="header"><%- include("./partials/common/navbar.ejs") %></header>
+    <header id="header">
+      <%- include("./partials/todo/navbar.ejs", { type: todo.type }) %>
+    </header>
 
     <main>
       <section id="todo-lists-section">

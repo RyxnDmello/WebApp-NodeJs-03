@@ -42,8 +42,14 @@ nav {
   color: #fff;
 }
 
+.nav-link:not(.personal) .nav-link-text {
+  transition: opacity 250ms, translate 250ms;
+  opacity: 0.65;
+}
+
 .nav-link.personal {
-  transition: background-color 400ms;
+  transition: background-color 400ms, translate 150ms, box-shadow 150ms;
+  box-shadow: 4px 4px #00000080;
   border: 2px solid #fff700;
   padding: 0.25rem 1.5rem;
   justify-content: center;
@@ -73,8 +79,18 @@ nav {
   translate: 0 -5px;
 }
 
+.nav-link:not(.personal):hover .nav-link-text {
+  translate: 0 -2px;
+  opacity: 1;
+}
+
 .nav-link.personal:hover {
   background-color: #fff700;
+}
+
+.nav-link.personal:focus {
+  box-shadow: 0 0 #00000080;
+  translate: 0 4px;
 }
 
 .nav-link.personal:hover .nav-link-text,

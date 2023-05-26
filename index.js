@@ -46,7 +46,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/todo/collection", (req, res) => {
-  res.send("COLLECTION PAGE");
+  res.render("collection");
 });
 
 app.get("/todo/:type", (req, res) => {

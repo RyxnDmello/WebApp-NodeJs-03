@@ -80,8 +80,8 @@ nav {
 /*---------------------------------------*/
 
 .nav-register-link {
-  transition: background-color 450ms, scale 150ms;
-  box-shadow: 4px 4px 4px #00000080;
+  transition: background-color 450ms, scale 150ms, box-shadow 150ms;
+  box-shadow: 4px 4px #00000080;
   border: 2px solid #fff700;
   justify-content: center;
   grid-auto-flow: column;
@@ -96,15 +96,15 @@ nav {
   font-family: "Poppins", sans-serif;
   transition: filter 450ms;
   letter-spacing: 1px;
+  font-size: 1.125rem;
   transition: 450ms;
   font-weight: 400;
-  font-size: 1rem;
   color: #fff;
 }
 
 .nav-register-link-image {
   transition: filter 450ms;
-  width: 24px;
+  width: 22.5px;
 }
 
 /*-----------------------------------------*/
@@ -159,6 +159,7 @@ nav {
 }
 
 .nav-register-link:focus {
+  box-shadow: 0 0 #00000080;
   scale: 0.9;
 }
 
