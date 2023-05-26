@@ -1,0 +1,55 @@
+<h1 class="type-section-title">YOUR COLLECTION</h1>
+
+<% collection.forEach((type, index) => { %>
+<article class="type-container">
+  <h2 class="type-container-title"><%= type.title %></h2>
+
+  <hr class="type-container-divider" />
+
+  <div class="type-information-container">
+    <div class="type-info-list">
+      <h3 class="type-info-list-title">PROGRESS</h3>
+
+      <% type.progress.forEach((priority, i) => { %>
+      <div class="type-info-block">
+        <img
+          class="type-info-block-image"
+          src="/collection/progress-<%= i + 1 %>.png"
+        />
+        <h4 class="type-info-block-text"><%= priority %></h4>
+      </div>
+      <% }) %>
+    </div>
+
+    <div class="type-info-list">
+      <h3 class="type-info-list-title">COMPLETED</h3>
+
+      <% type.completed.forEach((priority, i) => { %>
+      <div class="type-info-block">
+        <img
+          class="type-info-block-image"
+          src="/collection/completed-<%= i + 1 %>.png"
+        />
+        <h4 class="type-info-block-text"><%= priority %></h4>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+
+  <hr class="type-container-divider" />
+
+  <div class="type-progress-container">
+    <div class="type-progress-bar">
+      <div class="type-progress-fill"></div>
+    </div>
+
+    <div class="type-progress-info-container">
+      <h4 class="type-progress-ratio">
+        <%= type.totalCompleted %>/<%= type.total %>
+      </h4>
+
+      <h4 class="type-progress-percentage"><%= type.percentage %>%</h4>
+    </div>
+  </div>
+</article>
+<% }) %>

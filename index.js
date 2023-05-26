@@ -46,7 +46,16 @@ app.get("/", (req, res) => {
 });
 
 app.get("/todo/collection", (req, res) => {
-  res.render("collection");
+  if (req.session.email === undefined) {
+    res.redirect("/");
+    return;
+  }
+
+  const account = {
+    email: req.session.email,
+  };
+
+  TodoManager.DisplayTodoCollection(account, res);
 });
 
 app.get("/todo/:type", (req, res) => {

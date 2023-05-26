@@ -14,6 +14,12 @@ module.exports.DisplayTodoLists = (account, response) => {
   });
 };
 
+module.exports.DisplayTodoCollection = (account, response) => {
+  AccountModel.findOne({ email: account.email }).then((profile) => {
+    DisplayManager.DisplayCollection(profile, response);
+  });
+};
+
 module.exports.ManageTodoLists = async (account, todo, response) => {
   const getURL = `/todo/${account.type}`;
 

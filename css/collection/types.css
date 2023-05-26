@@ -1,0 +1,165 @@
+/*-------------------------------------------------------*/
+/*-------------------- TYPES SECTION --------------------*/
+/*-------------------------------------------------------*/
+
+#types-section {
+  grid-template-columns: repeat(2, auto);
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 10rem;
+  display: grid;
+  gap: 3rem;
+}
+
+.type-section-title {
+  font-family: "Poppins", sans-serif;
+  grid-column: span 2;
+  text-align: center;
+  font-weight: 200;
+  font-size: 5rem;
+  color: #fff;
+}
+
+.type-container {
+  border: 2px solid #ffffff20;
+  grid-template-columns: auto;
+  box-shadow: 4px 4px #000;
+  justify-content: stretch;
+  padding: 1rem 1.5rem;
+  align-items: center;
+  display: grid;
+  gap: 1rem;
+}
+
+.type-container:nth-of-type(1) {
+  grid-column: span 2;
+}
+
+.type-container-title {
+  font-family: "Poppins", sans-serif;
+  text-shadow: 4px 4px #000;
+  font-size: 2.5rem;
+  font-weight: 300;
+  cursor: default;
+  color: #fff;
+}
+
+.type-container-divider {
+  border-bottom: 2px solid #ffffff20;
+  border-right: none;
+  border-left: none;
+  border-top: none;
+}
+
+/*---------------------------------------*/
+/*------------- INFORMATION -------------*/
+/*---------------------------------------*/
+
+.type-information-container {
+  justify-content: space-between;
+  grid-auto-flow: column;
+  align-content: center;
+  display: grid;
+  gap: 5rem;
+}
+
+/*-----------------------------------------*/
+/*-------------- LIST STYLES --------------*/
+/*-----------------------------------------*/
+
+.type-info-list {
+  grid-template-columns: auto;
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  gap: 1rem;
+}
+
+.type-info-list-title {
+  font-family: "Poppins", sans-serif;
+  text-shadow: 2px 2px #000;
+  font-size: 1.5rem;
+  font-weight: 200;
+  cursor: default;
+  color: #fff;
+}
+
+/*------------------------------------------*/
+/*-------------- BLOCK STYLES --------------*/
+/*------------------------------------------*/
+
+.type-info-block {
+  grid-auto-flow: column;
+  justify-content: left;
+  align-items: center;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.type-info-block-image {
+  filter: drop-shadow(2px 2px #000);
+  width: 30px;
+}
+
+.type-info-block-text {
+  font-family: "Poppins", sans-serif;
+  text-shadow: 2px 2px #000;
+  font-size: 1.5rem;
+  font-weight: 200;
+  cursor: default;
+  color: #fff;
+}
+
+/*------------------------------------------*/
+/*-------------- PROGRESS BAR --------------*/
+/*------------------------------------------*/
+
+.type-progress-container {
+  grid-template-columns: auto;
+  justify-content: stretch;
+  align-items: center;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.type-progress-bar {
+  border: 2px solid #000286da;
+  box-shadow: 2px 2px #000;
+  border-radius: 40px;
+  position: relative;
+  overflow: hidden;
+  height: 8px;
+}
+
+.type-progress-fill {
+  background-color: #0002867b;
+  border-radius: 40px;
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  bottom: 0;
+  left: 0;
+  top: 0;
+}
+
+.type-progress-info-container {
+  justify-content: space-between;
+  grid-auto-flow: column;
+  align-items: center;
+  display: grid;
+}
+
+.type-progress-ratio,
+.type-progress-percentage {
+  font-family: "Poppins", sans-serif;
+  text-shadow: 2px 2px #000;
+  letter-spacing: 0.5px;
+  font-weight: 200;
+  cursor: default;
+  font-size: 1rem;
+  color: #fff;
+}
+
+/*----------------------------------------------*/
+/*----------------- END OF CSS -----------------*/
+/*----------------------------------------------*/
