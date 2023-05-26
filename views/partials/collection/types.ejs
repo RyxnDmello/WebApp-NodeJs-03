@@ -45,11 +45,18 @@
 
     <div class="type-progress-info-container">
       <h4 class="type-progress-ratio">
-        <%= type.totalCompleted %>/<%= type.total %>
+        <%= type.totalCompleted %>/<%= type.total %> Tasks
       </h4>
 
       <h4 class="type-progress-percentage"><%= type.percentage %>%</h4>
     </div>
   </div>
+
+  <hr class="type-container-divider" />
+
+  <a class="type-container-link" href="<%= type.URL %>">
+    <h4 class="type-container-link-text">Edit <%= type.title %></h4>
+    <img class="type-container-link-image" src="/buttons/arrow.png" />
+  </a>
 </article>
 <% }) %>
