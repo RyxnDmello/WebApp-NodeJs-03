@@ -1,0 +1,18 @@
+@import url("./common/fonts.css");
+
+@import url("./error/navbar.css");
+@import url("./error/errors.css");
+
+* {
+  scroll-behavior: smooth;
+  text-decoration: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-image: linear-gradient(to right top, #000d20, #0b091d, #000d20);
+  position: relative;
+  z-index: -2;
+}

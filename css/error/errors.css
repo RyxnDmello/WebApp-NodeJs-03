@@ -1,0 +1,134 @@
+/*---------------------------------------------------------*/
+/*--------------------- ERRORS STYLES ---------------------*/
+/*---------------------------------------------------------*/
+
+#errors-section {
+  grid-template-columns: repeat(2, auto);
+  justify-content: center;
+  padding: 8.5rem 6rem;
+  align-items: center;
+  display: grid;
+  gap: 2.5rem;
+}
+
+.error-image {
+  filter: drop-shadow(4px 4px #00000060);
+  width: 300px;
+}
+
+.error-information-container {
+  grid-template-columns: auto;
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  gap: 1rem;
+}
+
+/*-----------------------------------*/
+/*----------- TEXT STYLES -----------*/
+/*-----------------------------------*/
+
+.error-text-container {
+  grid-template-columns: auto;
+  justify-content: center;
+  align-items: center;
+  display: grid;
+}
+
+.error-title {
+  font-family: "Poppins", sans-serif;
+  text-shadow: 4px 4px #000;
+  font-weight: 200;
+  font-size: 4rem;
+  cursor: default;
+  color: #fff;
+}
+
+.error-description {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 200;
+  color: #b6b6b6;
+  cursor: default;
+}
+
+/*------------------------------------*/
+/*----------- LINKS STYLES -----------*/
+/*------------------------------------*/
+
+.error-links-container {
+  grid-auto-flow: column;
+  justify-content: left;
+  align-items: center;
+  display: grid;
+  gap: 1rem;
+}
+
+.error-link {
+  transition: background-color 450ms, border-color 450ms, translate 150ms,
+    box-shadow 150ms;
+  box-shadow: 4px 4px #00000080;
+  justify-content: center;
+  grid-auto-flow: column;
+  padding: 0.25rem 2rem;
+  align-items: center;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.error-link.home {
+  background-color: #ff002f;
+  border: 2px solid #ff002f;
+}
+
+.error-link.other {
+  border: 2px solid #1700e9;
+  position: relative;
+}
+
+.error-link.other::after {
+  transition: background-color 250ms, width 250ms, opacity 250ms;
+  background-color: #1700e9;
+  position: absolute;
+  margin: 0 auto;
+  height: 100%;
+  opacity: 0.5;
+  content: "";
+  z-index: -1;
+  width: 0%;
+  inset: 0;
+}
+
+.error-link-image {
+  width: 20px;
+}
+
+.error-link-text {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: #fff;
+}
+
+/*-------------------------------------------*/
+/*--------------- TRANSITIONS ---------------*/
+/*-------------------------------------------*/
+
+.error-link:focus {
+  box-shadow: 0 0 #00000080;
+  translate: 0 4px;
+}
+
+.error-link.home:hover {
+  background-color: #ba0022;
+  border-color: #ba0022;
+}
+
+.error-link.other:hover::after {
+  width: 100%;
+  opacity: 1;
+}
+
+/*----------------------------------------------*/
+/*----------------- END OF CSS -----------------*/
+/*----------------------------------------------*/

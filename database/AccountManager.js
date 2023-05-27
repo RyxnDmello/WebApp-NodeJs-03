@@ -6,13 +6,25 @@ const ManageAccount = async (account, request, response) => {
   await AccountModel.findOne({ email: account.email })
     .then((profile) => {
       if (account.password !== account.retypePassword) {
-        response.redirect("/");
+        response.render("error", {
+          error: {
+            title: "FAILED TO LOGIN",
+            description: "Unfortunately, there is a password mismatch",
+            URL: "/#account-section",
+          },
+        });
         return;
       }
 
       bcrypt.compare(account.password, profile.password).then((isValid) => {
         if (!isValid) {
-          response.redirect("/");
+          response.render("error", {
+            error: {
+              title: "FAILED TO LOGIN",
+              description: "Unfortunately, the password is incorrect.",
+              URL: "/#account-section",
+            },
+          });
           return;
         }
 

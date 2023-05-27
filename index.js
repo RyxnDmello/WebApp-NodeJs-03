@@ -32,7 +32,21 @@ const PORT = 1000;
 /*------------------------------------------*/
 
 app.get("/", (req, res) => {
-  req.session.email = "test@gmail.com";
+  if (req.session.email === undefined) {
+    res.render("home", {
+      header: DataManager.header,
+      templates: DataManager.templates,
+      custom: DataManager.custom,
+      personal: DataManager.personal,
+      inspired: DataManager.inspired,
+      comments: DataManager.comments,
+      footer: DataManager.footer,
+      account: false,
+    });
+
+    return;
+  }
+
   res.render("home", {
     header: DataManager.header,
     templates: DataManager.templates,
@@ -41,7 +55,7 @@ app.get("/", (req, res) => {
     inspired: DataManager.inspired,
     comments: DataManager.comments,
     footer: DataManager.footer,
-    account: false,
+    account: true,
   });
 });
 
