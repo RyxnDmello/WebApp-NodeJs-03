@@ -1,0 +1,32 @@
+{
+  "accountExists": {
+    "title": "ACCOUNT ALREADY EXISTS",
+    "description": "Login to your account to access your lists and related features.",
+    "image": "/error/general.png"
+  },
+  "accountAbsent": {
+    "title": "CREATE OR LOGIN TO YOUR ACCOUNT",
+    "description": "Create or login to access your lists and related features.",
+    "image": "/error/general.png"
+  },
+  "accountInvalid": {
+    "title": "ACCOUNT DOES NOT EXIST",
+    "description": "Create your account to access your lists and related features.",
+    "image": "/error/general.png"
+  },
+  "accountCreationFailure": {
+    "title": "FAILED TO CREATE YOUR ACCOUNT",
+    "description": "An unexpected error has occurred, please try again in a little while.",
+    "image": "/error/general.png"
+  },
+  "loginPasswordIncorrect": {
+    "title": "FAILED TO LOGIN TO YOUR ACCOUNT",
+    "description": "The password you entered, to this account, is incorrect.",
+    "image": "/error/general.png"
+  },
+  "loginPasswordMismatch": {
+    "title": "FAILED TO LOGIN TO YOUR ACCOUNT",
+    "description": "The password you entered does not match.",
+    "image": "/error/general.png"
+  }
+}

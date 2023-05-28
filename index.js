@@ -3,7 +3,8 @@ const bodyParser = require("body-parser");
 const session = require("express-session");
 
 const TodoManager = require(__dirname + "/database/TodoManager.js");
-const DataManager = require(__dirname + "/json/home.json");
+const HomeData = require(__dirname + "/json/home.json");
+const ErrorData = require(__dirname + "/json/error.json");
 
 const app = express();
 
@@ -32,36 +33,29 @@ const PORT = 1000;
 /*------------------------------------------*/
 
 app.get("/", (req, res) => {
-  if (req.session.email === undefined) {
-    res.render("home", {
-      header: DataManager.header,
-      templates: DataManager.templates,
-      custom: DataManager.custom,
-      personal: DataManager.personal,
-      inspired: DataManager.inspired,
-      comments: DataManager.comments,
-      footer: DataManager.footer,
-      account: false,
-    });
+  const home = {
+    header: HomeData.header,
+    templates: HomeData.templates,
+    custom: HomeData.custom,
+    personal: HomeData.personal,
+    inspired: HomeData.inspired,
+    comments: HomeData.comments,
+    footer: HomeData.footer,
+    account: false,
+  };
 
+  if (req.session.email === undefined) {
+    res.render("home", home);
     return;
   }
 
-  res.render("home", {
-    header: DataManager.header,
-    templates: DataManager.templates,
-    custom: DataManager.custom,
-    personal: DataManager.personal,
-    inspired: DataManager.inspired,
-    comments: DataManager.comments,
-    footer: DataManager.footer,
-    account: true,
-  });
+  home.account = true;
+  res.render("home", home);
 });
 
 app.get("/todo/collection", (req, res) => {
   if (req.session.email === undefined) {
-    res.redirect("/error/absent");
+    res.redirect("/error/account-absent");
     return;
   }
 
@@ -74,7 +68,7 @@ app.get("/todo/collection", (req, res) => {
 
 app.get("/todo/:type", (req, res) => {
   if (req.session.email === undefined) {
-    res.redirect("/error/absent");
+    res.redirect("/error/account-absent");
     return;
   }
 
@@ -90,75 +84,72 @@ app.get("/todo/:type", (req, res) => {
 app.get("/error/:type", (req, res) => {
   const type = req.params.type;
 
-  if (type === "exists") {
+  if (type === "account-exists") {
     res.render("error", {
       error: {
-        title: "ACCOUNT ALREADY EXISTS",
-        description:
-          "Login to your account to access your lists and related features.",
-        URL: "/#account-section",
+        title: ErrorData.accountExists.title,
+        description: ErrorData.accountExists.description,
+        image: ErrorData.accountExists.image,
       },
     });
 
     return;
   }
 
-  if (type === "absent") {
+  if (type === "account-absent") {
     res.render("error", {
       error: {
-        title: "CREATE AN ACCOUNT",
-        description:
-          "An account is required to access the lists and related features.",
-        URL: "/#account-section",
+        title: ErrorData.accountAbsent.title,
+        description: ErrorData.accountAbsent.description,
+        image: ErrorData.accountAbsent.image,
       },
     });
 
     return;
   }
 
-  if (type === "signup") {
+  if (type === "account-invalid") {
     res.render("error", {
       error: {
-        title: "FAILED TO SIGNUP",
-        description:
-          "An unexpected error has occurred, please try again in a little while.",
-        URL: "/#account-section",
+        title: ErrorData.accountInvalid.title,
+        description: ErrorData.accountInvalid.description,
+        image: ErrorData.accountInvalid.image,
       },
     });
 
     return;
   }
 
-  if (type === "login-account") {
+  if (type === "account-creation-failure") {
     res.render("error", {
       error: {
-        title: "FAILED TO LOGIN",
-        description: "No account exists with this email.",
-        URL: "/#account-section",
+        title: ErrorData.accountCreationFailure.title,
+        description: ErrorData.accountCreationFailure.description,
+        image: ErrorData.accountCreationFailure.image,
       },
     });
 
     return;
   }
 
-  if (type === "login-password") {
+  if (type === "login-password-incorrect") {
     res.render("error", {
       error: {
-        title: "FAILED TO LOGIN",
-        description: "The password you entered is incorrect.",
-        URL: "/#account-section",
+        title: ErrorData.loginPasswordIncorrect.title,
+        description: ErrorData.loginPasswordIncorrect.description,
+        image: ErrorData.loginPasswordIncorrect.image,
       },
     });
 
     return;
   }
 
-  if (type === "login-mismatch") {
+  if (type === "login-password-mismatch") {
     res.render("error", {
       error: {
-        title: "FAILED TO LOGIN",
-        description: "The passwords you entered does not match",
-        URL: "/#account-section",
+        title: ErrorData.loginPasswordMismatch.title,
+        description: ErrorData.loginPasswordMismatch.description,
+        image: ErrorData.loginPasswordMismatch.image,
       },
     });
 

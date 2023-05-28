@@ -20,7 +20,6 @@ module.exports.DisplayTodoLists = (account, response) => {
   AccountModel.findOne({ email: account.email })
     .select(`lists.${account.type}`)
     .then((profile) => {
-      console.log(profile);
       DisplayManager.DisplayLists(account.type, profile.lists, response);
     });
 };

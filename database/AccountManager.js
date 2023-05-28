@@ -6,7 +6,7 @@ const CreateAccount = async (account, request, response) => {
   const profile = await AccountModel.findOne({ email: account.email });
 
   if (profile) {
-    response.redirect("/error/exists");
+    response.redirect("/error/account-exists");
     return;
   }
 
@@ -20,13 +20,13 @@ const LoginAccount = async (account, request, response) => {
 
   if (profile) {
     if (account.password !== account.retypePassword) {
-      response.redirect("/error/login-mismatch");
+      response.redirect("/error/login-password-mismatch");
       return;
     }
 
     bcrypt.compare(account.password, profile.password).then((isValid) => {
       if (!isValid) {
-        response.redirect("/error/login-password");
+        response.redirect("/error/login-password-incorrect");
         return;
       }
 
@@ -38,7 +38,7 @@ const LoginAccount = async (account, request, response) => {
   }
 
   if (profile === null) {
-    response.redirect("/error/login-account");
+    response.redirect("/error/account-invalid");
   }
 };
 
@@ -78,7 +78,7 @@ const DatabaseCreateAccount = (account, request, response) => {
         response.redirect("/");
       })
       .catch(() => {
-        response.render("/error/signup");
+        response.render("/error/account-creation-failure");
       });
   });
 };
