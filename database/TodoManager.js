@@ -5,19 +5,32 @@ const DisplayManager = require("./DisplayManager.js");
 const TaskManager = require("./TaskManager.js");
 
 module.exports.ManageTodoAccount = async (account, request, response) => {
-  AccountManager.ManageAccount(account, request, response);
+  if (account.type === "create") {
+    AccountManager.CreateAccount(account, request, response);
+    return;
+  }
+
+  if (account.type === "login") {
+    AccountManager.LoginAccount(account, request, response);
+    return;
+  }
 };
 
 module.exports.DisplayTodoLists = (account, response) => {
-  AccountModel.findOne({ email: account.email }).then((profile) => {
-    DisplayManager.DisplayLists(account, profile, response);
-  });
+  AccountModel.findOne({ email: account.email })
+    .select(`lists.${account.type}`)
+    .then((profile) => {
+      console.log(profile);
+      DisplayManager.DisplayLists(account.type, profile.lists, response);
+    });
 };
 
 module.exports.DisplayTodoCollection = (account, response) => {
-  AccountModel.findOne({ email: account.email }).then((profile) => {
-    DisplayManager.DisplayCollection(profile, response);
-  });
+  AccountModel.findOne({ email: account.email })
+    .select("lists")
+    .then((profile) => {
+      DisplayManager.DisplayCollection(profile.lists, response);
+    });
 };
 
 module.exports.ManageTodoLists = async (account, todo, response) => {

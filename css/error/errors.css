@@ -5,7 +5,7 @@
 #errors-section {
   grid-template-columns: repeat(2, auto);
   justify-content: center;
-  padding: 8.5rem 6rem;
+  padding: 8.5rem 10rem;
   align-items: center;
   display: grid;
   gap: 2.5rem;
@@ -13,7 +13,7 @@
 
 .error-image {
   filter: drop-shadow(4px 4px #00000060);
-  width: 300px;
+  width: 350px;
 }
 
 .error-information-container {
@@ -46,7 +46,7 @@
 
 .error-description {
   font-family: "Poppins", sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: 200;
   color: #b6b6b6;
   cursor: default;
@@ -71,6 +71,7 @@
   justify-content: center;
   grid-auto-flow: column;
   padding: 0.25rem 2rem;
+  border-radius: 2.5px;
   align-items: center;
   display: grid;
   gap: 0.5rem;
@@ -87,7 +88,7 @@
 }
 
 .error-link.other::after {
-  transition: background-color 250ms, width 250ms, opacity 250ms;
+  transition: background-color 350ms, width 350ms, opacity 250ms;
   background-color: #1700e9;
   position: absolute;
   margin: 0 auto;
@@ -120,8 +121,8 @@
 }
 
 .error-link.home:hover {
-  background-color: #ba0022;
-  border-color: #ba0022;
+  background-color: #93001b;
+  border-color: #93001b;
 }
 
 .error-link.other:hover::after {

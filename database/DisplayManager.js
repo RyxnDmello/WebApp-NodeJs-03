@@ -1,74 +1,24 @@
 const { startCase } = require("lodash");
 
-/*--------------------------------------------------*/
-/*--------------- LISTS & COLLECTION ---------------*/
-/*--------------------------------------------------*/
+const DisplayLists = (type, lists, response) => {
+  if (type === "personal") lists = lists.personal;
+  if (type === "daily") lists = lists.daily;
+  if (type === "weekly") lists = lists.weekly;
+  if (type === "monthly") lists = lists.monthly;
+  if (type === "yearly") lists = lists.yearly;
 
-const DisplayLists = (account, profile, response) => {
-  const postURL = `/todo/${account.type}`;
+  const todo = {
+    progress: lists.progress,
+    completed: lists.completed,
+    type: startCase(type),
+    postURL: `/todo/${type}`,
+  };
 
-  if (account.type === "personal") {
-    const todo = {
-      progress: profile.lists.personal.progress,
-      completed: profile.lists.personal.completed,
-      type: startCase(account.type),
-      postURL: postURL,
-    };
-
-    RenderTodo(todo, response);
-    return;
-  }
-
-  if (account.type === "daily") {
-    const todo = {
-      progress: profile.lists.daily.progress,
-      completed: profile.lists.daily.completed,
-      type: startCase(account.type),
-      postURL: postURL,
-    };
-
-    RenderTodo(todo, response);
-    return;
-  }
-
-  if (account.type === "weekly") {
-    const todo = {
-      progress: profile.lists.weekly.progress,
-      completed: profile.lists.weekly.completed,
-      type: startCase(account.type),
-      postURL: postURL,
-    };
-
-    RenderTodo(todo, response);
-    return;
-  }
-
-  if (account.type === "monthly") {
-    const todo = {
-      progress: profile.lists.monthly.progress,
-      completed: profile.lists.monthly.completed,
-      type: startCase(account.type),
-      postURL: postURL,
-    };
-
-    RenderTodo(todo, response);
-    return;
-  }
-
-  if (account.type === "yearly") {
-    const todo = {
-      progress: profile.lists.yearly.progress,
-      completed: profile.lists.yearly.completed,
-      type: startCase(account.type),
-      postURL: postURL,
-    };
-
-    RenderTodo(todo, response);
-    return;
-  }
+  response.render("todo", { todo: todo });
+  return;
 };
 
-const DisplayCollection = (profile, response) => {
+const DisplayCollection = (lists, response) => {
   const collection = [
     {
       title: "Personal List",
@@ -117,42 +67,42 @@ const DisplayCollection = (profile, response) => {
     },
   ];
 
-  profile.lists.personal.progress.forEach((task) => {
+  lists.personal.progress.forEach((task) => {
     if (task.priority === "high") ++collection[0].progress[0];
     else if (task.priority === "medium") ++collection[0].progress[1];
     else if (task.priority === "low") ++collection[0].progress[2];
     ++collection[0].total;
   });
 
-  profile.lists.daily.progress.forEach((task) => {
+  lists.daily.progress.forEach((task) => {
     if (task.priority === "high") ++collection[1].progress[0];
     else if (task.priority === "medium") ++collection[1].progress[1];
     else if (task.priority === "low") ++collection[1].progress[2];
     ++collection[1].total;
   });
 
-  profile.lists.weekly.progress.forEach((task) => {
+  lists.weekly.progress.forEach((task) => {
     if (task.priority === "high") ++collection[2].progress[0];
     else if (task.priority === "medium") ++collection[2].progress[1];
     else if (task.priority === "low") ++collection[2].progress[2];
     ++collection[2].total;
   });
 
-  profile.lists.monthly.progress.forEach((task) => {
+  lists.monthly.progress.forEach((task) => {
     if (task.priority === "high") ++collection[3].progress[0];
     else if (task.priority === "medium") ++collection[3].progress[1];
     else if (task.priority === "low") ++collection[3].progress[2];
     ++collection[3].total;
   });
 
-  profile.lists.yearly.progress.forEach((task) => {
+  lists.yearly.progress.forEach((task) => {
     if (task.priority === "high") ++collection[4].progress[0];
     else if (task.priority === "medium") ++collection[4].progress[1];
     else if (task.priority === "low") ++collection[4].progress[2];
     ++collection[4].total;
   });
 
-  profile.lists.personal.completed.forEach((task) => {
+  lists.personal.completed.forEach((task) => {
     if (task.priority === "high") ++collection[0].completed[0];
     else if (task.priority === "medium") ++collection[0].completed[1];
     else if (task.priority === "low") ++collection[0].completed[2];
@@ -160,7 +110,7 @@ const DisplayCollection = (profile, response) => {
     ++collection[0].total;
   });
 
-  profile.lists.daily.completed.forEach((task) => {
+  lists.daily.completed.forEach((task) => {
     if (task.priority === "high") ++collection[1].completed[0];
     else if (task.priority === "medium") ++collection[1].completed[1];
     else if (task.priority === "low") ++collection[1].completed[2];
@@ -168,7 +118,7 @@ const DisplayCollection = (profile, response) => {
     ++collection[1].total;
   });
 
-  profile.lists.weekly.completed.forEach((task) => {
+  lists.weekly.completed.forEach((task) => {
     if (task.priority === "high") ++collection[2].completed[0];
     else if (task.priority === "medium") ++collection[2].completed[1];
     else if (task.priority === "low") ++collection[2].completed[2];
@@ -176,7 +126,7 @@ const DisplayCollection = (profile, response) => {
     ++collection[2].total;
   });
 
-  profile.lists.monthly.completed.forEach((task) => {
+  lists.monthly.completed.forEach((task) => {
     if (task.priority === "high") ++collection[3].completed[0];
     else if (task.priority === "medium") ++collection[3].completed[1];
     else if (task.priority === "low") ++collection[3].completed[2];
@@ -184,7 +134,7 @@ const DisplayCollection = (profile, response) => {
     ++collection[3].total;
   });
 
-  profile.lists.yearly.completed.forEach((task) => {
+  lists.yearly.completed.forEach((task) => {
     if (task.priority === "high") ++collection[4].completed[0];
     else if (task.priority === "medium") ++collection[4].completed[1];
     else if (task.priority === "low") ++collection[4].completed[2];
@@ -200,19 +150,8 @@ const DisplayCollection = (profile, response) => {
     }
   });
 
-  RenderCollection(collection, response);
-};
-
-/*--------------------------------------------------*/
-/*------------------ RENDER PAGES ------------------*/
-/*--------------------------------------------------*/
-
-const RenderTodo = (todo, response) => {
-  response.render("todo", { todo: todo });
-};
-
-const RenderCollection = (collection, response) => {
   response.render("collection", { collection: collection });
+  return;
 };
 
 module.exports.DisplayLists = DisplayLists;

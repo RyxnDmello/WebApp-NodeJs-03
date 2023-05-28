@@ -118,6 +118,10 @@ const ListsSchema = new mongoose.Schema({
 });
 
 const AccountSchema = new mongoose.Schema({
+  username: {
+    required: true,
+    type: String,
+  },
   email: {
     required: true,
     type: String,

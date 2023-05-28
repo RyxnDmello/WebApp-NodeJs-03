@@ -3,6 +3,19 @@
 <% } %>
 
 <form class="register-form" action="/account/<%= type %>" method="post">
+  <% if(type === "create") { %>
+  <div class="input-container email">
+    <h3 class="input-label">Username</h3>
+    <input
+      autocomplete="off"
+      name="username"
+      class="input"
+      type="text"
+      required
+    />
+  </div>
+  <% } %>
+
   <div class="input-container email">
     <h3 class="input-label">Email</h3>
     <input
