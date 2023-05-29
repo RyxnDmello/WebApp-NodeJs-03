@@ -40,15 +40,6 @@
   gap: 2rem;
 }
 
-.task-index {
-  font-family: "Poppins", sans-serif;
-  letter-spacing: 0.5px;
-  font-size: 1.5rem;
-  font-weight: 300;
-  cursor: default;
-  color: #fff;
-}
-
 .task-title {
   font-family: "Poppins", sans-serif;
   letter-spacing: 0.5px;

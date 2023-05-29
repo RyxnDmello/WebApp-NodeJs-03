@@ -15,7 +15,12 @@
       <img class="nav-collection-link-image" src="/buttons/personal.png" />
       <p class="nav-collection-link-text">Collection</p>
     </a>
-    <% } %> <% if(account === false) { %>
+
+    <div class="nav-profile-container">
+      <img class="nav-profile-image" src="/buttons/profile.png" />
+      <h3 class="nav-profile-username" src=""><%= username %></h3>
+    </div>
+    <% } else { %>
     <a class="nav-register-link" href="#account-section">
       <img class="nav-register-link-image" src="/buttons/signup.png" />
       <p class="nav-register-link-text">Register</p>

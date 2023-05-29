@@ -42,6 +42,7 @@ app.get("/", (req, res) => {
     comments: HomeData.comments,
     footer: HomeData.footer,
     account: false,
+    username: "",
   };
 
   if (req.session.email === undefined) {
@@ -49,6 +50,7 @@ app.get("/", (req, res) => {
     return;
   }
 
+  home.username = req.session.username;
   home.account = true;
   res.render("home", home);
 });

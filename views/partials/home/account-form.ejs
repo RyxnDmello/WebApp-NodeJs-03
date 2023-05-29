@@ -4,12 +4,14 @@
 
 <form class="register-form" action="/account/<%= type %>" method="post">
   <% if(type === "create") { %>
-  <div class="input-container email">
+  <div class="input-container username">
     <h3 class="input-label">Username</h3>
     <input
+      spellcheck="false"
       autocomplete="off"
       name="username"
-      maxlength="20"
+      maxlength="15"
+      minlength="5"
       class="input"
       type="text"
       required
@@ -44,7 +46,7 @@
     <h3 class="input-label">Confirm Password</h3>
     <input
       name="retypePassword"
-      autocomplete="LOL"
+      autocomplete="off"
       type="password"
       class="input"
       required

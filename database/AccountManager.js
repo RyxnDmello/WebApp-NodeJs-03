@@ -30,6 +30,7 @@ const LoginAccount = async (account, request, response) => {
         return;
       }
 
+      request.session.username = profile.username;
       request.session.email = account.email;
       response.redirect("/");
     });
@@ -74,6 +75,7 @@ const DatabaseCreateAccount = (account, request, response) => {
 
     ClientAccount.save()
       .then(() => {
+        request.session.username = account.username;
         request.session.email = account.email;
         response.redirect("/");
       })
