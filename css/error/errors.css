@@ -68,36 +68,46 @@
   transition: background-color 450ms, border-color 450ms, translate 150ms,
     box-shadow 150ms;
   box-shadow: 4px 4px #00000080;
+  transform: skewX(-6.5deg);
   justify-content: center;
   grid-auto-flow: column;
-  padding: 0.25rem 2rem;
+  padding: 0.3rem 2.5rem;
   border-radius: 2.5px;
   align-items: center;
+  position: relative;
   display: grid;
-  gap: 0.5rem;
+  gap: 0.6rem;
 }
 
 .error-link.home {
-  background-color: #ff002f;
-  border: 2px solid #ff002f;
+  background-color: #c5000010;
+  border: 2px solid #c50000;
 }
 
 .error-link.other {
-  border: 2px solid #1700e9;
-  position: relative;
+  background-color: #001ac510;
+  border: 2px solid #001ac5;
 }
 
-.error-link.other::after {
-  transition: background-color 350ms, width 350ms, opacity 250ms;
-  background-color: #1700e9;
+.error-link::after {
+  transition: background-color 350ms, width 350ms;
   position: absolute;
   margin: 0 auto;
   height: 100%;
-  opacity: 0.5;
   content: "";
   z-index: -1;
   width: 0%;
-  inset: 0;
+  bottom: 0;
+  left: 0;
+  top: 0;
+}
+
+.error-link.home::after {
+  background-color: #c50000;
+}
+
+.error-link.other::after {
+  background-color: #001ac5;
 }
 
 .error-link-image {
@@ -115,19 +125,13 @@
 /*--------------- TRANSITIONS ---------------*/
 /*-------------------------------------------*/
 
+.error-link:hover::after {
+  width: 100%;
+}
+
 .error-link:focus {
   box-shadow: 0 0 #00000080;
   translate: 0 4px;
-}
-
-.error-link.home:hover {
-  background-color: #93001b;
-  border-color: #93001b;
-}
-
-.error-link.other:hover::after {
-  width: 100%;
-  opacity: 1;
 }
 
 /*----------------------------------------------*/
