@@ -210,6 +210,6 @@ app.post("/todo/:type", async (req, res) => {
   TodoManager.ManageTodoLists(account, todo, res);
 });
 
-app.listen(1000, () => {
+app.listen(process.env.PORT, () => {
   console.log(`PORT: ${PORT} | ACTIVE`);
 });
