@@ -25,12 +25,12 @@
 
   <body>
     <header id="header">
-      <%- include("./partials/todo/navbar.ejs", { type: todo.type }) %>
+      <%- include("./todo/navbar.ejs", { type: todo.type }) %>
     </header>
 
     <main>
       <section id="todo-lists-section">
-        <%- include("./partials/todo/lists.ejs", { todo: todo }) %>
+        <%- include("./todo/lists.ejs", { ...todo }) %>
       </section>
     </main>
 

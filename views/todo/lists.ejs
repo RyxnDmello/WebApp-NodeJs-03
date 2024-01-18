@@ -1,15 +1,10 @@
-<% if(todo.progress.length !== 0 || todo.completed.length !== 0) { %>
-<form id="settings" action="<%= todo.postURL %>" method="post">
+<% if(progress.length !== 0 || completed.length !== 0) { %>
+<form id="settings" action="<%= post %>/clear" method="post">
   <article class="settings-header">
-    <h1 class="settings-header-title">My <%= todo.type %> List</h1>
+    <h1 class="settings-header-title">My <%= type %> List</h1>
   </article>
 
-  <button
-    class="settings-delete-button"
-    value="DeleteAllTasks"
-    name="taskButton"
-    type="submit"
-  >
+  <button class="settings-delete-button" type="submit">
     <img class="settings-delete-button-image" src="/lists/remove.png" />
     <h4 class="settings-delete-button-text">Delete List</h4>
   </button>
@@ -19,22 +14,22 @@
 <% } %>
 
 <section id="task-list-section">
-  <% if(todo.progress.length === 0 && todo.completed.length === 0) { %>
+  <% if(progress.length === 0 && completed.length === 0) { %>
   <h1 class="task-list-section-title">
-    ADD YOUR <%= todo.type.toUpperCase() %> TASKS
+    ADD YOUR <%= type.toUpperCase() %> TASKS
   </h1>
   <% } %>
 
   <article class="task-list-container">
-    <%- include("./list-progress.ejs", { todo: todo }) %>
+    <%- include("./lists/progress.ejs", { progress, post }) %>
   </article>
 
   <article class="task-list-container">
-    <%- include("./list-completed.ejs", { todo: todo }) %>
+    <%- include("./lists/completed.ejs", { completed, post }) %>
   </article>
 </section>
 
-<form id="controller" action="<%= todo.postURL %>" method="post">
+<form id="controller" action="<%= post %>/progress" method="post">
   <hr class="controller-divider" />
 
   <div class="controller-inputs-container">
@@ -42,16 +37,16 @@
       class="controller-input"
       placeholder="Title"
       autocomplete="off"
-      name="taskTitle"
       required="true"
       maxlength="25"
+      name="title"
       type="text"
     />
 
     <input
       placeholder="Description"
       class="controller-input"
-      name="taskDescription"
+      name="description"
       autocomplete="off"
       required="true"
       maxlength="50"
@@ -65,33 +60,36 @@
     <div class="controller-radio-block">
       <input
         id="controller-radio-high"
-        name="taskPriority"
+        name="priority"
         value="high"
         type="radio"
         required
       />
+
       <label for="controller-radio-high">High Priority</label>
     </div>
 
     <div class="controller-radio-block">
       <input
         id="controller-radio-medium"
-        name="taskPriority"
+        name="priority"
         value="medium"
         type="radio"
         required
       />
+
       <label for="controller-radio-medium">Medium Priority</label>
     </div>
 
     <div class="controller-radio-block">
       <input
         id="controller-radio-low"
-        name="taskPriority"
+        name="priority"
         type="radio"
         value="low"
         required
       />
+
       <label for="controller-radio-low">Low Priority</label>
     </div>
   </div>
@@ -99,9 +97,9 @@
   <div class="controller-buttons-container">
     <button
       class="controller-button add"
-      value="AddProgressTask"
-      name="taskButton"
+      name="action"
       type="submit"
+      value="add"
     >
       <h4 class="controller-button-text">Add Task</h4>
       <img class="controller-button-image" src="/lists/add.png" />

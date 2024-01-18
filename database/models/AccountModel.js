@@ -1,142 +1,137 @@
-const mongoose = require("mongoose");
+const { Schema, model } = require("mongoose");
 
-mongoose.connect(
-  "mongodb+srv://WebApp-Personal-03:RyanDmelloWebApp03@client-account-informat.kquhslf.mongodb.net/accountsDB",
-  { useNewUrlParser: true }
-);
-
-const TaskSchema = new mongoose.Schema({
+const taskSchema = new Schema({
   title: {
+    type: Schema.Types.String,
     required: true,
-    type: String,
   },
   description: {
+    type: Schema.Types.String,
     required: true,
-    type: String,
   },
   priority: {
+    type: Schema.Types.String,
     required: true,
-    type: String,
   },
   date: {
+    type: Schema.Types.String,
     required: true,
-    type: String,
   },
 });
 
-const ListsSchema = new mongoose.Schema({
+const listsSchema = new Schema({
   personal: {
-    _id: false,
     type: {
       progress: [
         {
-          type: TaskSchema,
+          type: taskSchema,
           _id: false,
         },
       ],
       completed: [
         {
-          type: TaskSchema,
+          type: taskSchema,
           _id: false,
         },
       ],
     },
     required: true,
+    _id: false,
   },
   daily: {
-    _id: false,
     type: {
       progress: [
         {
-          type: TaskSchema,
+          type: taskSchema,
           _id: false,
         },
       ],
       completed: [
         {
-          type: TaskSchema,
+          type: taskSchema,
           _id: false,
         },
       ],
     },
     required: true,
+    _id: false,
   },
   weekly: {
-    _id: false,
     type: {
       progress: [
         {
-          type: TaskSchema,
+          type: taskSchema,
           _id: false,
         },
       ],
       completed: [
         {
-          type: TaskSchema,
+          type: taskSchema,
           _id: false,
         },
       ],
     },
     required: true,
+    _id: false,
   },
   monthly: {
-    _id: false,
     type: {
       progress: [
         {
-          type: TaskSchema,
+          type: taskSchema,
           _id: false,
         },
       ],
       completed: [
         {
-          type: TaskSchema,
+          type: taskSchema,
           _id: false,
         },
       ],
     },
     required: true,
+    _id: false,
   },
   yearly: {
-    _id: false,
     type: {
       progress: [
         {
-          type: TaskSchema,
+          type: taskSchema,
           _id: false,
         },
       ],
       completed: [
         {
-          type: TaskSchema,
+          type: taskSchema,
           _id: false,
         },
       ],
     },
     required: true,
+    _id: false,
   },
 });
 
-const AccountSchema = new mongoose.Schema({
+const accountSchema = new Schema({
   username: {
+    type: Schema.Types.String,
     required: true,
-    type: String,
   },
   email: {
+    type: Schema.Types.String,
     required: true,
-    type: String,
   },
   password: {
+    type: Schema.Types.String,
     required: true,
-    type: String,
   },
   lists: {
-    _id: false,
-    type: ListsSchema,
+    type: listsSchema,
     required: true,
+    _id: false,
   },
 });
 
-const AccountModel = mongoose.model("account", AccountSchema);
+const accountModel = model("account", accountSchema);
 
-module.exports = AccountModel;
+module.exports = accountModel;

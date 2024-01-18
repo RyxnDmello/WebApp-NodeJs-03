@@ -1,40 +1,29 @@
-<% if(todo.progress.length !== 0) { %>
+<% if(progress.length !== 0) { %>
 <h1 class="task-list-container-title">PROGRESS</h1>
 <% } %>
 
 <article id="task-list">
-  <% todo.progress.forEach((task) => { %>
+  <% progress.forEach((task) => { %>
   <form
     class="task progress <%= task.priority %>"
-    action="<%= todo.postURL %>"
+    action="<%= post %>/progress"
     method="post"
   >
-    <input type="hidden" name="taskTitle" value="<%= task.title %>" />
-    <input type="hidden" name="taskPriority" value="<%= task.priority %>" />
-    <input
-      type="hidden"
-      name="taskDescription"
-      value="<%= task.description %>"
-    />
+    <input type="hidden" name="title" value="<%= task.title %>" />
+    <input type="hidden" name="priority" value="<%= task.priority %>" />
+    <input type="hidden" name="description" value="<%= task.description %>" />
+    <input type="hidden" name="date" value="<%= task.date %>" />
 
     <article class="task-primary-details">
       <div class="task-header">
         <h2 class="task-title"><%= task.title %></h2>
 
         <div class="task-controller">
-          <button
-            value="DeleteProgressTask"
-            class="task-button"
-            name="taskButton"
-          >
+          <button value="delete" class="task-button" name="action">
             <img class="task-button-image" src="/lists/delete.png" />
           </button>
 
-          <button
-            class="task-button"
-            name="taskButton"
-            value="AddCompletedTask"
-          >
+          <button class="task-button" value="completed" name="action">
             <img class="task-button-image" src="/lists/complete.png" />
           </button>
         </div>
