@@ -1,63 +1,27 @@
 const ErrorData = require("../json/error.json");
 
 const accountExists = (req, res) => {
-  res.render("error", {
-    error: {
-      title: ErrorData.accountExists.title,
-      description: ErrorData.accountExists.description,
-      image: ErrorData.accountExists.image,
-    },
-  });
+  res.render("error", { error: ErrorData.accountExists });
 };
 
 const accountAbsent = (req, res) => {
-  res.render("error", {
-    error: {
-      title: ErrorData.accountAbsent.title,
-      description: ErrorData.accountAbsent.description,
-      image: ErrorData.accountAbsent.image,
-    },
-  });
+  res.render("error", { error: ErrorData.accountAbsent });
 };
 
 const accountInvalid = (req, res) => {
-  res.render("error", {
-    error: {
-      title: ErrorData.accountInvalid.title,
-      description: ErrorData.accountInvalid.description,
-      image: ErrorData.accountInvalid.image,
-    },
-  });
+  res.render("error", { error: ErrorData.accountInvalid });
 };
 
 const accountCreationFailure = (req, res) => {
-  res.render("error", {
-    error: {
-      title: ErrorData.accountCreationFailure.title,
-      description: ErrorData.accountCreationFailure.description,
-      image: ErrorData.accountCreationFailure.image,
-    },
-  });
+  res.render("error", { error: ErrorData.accountCreationFailure });
 };
 
 const loginPasswordIncorrect = (req, res) => {
-  res.render("error", {
-    error: {
-      title: ErrorData.loginPasswordIncorrect.title,
-      description: ErrorData.loginPasswordIncorrect.description,
-      image: ErrorData.loginPasswordIncorrect.image,
-    },
-  });
+  res.render("error", { error: ErrorData.loginPasswordIncorrect });
 };
 
 const loginPasswordMismatch = (req, res) => {
-  res.render("error", {
-    error: {
-      title: ErrorData.loginPasswordMismatch.title,
-      description: ErrorData.loginPasswordMismatch.description,
-      image: ErrorData.loginPasswordMismatch.image,
-    },
-  });
+  res.render("error", { error: ErrorData.loginPasswordMismatch });
 };
 
 module.exports = {

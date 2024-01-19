@@ -25,49 +25,47 @@
 
   <body>
     <header id="header">
-      <%- include("./partials/home/navbar.ejs", { account: account }) %>
+      <%- include("./home/navbar.ejs", { account }) %>
     </header>
 
     <main>
       <section id="introduction-section">
-        <%- include("./partials/home/introduction.ejs") %>
+        <%- include("./home/introduction.ejs") %>
       </section>
 
       <section id="features-section">
-        <%- include("./partials/home/features.ejs") %>
+        <%- include("./home/features.ejs") %>
       </section>
 
       <section id="templates-section">
-        <%- include("./partials/home/templates.ejs", { templates: templates })
-        %>
+        <%- include("./home/templates.ejs", { templates }) %>
       </section>
 
       <section id="custom-section">
-        <%- include("./partials/home/custom.ejs", { custom: custom }) %>
+        <%- include("./home/custom.ejs", { custom }) %>
       </section>
 
       <section id="personal-section">
-        <%- include("./partials/home/personal.ejs", { personal: personal }) %>
+        <%- include("./home/personal.ejs", { personal }) %>
       </section>
 
-      <% if(account === false) { %>
+      <% if(account === undefined) { %>
       <section id="account-section">
-        <%- include("./partials/home/account.ejs") %>
+        <%- include("./home/account.ejs") %>
       </section>
 
       <section id="inspired-section">
-        <%- include("./partials/home/inspired.ejs", { inspired: inspired }) %>
+        <%- include("./home/inspired.ejs", { inspired }) %>
       </section>
       <% } %>
 
       <section id="comments-section">
-        <%- include("./partials/home/comments.ejs", { comments: comments }) %>
+        <%- include("./home/comments.ejs", { comments }) %>
       </section>
     </main>
 
     <footer id="footer">
-      <%- include("./partials/home/footer.ejs", { footer: footer, account:
-      account }) %>
+      <%- include("./home/footer.ejs", { footer, account }) %>
     </footer>
 
     <script type="module" src="/Home.js"></script>

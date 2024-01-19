@@ -2,11 +2,15 @@ const DisplayManager = require("../database/DisplayManager.js");
 const ProgressManager = require("../database/ProgressManager.js");
 const CompletedManager = require("../database/CompletedManager.js");
 
-const collection = (req, res) => {
+const collection = async (req, res) => {
   if (req.session.email === undefined) {
     res.redirect("/error/account-absent");
     return;
   }
+
+  const collection = await DisplayManager.GetCollection(req.session.email);
+
+  res.render("collection", { collection });
 };
 
 const list = async (req, res) => {
@@ -20,7 +24,7 @@ const list = async (req, res) => {
     req.params.type
   );
 
-  res.render("todo", { todo: todo });
+  res.render("todo", { todo });
 };
 
 const manageProgress = async (req, res) => {

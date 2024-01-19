@@ -2,7 +2,7 @@
   <h1 class="nav-logo">TaskTonic</h1>
 
   <article class="nav-links-container">
-    <% if(account === true) { %>
+    <% if(account !== undefined) { %>
     <div class="nav-list-links-container">
       <% header.lists.forEach((list) => { %>
       <a class="nav-link" href="<%= list.URL %>">

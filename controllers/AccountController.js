@@ -3,7 +3,7 @@ const AccountManager = require("../database/AccountManger.js");
 const create = async (req, res) => {
   const isCreated = await AccountManager.CreateAccount(req.body, req);
 
-  if (isCreated) {
+  if (isCreated === true) {
     res.redirect("/");
     return;
   }
@@ -14,7 +14,7 @@ const create = async (req, res) => {
 const login = async (req, res) => {
   const isLogin = await AccountManager.LoginAccount(req.body, req);
 
-  if (isLogin) {
+  if (isLogin === true) {
     res.redirect("/");
     return;
   }

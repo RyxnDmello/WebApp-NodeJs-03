@@ -24,11 +24,11 @@
   </head>
 
   <body>
-    <header><%- include("./partials/error/navbar.ejs") %></header>
+    <header><%- include("./error/navbar.ejs") %></header>
 
     <main>
       <section id="errors-section">
-        <%- include("./partials/error/errors.ejs", { error: error }) %>
+        <%- include("./error/errors.ejs", { error }) %>
       </section>
     </main>
   </body>

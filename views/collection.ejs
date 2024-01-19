@@ -24,12 +24,11 @@
   </head>
 
   <body>
-    <header><%- include("./partials/collection/navbar.ejs") %></header>
+    <header><%- include("./collection/navbar.ejs") %></header>
 
     <main>
       <section id="types-section">
-        <%- include("./partials/collection/types.ejs", { collection: collection
-        }) %>
+        <%- include("./collection/types.ejs", { collection }) %>
       </section>
     </main>
 
