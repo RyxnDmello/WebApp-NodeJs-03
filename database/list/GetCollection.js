@@ -43,6 +43,7 @@ const ListStatistics = (databaseAccount, periodType) => {
 
   if (stats.total > 0) {
     stats.percentage = (stats.totalCompleted / stats.total) * 100;
+    stats.percentage = stats.percentage.toFixed(2);
     return stats;
   }
 
