@@ -3,6 +3,7 @@ require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const session = require("express-session");
+const memoryStore = require("memorystore")(session);
 
 const app = express();
 
@@ -17,7 +18,14 @@ app.use(bodyParser.urlencoded({ extended: "true" }));
 
 app.use(
   session({
-    secret: "WebApp-Personal-03",
+    secret: "TaskTonic",
+    cookie: {
+      secure: false,
+      maxAge: 86400000,
+    },
+    store: new memoryStore({
+      checkPeriod: 86400000,
+    }),
     saveUninitialized: false,
     resave: false,
   })
